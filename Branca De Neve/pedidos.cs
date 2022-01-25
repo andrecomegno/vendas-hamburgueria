@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Branca_De_Neve
 {
     public partial class pedidos : Form
     {
+
         public pedidos()
         {
             InitializeComponent();
@@ -493,6 +495,159 @@ namespace Branca_De_Neve
                 txt_qt_10.Text = "0";
             }
         }
+
+        private void bt_buscar_cep_Click(object sender, EventArgs e)
+        {
+            using (var ws = new WSCorreios.AtendeClienteClient())
+            {
+                try
+                {
+                    var resultado = ws.consultaCEP(txt_cep.Text);
+                    txt_end.Text = resultado.end;
+                    txt_cidade.Text = resultado.cidade;
+                    txt_bairro.Text = resultado.bairro;
+                    txt_estado.Text = resultado.uf;
+                }
+                catch
+                {
+                    if (String.IsNullOrEmpty(txt_cep.Text))
+                    {
+                        MessageBox.Show("Você Esqueceu o CEP", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txt_cep.Focus();
+                        txt_cep.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("CEP Não Existe", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        txt_cep.Focus();
+                        txt_cep.Text = "";
+                    }                    
+                }
+            }
+        }
+
+        private void txt_nome_01_Leave(object sender, EventArgs e)
+        {
+            // buscar lanches
+        }
+
+        #region BOTÕES CONCLUIR E SAIR
+
+        private void bt_concluir_Click(object sender, EventArgs e)
+        {
+            // banco de dados 
+            try
+            {
+                MessageBox.Show("Pedido Salvo Com Sucesso ", "Tudo Certo", MessageBoxButtons.OK, MessageBoxIcon.Information);               
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message, "AVISO !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+                LimparTextBox(gp_cad.Controls);
+                LimparTextBox2(p_qt.Controls);
+                LimparTextBox3(p_valores.Controls);
+                LimparTextBox3(this.Controls);
+            }
+
+        }
+
+        private void LimparTextBox(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if(c is TextBox)
+                {
+                    ((TextBox)(c)).Text = string.Empty;
+                }
+            }
+        }
+
+        private void LimparTextBox2(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is TextBox)
+                {
+                    ((TextBox)(c)).Text = "0";
+                }
+            }
+        }
+
+        private void LimparTextBox3(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is TextBox)
+                {
+                    ((TextBox)(c)).Text = "0,00";
+                }
+            }
+        }
+
+        private void bt_sair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #endregion
+
+        #region MENU APP
+
+        private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<pedidos>().Count() > 0)
+            {
+                MessageBox.Show("A Janela Novo Pedido já está aberto", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                this.Show();
+            }
+        }
+
+        private void cardápioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<cardapio>().Count() > 0)
+            {
+                MessageBox.Show("A Janela Cardápido já está aberto", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);                
+            }
+            else
+            {
+                this.Close();
+
+                cardapio ca = new cardapio();
+                ca.Show();
+            }
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #endregion
+
+        private void pedidos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // sair do programa
+            DialogResult dr = MessageBox.Show("Deseja Mesmo Sair ?", "AVISO !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    e.Cancel = false;
+                    break;
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
 
     }
 }

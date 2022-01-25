@@ -14,19 +14,62 @@ namespace Branca_De_Neve
     {
         public Branca_Neve()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
-        private void bt_cadastro_Click(object sender, EventArgs e)
-        {
-            cadastro_novo nc = new cadastro_novo();
-            nc.Show();
-        }
+        #region BOTÕES PEDIR E CARDÁPIO
 
         private void bt_pedido_Click(object sender, EventArgs e)
         {
             pedidos pe = new pedidos();
             pe.Show();
+        }
+
+        private void bt_cardapio_Click(object sender, EventArgs e)
+        {
+            cardapio ca = new cardapio();
+            ca.Show();
+        }
+
+        #endregion
+
+        #region MENU DO APP
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pedidos pe = new pedidos();
+            pe.Show();
+        }
+
+        private void cardápioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cardapio ca = new cardapio();
+            ca.Show();
+        }
+
+        #endregion
+
+        private void Branca_Neve_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // sair do programa
+            DialogResult dr = MessageBox.Show("Deseja Mesmo Sair ?", "AVISO !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    e.Cancel = false;
+                    break;
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

@@ -38,10 +38,10 @@ namespace Branca_De_Neve
             this.cardápioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.bt_pedido = new System.Windows.Forms.Button();
             this.bt_sair = new System.Windows.Forms.Button();
             this.lb_titulo_menu = new System.Windows.Forms.Label();
+            this.rodape = new System.Windows.Forms.Panel();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -126,20 +126,12 @@ namespace Branca_De_Neve
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Gray;
-            this.panel3.Location = new System.Drawing.Point(0, 699);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(788, 17);
-            this.panel3.TabIndex = 17;
-            // 
             // bt_pedido
             // 
             this.bt_pedido.BackColor = System.Drawing.Color.YellowGreen;
             this.bt_pedido.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_pedido.ForeColor = System.Drawing.Color.White;
-            this.bt_pedido.Location = new System.Drawing.Point(583, 658);
+            this.bt_pedido.Location = new System.Drawing.Point(583, 634);
             this.bt_pedido.Name = "bt_pedido";
             this.bt_pedido.Size = new System.Drawing.Size(157, 35);
             this.bt_pedido.TabIndex = 19;
@@ -152,7 +144,7 @@ namespace Branca_De_Neve
             this.bt_sair.BackColor = System.Drawing.Color.Red;
             this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_sair.ForeColor = System.Drawing.Color.White;
-            this.bt_sair.Location = new System.Drawing.Point(27, 658);
+            this.bt_sair.Location = new System.Drawing.Point(27, 634);
             this.bt_sair.Name = "bt_sair";
             this.bt_sair.Size = new System.Drawing.Size(110, 35);
             this.bt_sair.TabIndex = 18;
@@ -170,6 +162,15 @@ namespace Branca_De_Neve
             this.lb_titulo_menu.TabIndex = 20;
             this.lb_titulo_menu.Text = "MENU";
             // 
+            // rodape
+            // 
+            this.rodape.BackColor = System.Drawing.Color.Gray;
+            this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rodape.Location = new System.Drawing.Point(0, 685);
+            this.rodape.Name = "rodape";
+            this.rodape.Size = new System.Drawing.Size(767, 30);
+            this.rodape.TabIndex = 21;
+            // 
             // cardapio
             // 
             this.AllowDrop = true;
@@ -177,17 +178,17 @@ namespace Branca_De_Neve
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(767, 715);
+            this.Controls.Add(this.rodape);
             this.Controls.Add(this.lb_titulo_menu);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.bt_pedido);
             this.Controls.Add(this.bt_sair);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.menuStrip1);
             this.MaximizeBox = false;
             this.Name = "cardapio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CARDÁPIO";
+            this.Text = "Cardápio - Branca de Neve Hamburgueria";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cardapio_FormClosing);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -205,12 +206,12 @@ namespace Branca_De_Neve
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button bt_pedido;
         private System.Windows.Forms.Button bt_sair;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lb_titulo_menu;
         private System.Windows.Forms.ToolStripMenuItem novoPedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cardápioToolStripMenuItem;
+        private System.Windows.Forms.Panel rodape;
     }
 }

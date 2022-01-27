@@ -31,7 +31,6 @@ namespace Branca_De_Neve
         {
             this.bt_concluir = new System.Windows.Forms.Button();
             this.bt_sair = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,11 +106,12 @@ namespace Branca_De_Neve
             this.txt_end_n = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rd_dinheiro = new System.Windows.Forms.RadioButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.rad_pix = new System.Windows.Forms.RadioButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rad_cartao = new System.Windows.Forms.RadioButton();
+            this.rodape = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.im_cartao = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.gp_pedido.SuspendLayout();
@@ -149,14 +149,6 @@ namespace Branca_De_Neve
             this.bt_sair.Text = "Sair";
             this.bt_sair.UseVisualStyleBackColor = false;
             this.bt_sair.Click += new System.EventHandler(this.bt_sair_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Gray;
-            this.panel3.Location = new System.Drawing.Point(0, 818);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(680, 17);
-            this.panel3.TabIndex = 14;
             // 
             // menuStrip1
             // 
@@ -1012,17 +1004,6 @@ namespace Branca_De_Neve
             this.rd_dinheiro.Text = "Dinheiro";
             this.rd_dinheiro.UseVisualStyleBackColor = true;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Branca_De_Neve.Properties.Resources.dinheiro;
-            this.pictureBox2.Location = new System.Drawing.Point(437, 15);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(85, 70);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -1045,16 +1026,6 @@ namespace Branca_De_Neve
             this.rad_pix.Text = "PIX";
             this.rad_pix.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Branca_De_Neve.Properties.Resources.pix;
-            this.pictureBox1.Location = new System.Drawing.Point(258, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // rad_cartao
             // 
             this.rad_cartao.AutoSize = true;
@@ -1065,6 +1036,36 @@ namespace Branca_De_Neve
             this.rad_cartao.TabStop = true;
             this.rad_cartao.Text = "Débito";
             this.rad_cartao.UseVisualStyleBackColor = true;
+            // 
+            // rodape
+            // 
+            this.rodape.BackColor = System.Drawing.Color.Gray;
+            this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rodape.Location = new System.Drawing.Point(0, 838);
+            this.rodape.Name = "rodape";
+            this.rodape.Size = new System.Drawing.Size(680, 30);
+            this.rodape.TabIndex = 67;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::Branca_De_Neve.Properties.Resources.dinheiro;
+            this.pictureBox2.Location = new System.Drawing.Point(437, 15);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(85, 70);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Branca_De_Neve.Properties.Resources.pix;
+            this.pictureBox1.Location = new System.Drawing.Point(258, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // im_cartao
             // 
@@ -1081,20 +1082,20 @@ namespace Branca_De_Neve
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(680, 834);
+            this.ClientSize = new System.Drawing.Size(680, 868);
+            this.Controls.Add(this.rodape);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gp_cad);
             this.Controls.Add(this.gp_pedido);
             this.Controls.Add(this.txt_total_venda);
             this.Controls.Add(this.lb_pagar);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.bt_concluir);
             this.Controls.Add(this.bt_sair);
             this.MaximizeBox = false;
             this.Name = "pedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Fazer Pedido";
+            this.Text = "Fazer Novo Pedido - Branca de Neve Hamburgueria";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.pedidos_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -1120,7 +1121,6 @@ namespace Branca_De_Neve
 
         private System.Windows.Forms.Button bt_concluir;
         private System.Windows.Forms.Button bt_sair;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
@@ -1202,5 +1202,6 @@ namespace Branca_De_Neve
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.RadioButton rd_dinheiro;
+        private System.Windows.Forms.Panel rodape;
     }
 }

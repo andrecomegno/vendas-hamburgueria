@@ -37,13 +37,13 @@ namespace Branca_De_Neve
             this.cardápioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txt_nome_01 = new System.Windows.Forms.TextBox();
+            this.txt_produto_01 = new System.Windows.Forms.TextBox();
             this.lb_produto = new System.Windows.Forms.Label();
             this.lb_qt = new System.Windows.Forms.Label();
-            this.txt_nome_02 = new System.Windows.Forms.TextBox();
-            this.txt_nome_03 = new System.Windows.Forms.TextBox();
-            this.txt_nome_04 = new System.Windows.Forms.TextBox();
-            this.txt_nome_05 = new System.Windows.Forms.TextBox();
+            this.txt_produto_02 = new System.Windows.Forms.TextBox();
+            this.txt_produto_03 = new System.Windows.Forms.TextBox();
+            this.txt_produto_04 = new System.Windows.Forms.TextBox();
+            this.txt_produto_05 = new System.Windows.Forms.TextBox();
             this.txt_valor_01 = new System.Windows.Forms.TextBox();
             this.lb_pagar = new System.Windows.Forms.Label();
             this.txt_total_venda = new System.Windows.Forms.TextBox();
@@ -80,11 +80,11 @@ namespace Branca_De_Neve
             this.txt_qt_09 = new System.Windows.Forms.TextBox();
             this.txt_qt_10 = new System.Windows.Forms.TextBox();
             this.lb_total = new System.Windows.Forms.Label();
-            this.txt_nome_06 = new System.Windows.Forms.TextBox();
-            this.txt_nome_07 = new System.Windows.Forms.TextBox();
-            this.txt_nome_08 = new System.Windows.Forms.TextBox();
-            this.txt_nome_10 = new System.Windows.Forms.TextBox();
-            this.txt_nome_09 = new System.Windows.Forms.TextBox();
+            this.txt_produto_06 = new System.Windows.Forms.TextBox();
+            this.txt_produto_07 = new System.Windows.Forms.TextBox();
+            this.txt_produto_08 = new System.Windows.Forms.TextBox();
+            this.txt_produto_10 = new System.Windows.Forms.TextBox();
+            this.txt_produto_09 = new System.Windows.Forms.TextBox();
             this.lb_valor_uni = new System.Windows.Forms.Label();
             this.lb_tel = new System.Windows.Forms.Label();
             this.lb_nome = new System.Windows.Forms.Label();
@@ -106,13 +106,13 @@ namespace Branca_De_Neve
             this.txt_end_n = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rd_dinheiro = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.rad_pix = new System.Windows.Forms.RadioButton();
-            this.rad_cartao = new System.Windows.Forms.RadioButton();
-            this.rodape = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.rad_credito = new System.Windows.Forms.RadioButton();
+            this.rad_pix = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.rad_debito = new System.Windows.Forms.RadioButton();
             this.im_cartao = new System.Windows.Forms.PictureBox();
+            this.rodape = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.gp_pedido.SuspendLayout();
             this.p_valores.SuspendLayout();
@@ -127,12 +127,13 @@ namespace Branca_De_Neve
             // bt_concluir
             // 
             this.bt_concluir.BackColor = System.Drawing.Color.YellowGreen;
+            this.bt_concluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_concluir.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_concluir.ForeColor = System.Drawing.Color.White;
             this.bt_concluir.Location = new System.Drawing.Point(544, 764);
             this.bt_concluir.Name = "bt_concluir";
             this.bt_concluir.Size = new System.Drawing.Size(110, 35);
-            this.bt_concluir.TabIndex = 12;
+            this.bt_concluir.TabIndex = 23;
             this.bt_concluir.Text = "Concluir";
             this.bt_concluir.UseVisualStyleBackColor = false;
             this.bt_concluir.Click += new System.EventHandler(this.bt_concluir_Click);
@@ -140,12 +141,13 @@ namespace Branca_De_Neve
             // bt_sair
             // 
             this.bt_sair.BackColor = System.Drawing.Color.Red;
+            this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_sair.ForeColor = System.Drawing.Color.White;
             this.bt_sair.Location = new System.Drawing.Point(29, 764);
             this.bt_sair.Name = "bt_sair";
             this.bt_sair.Size = new System.Drawing.Size(110, 35);
-            this.bt_sair.TabIndex = 11;
+            this.bt_sair.TabIndex = 20;
             this.bt_sair.Text = "Sair";
             this.bt_sair.UseVisualStyleBackColor = false;
             this.bt_sair.Click += new System.EventHandler(this.bt_sair_Click);
@@ -200,14 +202,14 @@ namespace Branca_De_Neve
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // txt_nome_01
+            // txt_produto_01
             // 
-            this.txt_nome_01.Location = new System.Drawing.Point(82, 46);
-            this.txt_nome_01.MaxLength = 250;
-            this.txt_nome_01.Name = "txt_nome_01";
-            this.txt_nome_01.Size = new System.Drawing.Size(363, 20);
-            this.txt_nome_01.TabIndex = 27;
-            this.txt_nome_01.Leave += new System.EventHandler(this.txt_nome_01_Leave);
+            this.txt_produto_01.Location = new System.Drawing.Point(82, 46);
+            this.txt_produto_01.MaxLength = 250;
+            this.txt_produto_01.Name = "txt_produto_01";
+            this.txt_produto_01.Size = new System.Drawing.Size(363, 20);
+            this.txt_produto_01.TabIndex = 0;
+            this.txt_produto_01.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_produto_01_MouseClick);
             // 
             // lb_produto
             // 
@@ -227,37 +229,37 @@ namespace Branca_De_Neve
             this.lb_qt.TabIndex = 29;
             this.lb_qt.Text = "Qtd";
             // 
-            // txt_nome_02
+            // txt_produto_02
             // 
-            this.txt_nome_02.Location = new System.Drawing.Point(82, 72);
-            this.txt_nome_02.MaxLength = 250;
-            this.txt_nome_02.Name = "txt_nome_02";
-            this.txt_nome_02.Size = new System.Drawing.Size(363, 20);
-            this.txt_nome_02.TabIndex = 31;
+            this.txt_produto_02.Location = new System.Drawing.Point(82, 72);
+            this.txt_produto_02.MaxLength = 250;
+            this.txt_produto_02.Name = "txt_produto_02";
+            this.txt_produto_02.Size = new System.Drawing.Size(363, 20);
+            this.txt_produto_02.TabIndex = 1;
             // 
-            // txt_nome_03
+            // txt_produto_03
             // 
-            this.txt_nome_03.Location = new System.Drawing.Point(82, 98);
-            this.txt_nome_03.MaxLength = 250;
-            this.txt_nome_03.Name = "txt_nome_03";
-            this.txt_nome_03.Size = new System.Drawing.Size(363, 20);
-            this.txt_nome_03.TabIndex = 33;
+            this.txt_produto_03.Location = new System.Drawing.Point(82, 98);
+            this.txt_produto_03.MaxLength = 250;
+            this.txt_produto_03.Name = "txt_produto_03";
+            this.txt_produto_03.Size = new System.Drawing.Size(363, 20);
+            this.txt_produto_03.TabIndex = 2;
             // 
-            // txt_nome_04
+            // txt_produto_04
             // 
-            this.txt_nome_04.Location = new System.Drawing.Point(82, 124);
-            this.txt_nome_04.MaxLength = 250;
-            this.txt_nome_04.Name = "txt_nome_04";
-            this.txt_nome_04.Size = new System.Drawing.Size(363, 20);
-            this.txt_nome_04.TabIndex = 35;
+            this.txt_produto_04.Location = new System.Drawing.Point(82, 124);
+            this.txt_produto_04.MaxLength = 250;
+            this.txt_produto_04.Name = "txt_produto_04";
+            this.txt_produto_04.Size = new System.Drawing.Size(363, 20);
+            this.txt_produto_04.TabIndex = 3;
             // 
-            // txt_nome_05
+            // txt_produto_05
             // 
-            this.txt_nome_05.Location = new System.Drawing.Point(82, 150);
-            this.txt_nome_05.MaxLength = 250;
-            this.txt_nome_05.Name = "txt_nome_05";
-            this.txt_nome_05.Size = new System.Drawing.Size(363, 20);
-            this.txt_nome_05.TabIndex = 37;
+            this.txt_produto_05.Location = new System.Drawing.Point(82, 150);
+            this.txt_produto_05.MaxLength = 250;
+            this.txt_produto_05.Name = "txt_produto_05";
+            this.txt_produto_05.Size = new System.Drawing.Size(363, 20);
+            this.txt_produto_05.TabIndex = 4;
             // 
             // txt_valor_01
             // 
@@ -267,7 +269,8 @@ namespace Branca_De_Neve
             this.txt_valor_01.Name = "txt_valor_01";
             this.txt_valor_01.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_01.TabIndex = 44;
-            this.txt_valor_01.Text = "0";
+            this.txt_valor_01.TabStop = false;
+            this.txt_valor_01.Text = "0,00";
             this.txt_valor_01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_valor_01.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_01_MouseClick);
             this.txt_valor_01.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
@@ -295,7 +298,7 @@ namespace Branca_De_Neve
             this.txt_total_venda.Size = new System.Drawing.Size(132, 26);
             this.txt_total_venda.TabIndex = 46;
             this.txt_total_venda.TabStop = false;
-            this.txt_total_venda.Text = "0";
+            this.txt_total_venda.Text = "0,00";
             this.txt_total_venda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_total_venda.Leave += new System.EventHandler(this.txt_total_venda_Leave);
             // 
@@ -304,23 +307,23 @@ namespace Branca_De_Neve
             this.gp_pedido.Controls.Add(this.p_valores);
             this.gp_pedido.Controls.Add(this.p_qt);
             this.gp_pedido.Controls.Add(this.lb_total);
-            this.gp_pedido.Controls.Add(this.txt_nome_06);
-            this.gp_pedido.Controls.Add(this.txt_nome_07);
-            this.gp_pedido.Controls.Add(this.txt_nome_08);
-            this.gp_pedido.Controls.Add(this.txt_nome_10);
-            this.gp_pedido.Controls.Add(this.txt_nome_09);
-            this.gp_pedido.Controls.Add(this.txt_nome_01);
+            this.gp_pedido.Controls.Add(this.txt_produto_06);
+            this.gp_pedido.Controls.Add(this.txt_produto_07);
+            this.gp_pedido.Controls.Add(this.txt_produto_08);
+            this.gp_pedido.Controls.Add(this.txt_produto_10);
+            this.gp_pedido.Controls.Add(this.txt_produto_09);
+            this.gp_pedido.Controls.Add(this.txt_produto_01);
             this.gp_pedido.Controls.Add(this.lb_valor_uni);
             this.gp_pedido.Controls.Add(this.lb_produto);
             this.gp_pedido.Controls.Add(this.lb_qt);
-            this.gp_pedido.Controls.Add(this.txt_nome_02);
-            this.gp_pedido.Controls.Add(this.txt_nome_03);
-            this.gp_pedido.Controls.Add(this.txt_nome_05);
-            this.gp_pedido.Controls.Add(this.txt_nome_04);
+            this.gp_pedido.Controls.Add(this.txt_produto_02);
+            this.gp_pedido.Controls.Add(this.txt_produto_03);
+            this.gp_pedido.Controls.Add(this.txt_produto_05);
+            this.gp_pedido.Controls.Add(this.txt_produto_04);
             this.gp_pedido.Location = new System.Drawing.Point(12, 359);
             this.gp_pedido.Name = "gp_pedido";
             this.gp_pedido.Size = new System.Drawing.Size(658, 326);
-            this.gp_pedido.TabIndex = 47;
+            this.gp_pedido.TabIndex = 102;
             this.gp_pedido.TabStop = false;
             this.gp_pedido.Text = "Pedidos";
             // 
@@ -349,7 +352,7 @@ namespace Branca_De_Neve
             this.p_valores.Location = new System.Drawing.Point(449, 46);
             this.p_valores.Name = "p_valores";
             this.p_valores.Size = new System.Drawing.Size(198, 253);
-            this.p_valores.TabIndex = 66;
+            this.p_valores.TabIndex = 104;
             // 
             // txt_total_10
             // 
@@ -359,7 +362,8 @@ namespace Branca_De_Neve
             this.txt_total_10.Name = "txt_total_10";
             this.txt_total_10.Size = new System.Drawing.Size(92, 20);
             this.txt_total_10.TabIndex = 99;
-            this.txt_total_10.Text = "0";
+            this.txt_total_10.TabStop = false;
+            this.txt_total_10.Text = "0,00";
             this.txt_total_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_valor_02
@@ -370,7 +374,8 @@ namespace Branca_De_Neve
             this.txt_valor_02.Name = "txt_valor_02";
             this.txt_valor_02.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_02.TabIndex = 51;
-            this.txt_valor_02.Text = "0";
+            this.txt_valor_02.TabStop = false;
+            this.txt_valor_02.Text = "0,00";
             this.txt_valor_02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_valor_02.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_02_MouseClick);
             this.txt_valor_02.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
@@ -384,7 +389,8 @@ namespace Branca_De_Neve
             this.txt_total_09.Name = "txt_total_09";
             this.txt_total_09.Size = new System.Drawing.Size(92, 20);
             this.txt_total_09.TabIndex = 98;
-            this.txt_total_09.Text = "0";
+            this.txt_total_09.TabStop = false;
+            this.txt_total_09.Text = "0,00";
             this.txt_total_09.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_valor_03
@@ -395,7 +401,8 @@ namespace Branca_De_Neve
             this.txt_valor_03.Name = "txt_valor_03";
             this.txt_valor_03.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_03.TabIndex = 53;
-            this.txt_valor_03.Text = "0";
+            this.txt_valor_03.TabStop = false;
+            this.txt_valor_03.Text = "0,00";
             this.txt_valor_03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_valor_03.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_03_MouseClick);
             this.txt_valor_03.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
@@ -409,7 +416,8 @@ namespace Branca_De_Neve
             this.txt_total_08.Name = "txt_total_08";
             this.txt_total_08.Size = new System.Drawing.Size(92, 20);
             this.txt_total_08.TabIndex = 97;
-            this.txt_total_08.Text = "0";
+            this.txt_total_08.TabStop = false;
+            this.txt_total_08.Text = "0,00";
             this.txt_total_08.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_valor_04
@@ -420,7 +428,8 @@ namespace Branca_De_Neve
             this.txt_valor_04.Name = "txt_valor_04";
             this.txt_valor_04.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_04.TabIndex = 55;
-            this.txt_valor_04.Text = "0";
+            this.txt_valor_04.TabStop = false;
+            this.txt_valor_04.Text = "0,00";
             this.txt_valor_04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_valor_04.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_04_MouseClick);
             this.txt_valor_04.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
@@ -434,7 +443,8 @@ namespace Branca_De_Neve
             this.txt_total_07.Name = "txt_total_07";
             this.txt_total_07.Size = new System.Drawing.Size(92, 20);
             this.txt_total_07.TabIndex = 96;
-            this.txt_total_07.Text = "0";
+            this.txt_total_07.TabStop = false;
+            this.txt_total_07.Text = "0,00";
             this.txt_total_07.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_valor_05
@@ -445,7 +455,8 @@ namespace Branca_De_Neve
             this.txt_valor_05.Name = "txt_valor_05";
             this.txt_valor_05.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_05.TabIndex = 59;
-            this.txt_valor_05.Text = "0";
+            this.txt_valor_05.TabStop = false;
+            this.txt_valor_05.Text = "0,00";
             this.txt_valor_05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_valor_05.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_05_MouseClick);
             this.txt_valor_05.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
@@ -459,7 +470,8 @@ namespace Branca_De_Neve
             this.txt_total_06.Name = "txt_total_06";
             this.txt_total_06.Size = new System.Drawing.Size(92, 20);
             this.txt_total_06.TabIndex = 95;
-            this.txt_total_06.Text = "0";
+            this.txt_total_06.TabStop = false;
+            this.txt_total_06.Text = "0,00";
             this.txt_total_06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_valor_06
@@ -470,7 +482,8 @@ namespace Branca_De_Neve
             this.txt_valor_06.Name = "txt_valor_06";
             this.txt_valor_06.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_06.TabIndex = 71;
-            this.txt_valor_06.Text = "0";
+            this.txt_valor_06.TabStop = false;
+            this.txt_valor_06.Text = "0,00";
             this.txt_valor_06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_valor_06.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_06_MouseClick);
             this.txt_valor_06.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
@@ -484,7 +497,8 @@ namespace Branca_De_Neve
             this.txt_total_05.Name = "txt_total_05";
             this.txt_total_05.Size = new System.Drawing.Size(92, 20);
             this.txt_total_05.TabIndex = 94;
-            this.txt_total_05.Text = "0";
+            this.txt_total_05.TabStop = false;
+            this.txt_total_05.Text = "0,00";
             this.txt_total_05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_valor_07
@@ -495,7 +509,8 @@ namespace Branca_De_Neve
             this.txt_valor_07.Name = "txt_valor_07";
             this.txt_valor_07.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_07.TabIndex = 73;
-            this.txt_valor_07.Text = "0";
+            this.txt_valor_07.TabStop = false;
+            this.txt_valor_07.Text = "0,00";
             this.txt_valor_07.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_valor_07.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_07_MouseClick);
             this.txt_valor_07.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
@@ -509,7 +524,8 @@ namespace Branca_De_Neve
             this.txt_total_04.Name = "txt_total_04";
             this.txt_total_04.Size = new System.Drawing.Size(92, 20);
             this.txt_total_04.TabIndex = 93;
-            this.txt_total_04.Text = "0";
+            this.txt_total_04.TabStop = false;
+            this.txt_total_04.Text = "0,00";
             this.txt_total_04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_valor_08
@@ -520,7 +536,8 @@ namespace Branca_De_Neve
             this.txt_valor_08.Name = "txt_valor_08";
             this.txt_valor_08.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_08.TabIndex = 75;
-            this.txt_valor_08.Text = "0";
+            this.txt_valor_08.TabStop = false;
+            this.txt_valor_08.Text = "0,00";
             this.txt_valor_08.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_valor_08.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_08_MouseClick);
             this.txt_valor_08.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
@@ -534,7 +551,8 @@ namespace Branca_De_Neve
             this.txt_total_03.Name = "txt_total_03";
             this.txt_total_03.Size = new System.Drawing.Size(92, 20);
             this.txt_total_03.TabIndex = 92;
-            this.txt_total_03.Text = "0";
+            this.txt_total_03.TabStop = false;
+            this.txt_total_03.Text = "0,00";
             this.txt_total_03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_valor_09
@@ -545,7 +563,8 @@ namespace Branca_De_Neve
             this.txt_valor_09.Name = "txt_valor_09";
             this.txt_valor_09.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_09.TabIndex = 77;
-            this.txt_valor_09.Text = "0";
+            this.txt_valor_09.TabStop = false;
+            this.txt_valor_09.Text = "0,00";
             this.txt_valor_09.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_valor_09.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_09_MouseClick);
             this.txt_valor_09.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
@@ -559,7 +578,8 @@ namespace Branca_De_Neve
             this.txt_total_02.Name = "txt_total_02";
             this.txt_total_02.Size = new System.Drawing.Size(92, 20);
             this.txt_total_02.TabIndex = 91;
-            this.txt_total_02.Text = "0";
+            this.txt_total_02.TabStop = false;
+            this.txt_total_02.Text = "0,00";
             this.txt_total_02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txt_valor_10
@@ -570,7 +590,8 @@ namespace Branca_De_Neve
             this.txt_valor_10.Name = "txt_valor_10";
             this.txt_valor_10.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_10.TabIndex = 79;
-            this.txt_valor_10.Text = "0";
+            this.txt_valor_10.TabStop = false;
+            this.txt_valor_10.Text = "0,00";
             this.txt_valor_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_valor_10.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_10_MouseClick);
             this.txt_valor_10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
@@ -584,7 +605,8 @@ namespace Branca_De_Neve
             this.txt_total_01.Name = "txt_total_01";
             this.txt_total_01.Size = new System.Drawing.Size(92, 20);
             this.txt_total_01.TabIndex = 90;
-            this.txt_total_01.Text = "0";
+            this.txt_total_01.TabStop = false;
+            this.txt_total_01.Text = "0,00";
             this.txt_total_01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // p_qt
@@ -602,7 +624,7 @@ namespace Branca_De_Neve
             this.p_qt.Location = new System.Drawing.Point(15, 43);
             this.p_qt.Name = "p_qt";
             this.p_qt.Size = new System.Drawing.Size(66, 256);
-            this.p_qt.TabIndex = 66;
+            this.p_qt.TabIndex = 103;
             // 
             // txt_qt_05
             // 
@@ -610,7 +632,7 @@ namespace Branca_De_Neve
             this.txt_qt_05.MaxLength = 2;
             this.txt_qt_05.Name = "txt_qt_05";
             this.txt_qt_05.Size = new System.Drawing.Size(59, 20);
-            this.txt_qt_05.TabIndex = 84;
+            this.txt_qt_05.TabIndex = 4;
             this.txt_qt_05.Tag = "";
             this.txt_qt_05.Text = "0";
             this.txt_qt_05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -624,7 +646,7 @@ namespace Branca_De_Neve
             this.txt_qt_01.MaxLength = 2;
             this.txt_qt_01.Name = "txt_qt_01";
             this.txt_qt_01.Size = new System.Drawing.Size(59, 20);
-            this.txt_qt_01.TabIndex = 80;
+            this.txt_qt_01.TabIndex = 0;
             this.txt_qt_01.Tag = "";
             this.txt_qt_01.Text = "0";
             this.txt_qt_01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -638,7 +660,7 @@ namespace Branca_De_Neve
             this.txt_qt_02.MaxLength = 2;
             this.txt_qt_02.Name = "txt_qt_02";
             this.txt_qt_02.Size = new System.Drawing.Size(59, 20);
-            this.txt_qt_02.TabIndex = 81;
+            this.txt_qt_02.TabIndex = 1;
             this.txt_qt_02.Tag = "";
             this.txt_qt_02.Text = "0";
             this.txt_qt_02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -652,7 +674,7 @@ namespace Branca_De_Neve
             this.txt_qt_03.MaxLength = 2;
             this.txt_qt_03.Name = "txt_qt_03";
             this.txt_qt_03.Size = new System.Drawing.Size(59, 20);
-            this.txt_qt_03.TabIndex = 82;
+            this.txt_qt_03.TabIndex = 2;
             this.txt_qt_03.Tag = "";
             this.txt_qt_03.Text = "0";
             this.txt_qt_03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -666,7 +688,7 @@ namespace Branca_De_Neve
             this.txt_qt_04.MaxLength = 2;
             this.txt_qt_04.Name = "txt_qt_04";
             this.txt_qt_04.Size = new System.Drawing.Size(59, 20);
-            this.txt_qt_04.TabIndex = 83;
+            this.txt_qt_04.TabIndex = 3;
             this.txt_qt_04.Tag = "";
             this.txt_qt_04.Text = "0";
             this.txt_qt_04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -680,7 +702,7 @@ namespace Branca_De_Neve
             this.txt_qt_06.MaxLength = 2;
             this.txt_qt_06.Name = "txt_qt_06";
             this.txt_qt_06.Size = new System.Drawing.Size(59, 20);
-            this.txt_qt_06.TabIndex = 85;
+            this.txt_qt_06.TabIndex = 5;
             this.txt_qt_06.Tag = "";
             this.txt_qt_06.Text = "0";
             this.txt_qt_06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -694,7 +716,7 @@ namespace Branca_De_Neve
             this.txt_qt_07.MaxLength = 2;
             this.txt_qt_07.Name = "txt_qt_07";
             this.txt_qt_07.Size = new System.Drawing.Size(59, 20);
-            this.txt_qt_07.TabIndex = 86;
+            this.txt_qt_07.TabIndex = 6;
             this.txt_qt_07.Tag = "";
             this.txt_qt_07.Text = "0";
             this.txt_qt_07.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -708,7 +730,7 @@ namespace Branca_De_Neve
             this.txt_qt_08.MaxLength = 2;
             this.txt_qt_08.Name = "txt_qt_08";
             this.txt_qt_08.Size = new System.Drawing.Size(59, 20);
-            this.txt_qt_08.TabIndex = 87;
+            this.txt_qt_08.TabIndex = 7;
             this.txt_qt_08.Tag = "";
             this.txt_qt_08.Text = "0";
             this.txt_qt_08.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -722,7 +744,7 @@ namespace Branca_De_Neve
             this.txt_qt_09.MaxLength = 2;
             this.txt_qt_09.Name = "txt_qt_09";
             this.txt_qt_09.Size = new System.Drawing.Size(59, 20);
-            this.txt_qt_09.TabIndex = 88;
+            this.txt_qt_09.TabIndex = 8;
             this.txt_qt_09.Tag = "";
             this.txt_qt_09.Text = "0";
             this.txt_qt_09.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -736,7 +758,7 @@ namespace Branca_De_Neve
             this.txt_qt_10.MaxLength = 2;
             this.txt_qt_10.Name = "txt_qt_10";
             this.txt_qt_10.Size = new System.Drawing.Size(59, 20);
-            this.txt_qt_10.TabIndex = 89;
+            this.txt_qt_10.TabIndex = 9;
             this.txt_qt_10.Tag = "";
             this.txt_qt_10.Text = "0";
             this.txt_qt_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -753,45 +775,45 @@ namespace Branca_De_Neve
             this.lb_total.TabIndex = 100;
             this.lb_total.Text = "Total";
             // 
-            // txt_nome_06
+            // txt_produto_06
             // 
-            this.txt_nome_06.Location = new System.Drawing.Point(82, 175);
-            this.txt_nome_06.MaxLength = 250;
-            this.txt_nome_06.Name = "txt_nome_06";
-            this.txt_nome_06.Size = new System.Drawing.Size(363, 20);
-            this.txt_nome_06.TabIndex = 61;
+            this.txt_produto_06.Location = new System.Drawing.Point(82, 175);
+            this.txt_produto_06.MaxLength = 250;
+            this.txt_produto_06.Name = "txt_produto_06";
+            this.txt_produto_06.Size = new System.Drawing.Size(363, 20);
+            this.txt_produto_06.TabIndex = 5;
             // 
-            // txt_nome_07
+            // txt_produto_07
             // 
-            this.txt_nome_07.Location = new System.Drawing.Point(82, 201);
-            this.txt_nome_07.MaxLength = 250;
-            this.txt_nome_07.Name = "txt_nome_07";
-            this.txt_nome_07.Size = new System.Drawing.Size(363, 20);
-            this.txt_nome_07.TabIndex = 63;
+            this.txt_produto_07.Location = new System.Drawing.Point(82, 201);
+            this.txt_produto_07.MaxLength = 250;
+            this.txt_produto_07.Name = "txt_produto_07";
+            this.txt_produto_07.Size = new System.Drawing.Size(363, 20);
+            this.txt_produto_07.TabIndex = 6;
             // 
-            // txt_nome_08
+            // txt_produto_08
             // 
-            this.txt_nome_08.Location = new System.Drawing.Point(82, 227);
-            this.txt_nome_08.MaxLength = 250;
-            this.txt_nome_08.Name = "txt_nome_08";
-            this.txt_nome_08.Size = new System.Drawing.Size(363, 20);
-            this.txt_nome_08.TabIndex = 65;
+            this.txt_produto_08.Location = new System.Drawing.Point(82, 227);
+            this.txt_produto_08.MaxLength = 250;
+            this.txt_produto_08.Name = "txt_produto_08";
+            this.txt_produto_08.Size = new System.Drawing.Size(363, 20);
+            this.txt_produto_08.TabIndex = 7;
             // 
-            // txt_nome_10
+            // txt_produto_10
             // 
-            this.txt_nome_10.Location = new System.Drawing.Point(82, 279);
-            this.txt_nome_10.MaxLength = 250;
-            this.txt_nome_10.Name = "txt_nome_10";
-            this.txt_nome_10.Size = new System.Drawing.Size(363, 20);
-            this.txt_nome_10.TabIndex = 69;
+            this.txt_produto_10.Location = new System.Drawing.Point(82, 279);
+            this.txt_produto_10.MaxLength = 250;
+            this.txt_produto_10.Name = "txt_produto_10";
+            this.txt_produto_10.Size = new System.Drawing.Size(363, 20);
+            this.txt_produto_10.TabIndex = 9;
             // 
-            // txt_nome_09
+            // txt_produto_09
             // 
-            this.txt_nome_09.Location = new System.Drawing.Point(82, 253);
-            this.txt_nome_09.MaxLength = 250;
-            this.txt_nome_09.Name = "txt_nome_09";
-            this.txt_nome_09.Size = new System.Drawing.Size(363, 20);
-            this.txt_nome_09.TabIndex = 67;
+            this.txt_produto_09.Location = new System.Drawing.Point(82, 253);
+            this.txt_produto_09.MaxLength = 250;
+            this.txt_produto_09.Name = "txt_produto_09";
+            this.txt_produto_09.Size = new System.Drawing.Size(363, 20);
+            this.txt_produto_09.TabIndex = 8;
             // 
             // lb_valor_uni
             // 
@@ -822,11 +844,13 @@ namespace Branca_De_Neve
             // 
             // txt_nome
             // 
+            this.txt_nome.BackColor = System.Drawing.SystemColors.Window;
             this.txt_nome.Location = new System.Drawing.Point(63, 41);
             this.txt_nome.MaxLength = 100;
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(378, 20);
-            this.txt_nome.TabIndex = 61;
+            this.txt_nome.TabIndex = 0;
+            this.txt_nome.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_nome_MouseClick);
             // 
             // txt_tel
             // 
@@ -834,7 +858,8 @@ namespace Branca_De_Neve
             this.txt_tel.MaxLength = 11;
             this.txt_tel.Name = "txt_tel";
             this.txt_tel.Size = new System.Drawing.Size(132, 20);
-            this.txt_tel.TabIndex = 62;
+            this.txt_tel.TabIndex = 1;
+            this.txt_tel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
             // 
             // lb_estado
             // 
@@ -884,12 +909,13 @@ namespace Branca_De_Neve
             // bt_buscar_cep
             // 
             this.bt_buscar_cep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bt_buscar_cep.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_buscar_cep.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_buscar_cep.ForeColor = System.Drawing.Color.White;
-            this.bt_buscar_cep.Location = new System.Drawing.Point(188, 76);
+            this.bt_buscar_cep.Location = new System.Drawing.Point(188, 79);
             this.bt_buscar_cep.Name = "bt_buscar_cep";
-            this.bt_buscar_cep.Size = new System.Drawing.Size(85, 34);
-            this.bt_buscar_cep.TabIndex = 51;
+            this.bt_buscar_cep.Size = new System.Drawing.Size(79, 28);
+            this.bt_buscar_cep.TabIndex = 3;
             this.bt_buscar_cep.Text = "Buscar";
             this.bt_buscar_cep.UseVisualStyleBackColor = false;
             this.bt_buscar_cep.Click += new System.EventHandler(this.bt_buscar_cep_Click);
@@ -900,7 +926,8 @@ namespace Branca_De_Neve
             this.txt_end.MaxLength = 100;
             this.txt_end.Name = "txt_end";
             this.txt_end.Size = new System.Drawing.Size(378, 20);
-            this.txt_end.TabIndex = 52;
+            this.txt_end.TabIndex = 4;
+            this.txt_end.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_end_MouseClick);
             // 
             // txt_bairro
             // 
@@ -908,7 +935,7 @@ namespace Branca_De_Neve
             this.txt_bairro.MaxLength = 100;
             this.txt_bairro.Name = "txt_bairro";
             this.txt_bairro.Size = new System.Drawing.Size(231, 20);
-            this.txt_bairro.TabIndex = 54;
+            this.txt_bairro.TabIndex = 6;
             // 
             // txt_cep
             // 
@@ -916,7 +943,8 @@ namespace Branca_De_Neve
             this.txt_cep.MaxLength = 8;
             this.txt_cep.Name = "txt_cep";
             this.txt_cep.Size = new System.Drawing.Size(110, 20);
-            this.txt_cep.TabIndex = 50;
+            this.txt_cep.TabIndex = 2;
+            this.txt_cep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
             // 
             // txt_estado
             // 
@@ -924,7 +952,7 @@ namespace Branca_De_Neve
             this.txt_estado.MaxLength = 2;
             this.txt_estado.Name = "txt_estado";
             this.txt_estado.Size = new System.Drawing.Size(56, 20);
-            this.txt_estado.TabIndex = 56;
+            this.txt_estado.TabIndex = 8;
             // 
             // txt_cidade
             // 
@@ -932,7 +960,7 @@ namespace Branca_De_Neve
             this.txt_cidade.MaxLength = 100;
             this.txt_cidade.Name = "txt_cidade";
             this.txt_cidade.Size = new System.Drawing.Size(217, 20);
-            this.txt_cidade.TabIndex = 55;
+            this.txt_cidade.TabIndex = 7;
             // 
             // gp_cad
             // 
@@ -956,7 +984,7 @@ namespace Branca_De_Neve
             this.gp_cad.Location = new System.Drawing.Point(12, 36);
             this.gp_cad.Name = "gp_cad";
             this.gp_cad.Size = new System.Drawing.Size(658, 216);
-            this.gp_cad.TabIndex = 65;
+            this.gp_cad.TabIndex = 1;
             this.gp_cad.TabStop = false;
             this.gp_cad.Text = "Cadastro";
             // 
@@ -975,21 +1003,24 @@ namespace Branca_De_Neve
             this.txt_end_n.MaxLength = 10;
             this.txt_end_n.Name = "txt_end_n";
             this.txt_end_n.Size = new System.Drawing.Size(56, 20);
-            this.txt_end_n.TabIndex = 65;
+            this.txt_end_n.TabIndex = 5;
+            this.txt_end_n.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_end_n_MouseClick);
+            this.txt_end_n.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rd_dinheiro);
             this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.rad_credito);
             this.groupBox1.Controls.Add(this.rad_pix);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.rad_cartao);
+            this.groupBox1.Controls.Add(this.rad_debito);
             this.groupBox1.Controls.Add(this.im_cartao);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 258);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(656, 95);
-            this.groupBox1.TabIndex = 66;
+            this.groupBox1.TabIndex = 101;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pagamento";
             // 
@@ -999,52 +1030,10 @@ namespace Branca_De_Neve
             this.rd_dinheiro.Location = new System.Drawing.Point(516, 46);
             this.rd_dinheiro.Name = "rd_dinheiro";
             this.rd_dinheiro.Size = new System.Drawing.Size(64, 17);
-            this.rd_dinheiro.TabIndex = 6;
+            this.rd_dinheiro.TabIndex = 3;
             this.rd_dinheiro.TabStop = true;
             this.rd_dinheiro.Text = "Dinheiro";
             this.rd_dinheiro.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(165, 57);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(58, 17);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Crédito";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // rad_pix
-            // 
-            this.rad_pix.AutoSize = true;
-            this.rad_pix.Location = new System.Drawing.Point(370, 47);
-            this.rad_pix.Name = "rad_pix";
-            this.rad_pix.Size = new System.Drawing.Size(42, 17);
-            this.rad_pix.TabIndex = 3;
-            this.rad_pix.TabStop = true;
-            this.rad_pix.Text = "PIX";
-            this.rad_pix.UseVisualStyleBackColor = true;
-            // 
-            // rad_cartao
-            // 
-            this.rad_cartao.AutoSize = true;
-            this.rad_cartao.Location = new System.Drawing.Point(165, 34);
-            this.rad_cartao.Name = "rad_cartao";
-            this.rad_cartao.Size = new System.Drawing.Size(56, 17);
-            this.rad_cartao.TabIndex = 1;
-            this.rad_cartao.TabStop = true;
-            this.rad_cartao.Text = "Débito";
-            this.rad_cartao.UseVisualStyleBackColor = true;
-            // 
-            // rodape
-            // 
-            this.rodape.BackColor = System.Drawing.Color.Gray;
-            this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.rodape.Location = new System.Drawing.Point(0, 838);
-            this.rodape.Name = "rodape";
-            this.rodape.Size = new System.Drawing.Size(680, 30);
-            this.rodape.TabIndex = 67;
             // 
             // pictureBox2
             // 
@@ -1057,6 +1046,28 @@ namespace Branca_De_Neve
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
+            // rad_credito
+            // 
+            this.rad_credito.AutoSize = true;
+            this.rad_credito.Location = new System.Drawing.Point(165, 57);
+            this.rad_credito.Name = "rad_credito";
+            this.rad_credito.Size = new System.Drawing.Size(58, 17);
+            this.rad_credito.TabIndex = 1;
+            this.rad_credito.TabStop = true;
+            this.rad_credito.Text = "Crédito";
+            this.rad_credito.UseVisualStyleBackColor = true;
+            // 
+            // rad_pix
+            // 
+            this.rad_pix.AutoSize = true;
+            this.rad_pix.Location = new System.Drawing.Point(370, 47);
+            this.rad_pix.Name = "rad_pix";
+            this.rad_pix.Size = new System.Drawing.Size(42, 17);
+            this.rad_pix.TabIndex = 2;
+            this.rad_pix.TabStop = true;
+            this.rad_pix.Text = "PIX";
+            this.rad_pix.UseVisualStyleBackColor = true;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Branca_De_Neve.Properties.Resources.pix;
@@ -1067,6 +1078,17 @@ namespace Branca_De_Neve
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // rad_debito
+            // 
+            this.rad_debito.AutoSize = true;
+            this.rad_debito.Location = new System.Drawing.Point(165, 34);
+            this.rad_debito.Name = "rad_debito";
+            this.rad_debito.Size = new System.Drawing.Size(56, 17);
+            this.rad_debito.TabIndex = 0;
+            this.rad_debito.TabStop = true;
+            this.rad_debito.Text = "Débito";
+            this.rad_debito.UseVisualStyleBackColor = true;
+            // 
             // im_cartao
             // 
             this.im_cartao.Image = global::Branca_De_Neve.Properties.Resources.cartao_credito;
@@ -1076,6 +1098,15 @@ namespace Branca_De_Neve
             this.im_cartao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.im_cartao.TabIndex = 0;
             this.im_cartao.TabStop = false;
+            // 
+            // rodape
+            // 
+            this.rodape.BackColor = System.Drawing.Color.Gray;
+            this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rodape.Location = new System.Drawing.Point(0, 838);
+            this.rodape.Name = "rodape";
+            this.rodape.Size = new System.Drawing.Size(680, 30);
+            this.rodape.TabIndex = 67;
             // 
             // pedidos
             // 
@@ -1095,7 +1126,7 @@ namespace Branca_De_Neve
             this.MaximizeBox = false;
             this.Name = "pedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Fazer Novo Pedido - Branca de Neve Hamburgueria";
+            this.Text = "Novo Pedido - Branca de Neve Hamburgueria";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.pedidos_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -1125,13 +1156,13 @@ namespace Branca_De_Neve
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.TextBox txt_nome_01;
+        private System.Windows.Forms.TextBox txt_produto_01;
         private System.Windows.Forms.Label lb_produto;
         private System.Windows.Forms.Label lb_qt;
-        private System.Windows.Forms.TextBox txt_nome_02;
-        private System.Windows.Forms.TextBox txt_nome_03;
-        private System.Windows.Forms.TextBox txt_nome_04;
-        private System.Windows.Forms.TextBox txt_nome_05;
+        private System.Windows.Forms.TextBox txt_produto_02;
+        private System.Windows.Forms.TextBox txt_produto_03;
+        private System.Windows.Forms.TextBox txt_produto_04;
+        private System.Windows.Forms.TextBox txt_produto_05;
         private System.Windows.Forms.TextBox txt_valor_01;
         private System.Windows.Forms.Label lb_pagar;
         private System.Windows.Forms.TextBox txt_total_venda;
@@ -1144,12 +1175,12 @@ namespace Branca_De_Neve
         private System.Windows.Forms.TextBox txt_valor_09;
         private System.Windows.Forms.TextBox txt_valor_08;
         private System.Windows.Forms.TextBox txt_valor_07;
-        private System.Windows.Forms.TextBox txt_nome_06;
-        private System.Windows.Forms.TextBox txt_nome_07;
+        private System.Windows.Forms.TextBox txt_produto_06;
+        private System.Windows.Forms.TextBox txt_produto_07;
         private System.Windows.Forms.TextBox txt_valor_06;
-        private System.Windows.Forms.TextBox txt_nome_08;
-        private System.Windows.Forms.TextBox txt_nome_10;
-        private System.Windows.Forms.TextBox txt_nome_09;
+        private System.Windows.Forms.TextBox txt_produto_08;
+        private System.Windows.Forms.TextBox txt_produto_10;
+        private System.Windows.Forms.TextBox txt_produto_09;
         private System.Windows.Forms.Label lb_tel;
         private System.Windows.Forms.Label lb_nome;
         private System.Windows.Forms.TextBox txt_nome;
@@ -1196,10 +1227,10 @@ namespace Branca_De_Neve
         private System.Windows.Forms.Panel p_valores;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox im_cartao;
-        private System.Windows.Forms.RadioButton rad_cartao;
+        private System.Windows.Forms.RadioButton rad_debito;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RadioButton rad_pix;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rad_credito;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.RadioButton rd_dinheiro;
         private System.Windows.Forms.Panel rodape;

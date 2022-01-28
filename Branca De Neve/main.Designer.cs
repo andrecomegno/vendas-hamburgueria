@@ -39,17 +39,17 @@ namespace Branca_De_Neve
             this.rodape = new System.Windows.Forms.Panel();
             this.bt_cardapio = new System.Windows.Forms.Button();
             this.lb_novo_pedido = new System.Windows.Forms.Label();
-            this.bt_hist_pedido = new System.Windows.Forms.Button();
-            this.bt_ = new System.Windows.Forms.Button();
-            this.im_historico = new System.Windows.Forms.PictureBox();
+            this.bt_relatorio = new System.Windows.Forms.Button();
+            this.bt_caixa = new System.Windows.Forms.Button();
             this.im_cardapio = new System.Windows.Forms.PictureBox();
             this.im_novo_pedido = new System.Windows.Forms.PictureBox();
             this.im_ = new System.Windows.Forms.PictureBox();
+            this.im_historico = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.im_historico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_cardapio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_novo_pedido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.im_historico)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_pedido
@@ -65,8 +65,7 @@ namespace Branca_De_Neve
             this.bt_pedido.Location = new System.Drawing.Point(45, 99);
             this.bt_pedido.Name = "bt_pedido";
             this.bt_pedido.Size = new System.Drawing.Size(193, 69);
-            this.bt_pedido.TabIndex = 1;
-            this.bt_pedido.TabStop = false;
+            this.bt_pedido.TabIndex = 0;
             this.bt_pedido.Text = "   NOVO PEDIDO";
             this.bt_pedido.UseVisualStyleBackColor = false;
             this.bt_pedido.Click += new System.EventHandler(this.bt_pedido_Click);
@@ -143,8 +142,7 @@ namespace Branca_De_Neve
             this.bt_cardapio.Location = new System.Drawing.Point(258, 99);
             this.bt_cardapio.Name = "bt_cardapio";
             this.bt_cardapio.Size = new System.Drawing.Size(193, 69);
-            this.bt_cardapio.TabIndex = 2;
-            this.bt_cardapio.TabStop = false;
+            this.bt_cardapio.TabIndex = 1;
             this.bt_cardapio.Text = "CARDÁPIO";
             this.bt_cardapio.UseVisualStyleBackColor = false;
             this.bt_cardapio.Click += new System.EventHandler(this.bt_cardapio_Click);
@@ -162,54 +160,40 @@ namespace Branca_De_Neve
             this.lb_novo_pedido.Text = "0";
             this.lb_novo_pedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bt_hist_pedido
+            // bt_relatorio
             // 
-            this.bt_hist_pedido.BackColor = System.Drawing.Color.SteelBlue;
-            this.bt_hist_pedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_hist_pedido.FlatAppearance.BorderSize = 0;
-            this.bt_hist_pedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.bt_hist_pedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
-            this.bt_hist_pedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_hist_pedido.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_hist_pedido.ForeColor = System.Drawing.Color.White;
-            this.bt_hist_pedido.Location = new System.Drawing.Point(44, 190);
-            this.bt_hist_pedido.Name = "bt_hist_pedido";
-            this.bt_hist_pedido.Size = new System.Drawing.Size(193, 69);
-            this.bt_hist_pedido.TabIndex = 21;
-            this.bt_hist_pedido.TabStop = false;
-            this.bt_hist_pedido.Text = "HISTÓRICO \r\nDE\r\nPEDIDOS";
-            this.bt_hist_pedido.UseVisualStyleBackColor = false;
+            this.bt_relatorio.BackColor = System.Drawing.Color.SteelBlue;
+            this.bt_relatorio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_relatorio.FlatAppearance.BorderSize = 0;
+            this.bt_relatorio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
+            this.bt_relatorio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
+            this.bt_relatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_relatorio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_relatorio.ForeColor = System.Drawing.Color.White;
+            this.bt_relatorio.Location = new System.Drawing.Point(44, 190);
+            this.bt_relatorio.Name = "bt_relatorio";
+            this.bt_relatorio.Size = new System.Drawing.Size(193, 69);
+            this.bt_relatorio.TabIndex = 2;
+            this.bt_relatorio.Text = " RELATÓRIO \r\nDE\r\n VENDAS";
+            this.bt_relatorio.UseVisualStyleBackColor = false;
+            this.bt_relatorio.Click += new System.EventHandler(this.bt_relatorio_Click);
             // 
-            // bt_
+            // bt_caixa
             // 
-            this.bt_.BackColor = System.Drawing.Color.Orange;
-            this.bt_.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_.FlatAppearance.BorderSize = 0;
-            this.bt_.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Orange;
-            this.bt_.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
-            this.bt_.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bt_.Location = new System.Drawing.Point(258, 190);
-            this.bt_.Name = "bt_";
-            this.bt_.Size = new System.Drawing.Size(193, 69);
-            this.bt_.TabIndex = 22;
-            this.bt_.TabStop = false;
-            this.bt_.Text = "CAIXA";
-            this.bt_.UseVisualStyleBackColor = false;
-            // 
-            // im_historico
-            // 
-            this.im_historico.BackColor = System.Drawing.Color.SteelBlue;
-            this.im_historico.BackgroundImage = global::Branca_De_Neve.Properties.Resources.historico;
-            this.im_historico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.im_historico.Cursor = System.Windows.Forms.Cursors.Default;
-            this.im_historico.Image = global::Branca_De_Neve.Properties.Resources.historico;
-            this.im_historico.Location = new System.Drawing.Point(47, 193);
-            this.im_historico.Name = "im_historico";
-            this.im_historico.Size = new System.Drawing.Size(30, 30);
-            this.im_historico.TabIndex = 24;
-            this.im_historico.TabStop = false;
+            this.bt_caixa.BackColor = System.Drawing.Color.Orange;
+            this.bt_caixa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bt_caixa.FlatAppearance.BorderSize = 0;
+            this.bt_caixa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Orange;
+            this.bt_caixa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.bt_caixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_caixa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_caixa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bt_caixa.Location = new System.Drawing.Point(258, 190);
+            this.bt_caixa.Name = "bt_caixa";
+            this.bt_caixa.Size = new System.Drawing.Size(193, 69);
+            this.bt_caixa.TabIndex = 3;
+            this.bt_caixa.Text = "CAIXA";
+            this.bt_caixa.UseVisualStyleBackColor = false;
             // 
             // im_cardapio
             // 
@@ -247,6 +231,19 @@ namespace Branca_De_Neve
             this.im_.TabIndex = 25;
             this.im_.TabStop = false;
             // 
+            // im_historico
+            // 
+            this.im_historico.BackColor = System.Drawing.Color.SteelBlue;
+            this.im_historico.BackgroundImage = global::Branca_De_Neve.Properties.Resources.historico;
+            this.im_historico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.im_historico.Cursor = System.Windows.Forms.Cursors.Default;
+            this.im_historico.Image = global::Branca_De_Neve.Properties.Resources.historico;
+            this.im_historico.Location = new System.Drawing.Point(47, 193);
+            this.im_historico.Name = "im_historico";
+            this.im_historico.Size = new System.Drawing.Size(30, 30);
+            this.im_historico.TabIndex = 24;
+            this.im_historico.TabStop = false;
+            // 
             // Branca_Neve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,8 +254,8 @@ namespace Branca_De_Neve
             this.Controls.Add(this.im_);
             this.Controls.Add(this.im_historico);
             this.Controls.Add(this.im_cardapio);
-            this.Controls.Add(this.bt_);
-            this.Controls.Add(this.bt_hist_pedido);
+            this.Controls.Add(this.bt_caixa);
+            this.Controls.Add(this.bt_relatorio);
             this.Controls.Add(this.lb_novo_pedido);
             this.Controls.Add(this.im_novo_pedido);
             this.Controls.Add(this.bt_cardapio);
@@ -273,10 +270,10 @@ namespace Branca_De_Neve
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Branca_Neve_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.im_historico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_cardapio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_novo_pedido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.im_historico)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,11 +292,11 @@ namespace Branca_De_Neve
         private System.Windows.Forms.ToolStripMenuItem cardápioToolStripMenuItem;
         private System.Windows.Forms.PictureBox im_novo_pedido;
         private System.Windows.Forms.Label lb_novo_pedido;
-        private System.Windows.Forms.Button bt_hist_pedido;
-        private System.Windows.Forms.Button bt_;
+        private System.Windows.Forms.Button bt_relatorio;
+        private System.Windows.Forms.Button bt_caixa;
         private System.Windows.Forms.PictureBox im_cardapio;
-        private System.Windows.Forms.PictureBox im_historico;
         private System.Windows.Forms.PictureBox im_;
+        private System.Windows.Forms.PictureBox im_historico;
     }
 }
 

@@ -31,6 +31,12 @@ namespace Branca_De_Neve
             ca.Show();
         }
 
+        private void bt_relatorio_Click(object sender, EventArgs e)
+        {
+            relatorio re = new relatorio();
+            re.Show();
+        }
+
         #endregion
 
         #region MENU DO APP
@@ -71,5 +77,7 @@ namespace Branca_De_Neve
                     break;
             }
         }
+
+
     }
 }

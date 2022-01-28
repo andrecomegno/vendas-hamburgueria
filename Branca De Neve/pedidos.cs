@@ -48,6 +48,8 @@ namespace Branca_De_Neve
 
         }
 
+        #region PEDIDO TABELA
+
         private void TotalPagar()
         {
             double res = Convert.ToDouble(txt_total_01.Text) + Convert.ToDouble(txt_total_02.Text) + Convert.ToDouble(txt_total_03.Text) +
@@ -274,138 +276,6 @@ namespace Branca_De_Neve
             txt_total_10.Text = Convert.ToDouble(txt_total_10.Text).ToString("F");
         }
 
-        // VERIFICA SE SOMENTE NUMEROS ESTAO SENDO DIGITADOS
-        private void valor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar < '0' || e.KeyChar > '9') &&
-                (e.KeyChar != ',' && e.KeyChar != '.' &&
-                e.KeyChar != (Char)13 && e.KeyChar != (Char)8))
-            {
-                e.KeyChar = (Char)0;
-            }
-            else
-            {
-                if (e.KeyChar == '.' || e.KeyChar == ',')
-                {
-                    if (!txt_nome_02.Text.Contains(','))
-                    {
-                        e.KeyChar = ',';
-                    }
-                    else
-                    {
-                        e.KeyChar = (Char)0;
-                    }
-                }
-            }
-        }
-
-        #region MouseClick
-
-        // Valor
-        private void txt_valor_01_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_valor_01.Text = "";
-        }
-
-        private void txt_valor_02_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_valor_02.Text = "";
-        }
-
-        private void txt_valor_03_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_valor_03.Text = "";
-        }
-
-        private void txt_valor_04_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_valor_04.Text = "";
-        }
-
-        private void txt_valor_05_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_valor_05.Text = "";
-        }
-
-        private void txt_valor_06_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_valor_06.Text = "";
-        }
-
-        private void txt_valor_07_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_valor_07.Text = "";
-        }
-
-        private void txt_valor_08_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_valor_08.Text = "";
-        }
-
-        private void txt_valor_09_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_valor_09.Text = "";
-        }
-
-        private void txt_valor_10_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_valor_10.Text = "";
-        }
-
-
-        // Quantidade
-        private void txt_qt_01_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_qt_01.Text = "";
-        }
-
-        private void txt_qt_02_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_qt_02.Text = "";
-        }
-
-        private void txt_qt_03_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_qt_03.Text = "";
-        }
-
-        private void txt_qt_04_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_qt_04.Text = "";
-        }
-
-        private void txt_qt_05_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_qt_05.Text = "";
-        }
-
-        private void txt_qt_06_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_qt_06.Text = "";
-        }
-
-        private void txt_qt_07_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_qt_07.Text = "";
-        }
-
-        private void txt_qt_08_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_qt_08.Text = "";
-        }
-
-        private void txt_qt_09_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_qt_09.Text = "";
-        }
-
-        private void txt_qt_10_MouseClick(object sender, MouseEventArgs e)
-        {
-            txt_qt_10.Text = "";
-        }
-
-        #endregion
-
         private void txt_total_venda_Leave(object sender, EventArgs e)
         {
             if (txt_total_venda.Text == "")
@@ -496,6 +366,140 @@ namespace Branca_De_Neve
             }
         }
 
+        #endregion
+
+        #region MOUSE CLICK
+
+        // CADASTRO
+        private void txt_nome_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_nome.BackColor = Color.White;
+        }
+
+        private void txt_end_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_end.BackColor = Color.White;
+        }
+
+        private void txt_end_n_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_end_n.BackColor = Color.White;
+        }
+
+        // PAGAMENTO
+
+
+        // QUANTIDADE
+        private void txt_qt_01_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_qt_01.Text = "";
+        }
+
+        private void txt_qt_02_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_qt_02.Text = "";
+        }
+
+        private void txt_qt_03_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_qt_03.Text = "";
+        }
+
+        private void txt_qt_04_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_qt_04.Text = "";
+        }
+
+        private void txt_qt_05_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_qt_05.Text = "";
+        }
+
+        private void txt_qt_06_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_qt_06.Text = "";
+        }
+
+        private void txt_qt_07_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_qt_07.Text = "";
+        }
+
+        private void txt_qt_08_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_qt_08.Text = "";
+        }
+
+        private void txt_qt_09_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_qt_09.Text = "";
+        }
+
+        private void txt_qt_10_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_qt_10.Text = "";
+        }
+
+        // NOME DO PRODUTO
+        private void txt_produto_01_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        // VALOR UNITARIO
+        private void txt_valor_01_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_valor_01.Text = "";
+        }
+
+        private void txt_valor_02_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_valor_02.Text = "";
+        }
+
+        private void txt_valor_03_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_valor_03.Text = "";
+        }
+
+        private void txt_valor_04_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_valor_04.Text = "";
+        }
+
+        private void txt_valor_05_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_valor_05.Text = "";
+        }
+
+        private void txt_valor_06_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_valor_06.Text = "";
+        }
+
+        private void txt_valor_07_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_valor_07.Text = "";
+        }
+
+        private void txt_valor_08_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_valor_08.Text = "";
+        }
+
+        private void txt_valor_09_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_valor_09.Text = "";
+        }
+
+        private void txt_valor_10_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_valor_10.Text = "";
+        }
+
+        #endregion
+
+        #region CADASTRO TABELA
         private void bt_buscar_cep_Click(object sender, EventArgs e)
         {
             using (var ws = new WSCorreios.AtendeClienteClient())
@@ -525,32 +529,16 @@ namespace Branca_De_Neve
                 }
             }
         }
-
-        private void txt_nome_01_Leave(object sender, EventArgs e)
-        {
-            // buscar lanches
-        }
+        #endregion
 
         #region BOTÕES CONCLUIR E SAIR
-
         private void bt_concluir_Click(object sender, EventArgs e)
         {
+            CampoVazio();
+
             // banco de dados 
-            try
-            {
-                MessageBox.Show("Pedido Salvo Com Sucesso ", "Tudo Certo", MessageBoxButtons.OK, MessageBoxIcon.Information);               
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message, "AVISO !", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            finally
-            {
-                LimparTextBox(gp_cad.Controls);
-                LimparTextBox2(p_qt.Controls);
-                LimparTextBox3(p_valores.Controls);
-                LimparTextBox3(this.Controls);
-            }
+
+
 
         }
 
@@ -592,9 +580,39 @@ namespace Branca_De_Neve
             this.Close();
         }
 
+        public void CampoVazio()
+        {
+
+            if (String.IsNullOrEmpty(txt_nome.Text))
+            {
+                txt_nome.BackColor = Color.FromArgb(255, 139, 139);
+            }
+            else if (String.IsNullOrEmpty(txt_end.Text))
+            {
+                txt_end.BackColor = Color.FromArgb(255, 139, 139);
+            }
+            else if (String.IsNullOrEmpty(txt_end_n.Text))
+            {
+                txt_end_n.BackColor = Color.FromArgb(255, 139, 139);
+            }
+            else if(rad_credito.Checked == false && rad_debito.Checked == false && rad_pix.Checked == false)
+            {
+                MessageBox.Show("Selecione Um Pagamento ", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Pedido Salvo Com Sucesso ", "Tudo Certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimparTextBox(gp_cad.Controls);
+                LimparTextBox2(p_qt.Controls);
+                LimparTextBox3(p_valores.Controls);
+                LimparTextBox3(this.Controls);
+            }
+
+        }
+
         #endregion
 
-        #region MENU APP
+        #region MENU TOP
 
         private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -630,9 +648,9 @@ namespace Branca_De_Neve
 
         #endregion
 
+        #region SAIR DO APLICATIVO
         private void pedidos_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // sair do programa
             DialogResult dr = MessageBox.Show("Deseja Mesmo Sair ?", "AVISO !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
             switch (dr)
@@ -649,5 +667,15 @@ namespace Branca_De_Neve
         }
 
 
+        #endregion
+
+        // VERIFICA SE SOMENTE NUMEROS ESTAO SENDO DIGITADOS
+        private void valor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < '0' || e.KeyChar > '9'))
+            {
+                e.KeyChar = (Char)0;
+            }
+        }
     }
 }

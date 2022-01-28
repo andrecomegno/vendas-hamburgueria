@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Branca_De_Neve
 {
-    public partial class historico : Form
+    public partial class relatorio : Form
     {
-        public historico()
+        public relatorio()
         {
             InitializeComponent();
         }

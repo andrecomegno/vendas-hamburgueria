@@ -86,9 +86,5 @@ namespace Branca_De_Neve
                     break;
             }
         }
-
-
-
-
     }
 }

@@ -45,6 +45,7 @@ namespace Branca_De_Neve
             this.im_novo_pedido = new System.Windows.Forms.PictureBox();
             this.im_ = new System.Windows.Forms.PictureBox();
             this.im_historico = new System.Windows.Forms.PictureBox();
+            this.relatórioDeVendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.im_cardapio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_novo_pedido)).BeginInit();
@@ -88,7 +89,8 @@ namespace Branca_De_Neve
             // 
             this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.novoPedidoToolStripMenuItem,
-            this.cardápioToolStripMenuItem});
+            this.cardápioToolStripMenuItem,
+            this.relatórioDeVendasToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(69, 23);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
@@ -96,14 +98,14 @@ namespace Branca_De_Neve
             // novoPedidoToolStripMenuItem
             // 
             this.novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
-            this.novoPedidoToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
+            this.novoPedidoToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.novoPedidoToolStripMenuItem.Text = "Novo Pedido";
             this.novoPedidoToolStripMenuItem.Click += new System.EventHandler(this.novoPedidoToolStripMenuItem_Click);
             // 
             // cardápioToolStripMenuItem
             // 
             this.cardápioToolStripMenuItem.Name = "cardápioToolStripMenuItem";
-            this.cardápioToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
+            this.cardápioToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.cardápioToolStripMenuItem.Text = "Cardápio";
             this.cardápioToolStripMenuItem.Click += new System.EventHandler(this.cardápioToolStripMenuItem_Click);
             // 
@@ -244,6 +246,13 @@ namespace Branca_De_Neve
             this.im_historico.TabIndex = 24;
             this.im_historico.TabStop = false;
             // 
+            // relatórioDeVendasToolStripMenuItem
+            // 
+            this.relatórioDeVendasToolStripMenuItem.Name = "relatórioDeVendasToolStripMenuItem";
+            this.relatórioDeVendasToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.relatórioDeVendasToolStripMenuItem.Text = "Relatório De Vendas";
+            this.relatórioDeVendasToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeVendasToolStripMenuItem_Click);
+            // 
             // Branca_Neve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,6 +306,7 @@ namespace Branca_De_Neve
         private System.Windows.Forms.PictureBox im_cardapio;
         private System.Windows.Forms.PictureBox im_;
         private System.Windows.Forms.PictureBox im_historico;
+        private System.Windows.Forms.ToolStripMenuItem relatórioDeVendasToolStripMenuItem;
     }
 }
 

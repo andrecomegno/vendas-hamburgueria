@@ -846,7 +846,7 @@ namespace Branca_De_Neve
             // 
             this.txt_nome.BackColor = System.Drawing.SystemColors.Window;
             this.txt_nome.Location = new System.Drawing.Point(63, 41);
-            this.txt_nome.MaxLength = 100;
+            this.txt_nome.MaxLength = 256;
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(378, 20);
             this.txt_nome.TabIndex = 0;
@@ -1032,6 +1032,7 @@ namespace Branca_De_Neve
             this.rd_dinheiro.Size = new System.Drawing.Size(64, 17);
             this.rd_dinheiro.TabIndex = 3;
             this.rd_dinheiro.TabStop = true;
+            this.rd_dinheiro.Tag = "pagamento";
             this.rd_dinheiro.Text = "Dinheiro";
             this.rd_dinheiro.UseVisualStyleBackColor = true;
             // 
@@ -1054,6 +1055,7 @@ namespace Branca_De_Neve
             this.rad_credito.Size = new System.Drawing.Size(58, 17);
             this.rad_credito.TabIndex = 1;
             this.rad_credito.TabStop = true;
+            this.rad_credito.Tag = "pagamento";
             this.rad_credito.Text = "Crédito";
             this.rad_credito.UseVisualStyleBackColor = true;
             // 
@@ -1065,6 +1067,7 @@ namespace Branca_De_Neve
             this.rad_pix.Size = new System.Drawing.Size(42, 17);
             this.rad_pix.TabIndex = 2;
             this.rad_pix.TabStop = true;
+            this.rad_pix.Tag = "pagamento";
             this.rad_pix.Text = "PIX";
             this.rad_pix.UseVisualStyleBackColor = true;
             // 
@@ -1086,6 +1089,7 @@ namespace Branca_De_Neve
             this.rad_debito.Size = new System.Drawing.Size(56, 17);
             this.rad_debito.TabIndex = 0;
             this.rad_debito.TabStop = true;
+            this.rad_debito.Tag = "pagamento";
             this.rad_debito.Text = "Débito";
             this.rad_debito.UseVisualStyleBackColor = true;
             // 

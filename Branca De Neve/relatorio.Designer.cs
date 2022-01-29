@@ -37,6 +37,7 @@ namespace Branca_De_Neve
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rodape = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.bt_concluir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bt_sair = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@ namespace Branca_De_Neve
             this.label1 = new System.Windows.Forms.Label();
             this.bt_buscar_cep = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.bt_concluir = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -61,7 +61,7 @@ namespace Branca_De_Neve
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(617, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(767, 27);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -102,27 +102,41 @@ namespace Branca_De_Neve
             // 
             this.rodape.BackColor = System.Drawing.Color.Gray;
             this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.rodape.Location = new System.Drawing.Point(0, 672);
+            this.rodape.Location = new System.Drawing.Point(0, 911);
             this.rodape.Name = "rodape";
-            this.rodape.Size = new System.Drawing.Size(617, 30);
+            this.rodape.Size = new System.Drawing.Size(767, 30);
             this.rodape.TabIndex = 68;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.bt_concluir);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(12, 138);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(593, 424);
+            this.groupBox1.Size = new System.Drawing.Size(743, 676);
             this.groupBox1.TabIndex = 69;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Relatório";
             // 
+            // bt_concluir
+            // 
+            this.bt_concluir.BackColor = System.Drawing.Color.YellowGreen;
+            this.bt_concluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bt_concluir.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_concluir.ForeColor = System.Drawing.Color.White;
+            this.bt_concluir.Location = new System.Drawing.Point(621, 14);
+            this.bt_concluir.Name = "bt_concluir";
+            this.bt_concluir.Size = new System.Drawing.Size(110, 35);
+            this.bt_concluir.TabIndex = 71;
+            this.bt_concluir.Text = "Imprimir";
+            this.bt_concluir.UseVisualStyleBackColor = false;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 33);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 55);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(555, 366);
+            this.dataGridView1.Size = new System.Drawing.Size(717, 604);
             this.dataGridView1.TabIndex = 0;
             // 
             // bt_sair
@@ -131,7 +145,7 @@ namespace Branca_De_Neve
             this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_sair.ForeColor = System.Drawing.Color.White;
-            this.bt_sair.Location = new System.Drawing.Point(29, 605);
+            this.bt_sair.Location = new System.Drawing.Point(27, 820);
             this.bt_sair.Name = "bt_sair";
             this.bt_sair.Size = new System.Drawing.Size(110, 35);
             this.bt_sair.TabIndex = 70;
@@ -153,7 +167,7 @@ namespace Branca_De_Neve
             this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Location = new System.Drawing.Point(12, 48);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(593, 84);
+            this.groupBox2.Size = new System.Drawing.Size(743, 84);
             this.groupBox2.TabIndex = 70;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data";
@@ -187,26 +201,12 @@ namespace Branca_De_Neve
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 1;
             // 
-            // bt_concluir
-            // 
-            this.bt_concluir.BackColor = System.Drawing.Color.YellowGreen;
-            this.bt_concluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bt_concluir.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_concluir.ForeColor = System.Drawing.Color.White;
-            this.bt_concluir.Location = new System.Drawing.Point(474, 605);
-            this.bt_concluir.Name = "bt_concluir";
-            this.bt_concluir.Size = new System.Drawing.Size(110, 35);
-            this.bt_concluir.TabIndex = 71;
-            this.bt_concluir.Text = "Imprimir";
-            this.bt_concluir.UseVisualStyleBackColor = false;
-            // 
             // relatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(617, 702);
-            this.Controls.Add(this.bt_concluir);
+            this.ClientSize = new System.Drawing.Size(767, 941);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.bt_sair);
             this.Controls.Add(this.groupBox1);

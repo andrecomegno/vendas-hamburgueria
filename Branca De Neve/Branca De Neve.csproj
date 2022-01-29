@@ -82,6 +82,7 @@
     <Compile Include="relatorio.Designer.cs">
       <DependentUpon>relatorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Script\database.cs" />
     <EmbeddedResource Include="cardapio.resx">
       <DependentUpon>cardapio.cs</DependentUpon>
     </EmbeddedResource>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Branca_De_Neve.Script;
 using MySql.Data.MySqlClient;
 
 namespace Branca_De_Neve
@@ -535,10 +536,58 @@ namespace Branca_De_Neve
         private void bt_concluir_Click(object sender, EventArgs e)
         {
             CampoVazio();
+            // banco de dados
 
-            // banco de dados 
+            database database = new database();
 
+            database.openConnection();
 
+            MySqlCommand objCmdCliente = new MySqlCommand("insert into cliente (id, nome, telefone, endereco, numero, cep, bairro, cidade, estado) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdCliente.Parameters.Add("@nome", MySqlDbType.VarChar, 256).Value = txt_nome.Text;
+            objCmdCliente.Parameters.Add("@telefone", MySqlDbType.Int32).Value = txt_tel.Text;
+            objCmdCliente.Parameters.Add("@endereco", MySqlDbType.VarChar, 256).Value = txt_end.Text;
+            objCmdCliente.Parameters.Add("@numero", MySqlDbType.Int32).Value = txt_end_n.Text;
+            objCmdCliente.Parameters.Add("@cep", MySqlDbType.Int32).Value = txt_end_n.Text;
+            objCmdCliente.Parameters.Add("@bairro", MySqlDbType.VarChar, 256).Value = txt_bairro.Text;
+            objCmdCliente.Parameters.Add("@cidade", MySqlDbType.VarChar, 256).Value = txt_cidade.Text;
+            objCmdCliente.Parameters.Add("@estado", MySqlDbType.VarChar, 256).Value = txt_estado.Text;
+
+            objCmdCliente.ExecuteNonQuery();
+            long idCliente = objCmdCliente.LastInsertedId;
+
+            MySqlCommand objCmdPagamento = new MySqlCommand("insert into pagamento (id, forma_pagamento) value(null, ?)", database.getConnection());
+
+            //objCmdPagamento.Parameters.Add("@forma_pagamento", rad_credito.Checked);
+
+            objCmdPagamento.ExecuteNonQuery();
+            long idPagamento = objCmdPagamento.LastInsertedId;
+
+            MySqlCommand objCmdVendas = new MySqlCommand("insert into vendas (id, valor_total, data, cliente_id, pagamento_id) value(null, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdVendas.Parameters.Add("@valor_total", MySqlDbType.VarChar, 256).Value = txt_nome.Text;
+            objCmdVendas.Parameters.Add("@data", MySqlDbType.DateTime).Value = txt_tel.Text;
+            objCmdVendas.Parameters.Add("@cliente_id", MySqlDbType.Int32).Value = idCliente;
+            objCmdVendas.Parameters.Add("@pagamento_id", MySqlDbType.Int32).Value = idPagamento;
+
+            objCmdVendas.ExecuteNonQuery();
+            long idVendas = objCmdVendas.LastInsertedId;
+
+            MySqlCommand objCmdProdutos = new MySqlCommand("insert into produtos (id, nome, preco, quantidade ) value(null, ?, ?, ?)", database.getConnection());
+            objCmdProdutos.Parameters.Add("@nome", MySqlDbType.VarChar, 256).Value = txt_produto_01.Text;
+            objCmdProdutos.Parameters.Add("@preco", MySqlDbType.VarChar, 256).Value = txt_valor_01.Text;
+            objCmdProdutos.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = txt_qt_01.Text;
+
+            objCmdProdutos.ExecuteNonQuery();
+            long idProdutos = objCmdProdutos.LastInsertedId;
+
+            MySqlCommand objCmdVendasProdutos = new MySqlCommand("insert into vendas_produtos (id_vendas, id_produtos) value(?, ?)", database.getConnection());
+            objCmdVendasProdutos.Parameters.Add("@id_pessoa", MySqlDbType.Int32).Value = idVendas;
+            objCmdVendasProdutos.Parameters.Add("@id_telefone", MySqlDbType.Int32).Value = idProdutos;
+
+            objCmdVendasProdutos.ExecuteNonQuery();
+
+            database.closeConnection();
 
         }
 

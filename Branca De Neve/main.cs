@@ -58,6 +58,12 @@ namespace Branca_De_Neve
             ca.Show();
         }
 
+        private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            relatorio re = new relatorio();
+            re.Show();
+        }
+
         #endregion
 
         private void Branca_Neve_FormClosing(object sender, FormClosingEventArgs e)

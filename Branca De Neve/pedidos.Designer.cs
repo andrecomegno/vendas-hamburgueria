@@ -89,7 +89,6 @@ namespace Branca_De_Neve
             this.lb_tel = new System.Windows.Forms.Label();
             this.lb_nome = new System.Windows.Forms.Label();
             this.txt_nome = new System.Windows.Forms.TextBox();
-            this.txt_tel = new System.Windows.Forms.TextBox();
             this.lb_estado = new System.Windows.Forms.Label();
             this.lb_cidade = new System.Windows.Forms.Label();
             this.lb_bairro = new System.Windows.Forms.Label();
@@ -98,10 +97,11 @@ namespace Branca_De_Neve
             this.bt_buscar_cep = new System.Windows.Forms.Button();
             this.txt_end = new System.Windows.Forms.TextBox();
             this.txt_bairro = new System.Windows.Forms.TextBox();
-            this.txt_cep = new System.Windows.Forms.TextBox();
             this.txt_estado = new System.Windows.Forms.TextBox();
             this.txt_cidade = new System.Windows.Forms.TextBox();
             this.gp_cad = new System.Windows.Forms.GroupBox();
+            this.txt_cep = new System.Windows.Forms.MaskedTextBox();
+            this.txt_tel = new System.Windows.Forms.MaskedTextBox();
             this.lb_end_n = new System.Windows.Forms.Label();
             this.txt_end_n = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -204,12 +204,14 @@ namespace Branca_De_Neve
             // 
             // txt_produto_01
             // 
+            this.txt_produto_01.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_produto_01.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_produto_01.Location = new System.Drawing.Point(82, 46);
             this.txt_produto_01.MaxLength = 250;
             this.txt_produto_01.Name = "txt_produto_01";
             this.txt_produto_01.Size = new System.Drawing.Size(363, 20);
             this.txt_produto_01.TabIndex = 0;
-            this.txt_produto_01.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_produto_01_MouseClick);
+            this.txt_produto_01.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_produto_01_KeyDown);
             // 
             // lb_produto
             // 
@@ -231,6 +233,8 @@ namespace Branca_De_Neve
             // 
             // txt_produto_02
             // 
+            this.txt_produto_02.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_produto_02.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_produto_02.Location = new System.Drawing.Point(82, 72);
             this.txt_produto_02.MaxLength = 250;
             this.txt_produto_02.Name = "txt_produto_02";
@@ -239,6 +243,8 @@ namespace Branca_De_Neve
             // 
             // txt_produto_03
             // 
+            this.txt_produto_03.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_produto_03.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_produto_03.Location = new System.Drawing.Point(82, 98);
             this.txt_produto_03.MaxLength = 250;
             this.txt_produto_03.Name = "txt_produto_03";
@@ -247,6 +253,8 @@ namespace Branca_De_Neve
             // 
             // txt_produto_04
             // 
+            this.txt_produto_04.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_produto_04.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_produto_04.Location = new System.Drawing.Point(82, 124);
             this.txt_produto_04.MaxLength = 250;
             this.txt_produto_04.Name = "txt_produto_04";
@@ -255,6 +263,8 @@ namespace Branca_De_Neve
             // 
             // txt_produto_05
             // 
+            this.txt_produto_05.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_produto_05.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_produto_05.Location = new System.Drawing.Point(82, 150);
             this.txt_produto_05.MaxLength = 250;
             this.txt_produto_05.Name = "txt_produto_05";
@@ -777,6 +787,8 @@ namespace Branca_De_Neve
             // 
             // txt_produto_06
             // 
+            this.txt_produto_06.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_produto_06.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_produto_06.Location = new System.Drawing.Point(82, 175);
             this.txt_produto_06.MaxLength = 250;
             this.txt_produto_06.Name = "txt_produto_06";
@@ -785,6 +797,8 @@ namespace Branca_De_Neve
             // 
             // txt_produto_07
             // 
+            this.txt_produto_07.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_produto_07.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_produto_07.Location = new System.Drawing.Point(82, 201);
             this.txt_produto_07.MaxLength = 250;
             this.txt_produto_07.Name = "txt_produto_07";
@@ -793,6 +807,8 @@ namespace Branca_De_Neve
             // 
             // txt_produto_08
             // 
+            this.txt_produto_08.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_produto_08.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_produto_08.Location = new System.Drawing.Point(82, 227);
             this.txt_produto_08.MaxLength = 250;
             this.txt_produto_08.Name = "txt_produto_08";
@@ -801,6 +817,8 @@ namespace Branca_De_Neve
             // 
             // txt_produto_10
             // 
+            this.txt_produto_10.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_produto_10.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_produto_10.Location = new System.Drawing.Point(82, 279);
             this.txt_produto_10.MaxLength = 250;
             this.txt_produto_10.Name = "txt_produto_10";
@@ -809,6 +827,8 @@ namespace Branca_De_Neve
             // 
             // txt_produto_09
             // 
+            this.txt_produto_09.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txt_produto_09.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txt_produto_09.Location = new System.Drawing.Point(82, 253);
             this.txt_produto_09.MaxLength = 250;
             this.txt_produto_09.Name = "txt_produto_09";
@@ -851,15 +871,6 @@ namespace Branca_De_Neve
             this.txt_nome.Size = new System.Drawing.Size(378, 20);
             this.txt_nome.TabIndex = 0;
             this.txt_nome.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_nome_MouseClick);
-            // 
-            // txt_tel
-            // 
-            this.txt_tel.Location = new System.Drawing.Point(447, 41);
-            this.txt_tel.MaxLength = 11;
-            this.txt_tel.Name = "txt_tel";
-            this.txt_tel.Size = new System.Drawing.Size(132, 20);
-            this.txt_tel.TabIndex = 1;
-            this.txt_tel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
             // 
             // lb_estado
             // 
@@ -937,15 +948,6 @@ namespace Branca_De_Neve
             this.txt_bairro.Size = new System.Drawing.Size(231, 20);
             this.txt_bairro.TabIndex = 6;
             // 
-            // txt_cep
-            // 
-            this.txt_cep.Location = new System.Drawing.Point(63, 84);
-            this.txt_cep.MaxLength = 8;
-            this.txt_cep.Name = "txt_cep";
-            this.txt_cep.Size = new System.Drawing.Size(110, 20);
-            this.txt_cep.TabIndex = 2;
-            this.txt_cep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
-            // 
             // txt_estado
             // 
             this.txt_estado.Location = new System.Drawing.Point(523, 177);
@@ -964,6 +966,8 @@ namespace Branca_De_Neve
             // 
             // gp_cad
             // 
+            this.gp_cad.Controls.Add(this.txt_cep);
+            this.gp_cad.Controls.Add(this.txt_tel);
             this.gp_cad.Controls.Add(this.lb_end_n);
             this.gp_cad.Controls.Add(this.txt_end_n);
             this.gp_cad.Controls.Add(this.txt_bairro);
@@ -972,8 +976,6 @@ namespace Branca_De_Neve
             this.gp_cad.Controls.Add(this.lb_nome);
             this.gp_cad.Controls.Add(this.txt_estado);
             this.gp_cad.Controls.Add(this.txt_nome);
-            this.gp_cad.Controls.Add(this.txt_cep);
-            this.gp_cad.Controls.Add(this.txt_tel);
             this.gp_cad.Controls.Add(this.txt_end);
             this.gp_cad.Controls.Add(this.lb_estado);
             this.gp_cad.Controls.Add(this.bt_buscar_cep);
@@ -987,6 +989,22 @@ namespace Branca_De_Neve
             this.gp_cad.TabIndex = 1;
             this.gp_cad.TabStop = false;
             this.gp_cad.Text = "Cadastro";
+            // 
+            // txt_cep
+            // 
+            this.txt_cep.Location = new System.Drawing.Point(63, 87);
+            this.txt_cep.Mask = "00000-000";
+            this.txt_cep.Name = "txt_cep";
+            this.txt_cep.Size = new System.Drawing.Size(112, 20);
+            this.txt_cep.TabIndex = 2;
+            // 
+            // txt_tel
+            // 
+            this.txt_tel.Location = new System.Drawing.Point(447, 41);
+            this.txt_tel.Mask = "(99) 000000000";
+            this.txt_tel.Name = "txt_tel";
+            this.txt_tel.Size = new System.Drawing.Size(130, 20);
+            this.txt_tel.TabIndex = 1;
             // 
             // lb_end_n
             // 
@@ -1005,7 +1023,6 @@ namespace Branca_De_Neve
             this.txt_end_n.Size = new System.Drawing.Size(56, 20);
             this.txt_end_n.TabIndex = 5;
             this.txt_end_n.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_end_n_MouseClick);
-            this.txt_end_n.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
             // 
             // groupBox1
             // 
@@ -1035,6 +1052,7 @@ namespace Branca_De_Neve
             this.rd_dinheiro.Tag = "pagamento";
             this.rd_dinheiro.Text = "Dinheiro";
             this.rd_dinheiro.UseVisualStyleBackColor = true;
+            this.rd_dinheiro.CheckedChanged += new System.EventHandler(this.rd_dinheiro_CheckedChanged);
             // 
             // pictureBox2
             // 
@@ -1058,6 +1076,7 @@ namespace Branca_De_Neve
             this.rad_credito.Tag = "pagamento";
             this.rad_credito.Text = "Crédito";
             this.rad_credito.UseVisualStyleBackColor = true;
+            this.rad_credito.CheckedChanged += new System.EventHandler(this.rad_credito_CheckedChanged);
             // 
             // rad_pix
             // 
@@ -1070,6 +1089,7 @@ namespace Branca_De_Neve
             this.rad_pix.Tag = "pagamento";
             this.rad_pix.Text = "PIX";
             this.rad_pix.UseVisualStyleBackColor = true;
+            this.rad_pix.CheckedChanged += new System.EventHandler(this.rad_pix_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -1092,6 +1112,7 @@ namespace Branca_De_Neve
             this.rad_debito.Tag = "pagamento";
             this.rad_debito.Text = "Débito";
             this.rad_debito.UseVisualStyleBackColor = true;
+            this.rad_debito.CheckedChanged += new System.EventHandler(this.rad_debito_CheckedChanged);
             // 
             // im_cartao
             // 
@@ -1132,6 +1153,7 @@ namespace Branca_De_Neve
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo Pedido - Branca de Neve Hamburgueria";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.pedidos_FormClosing);
+            this.Load += new System.EventHandler(this.pedidos_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gp_pedido.ResumeLayout(false);
@@ -1188,7 +1210,6 @@ namespace Branca_De_Neve
         private System.Windows.Forms.Label lb_tel;
         private System.Windows.Forms.Label lb_nome;
         private System.Windows.Forms.TextBox txt_nome;
-        private System.Windows.Forms.TextBox txt_tel;
         private System.Windows.Forms.Label lb_estado;
         private System.Windows.Forms.Label lb_cidade;
         private System.Windows.Forms.Label lb_bairro;
@@ -1197,7 +1218,6 @@ namespace Branca_De_Neve
         private System.Windows.Forms.Button bt_buscar_cep;
         private System.Windows.Forms.TextBox txt_end;
         private System.Windows.Forms.TextBox txt_bairro;
-        private System.Windows.Forms.TextBox txt_cep;
         private System.Windows.Forms.TextBox txt_estado;
         private System.Windows.Forms.TextBox txt_cidade;
         private System.Windows.Forms.GroupBox gp_cad;
@@ -1238,5 +1258,7 @@ namespace Branca_De_Neve
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.RadioButton rd_dinheiro;
         private System.Windows.Forms.Panel rodape;
+        private System.Windows.Forms.MaskedTextBox txt_cep;
+        private System.Windows.Forms.MaskedTextBox txt_tel;
     }
 }

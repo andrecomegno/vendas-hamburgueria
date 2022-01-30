@@ -14,6 +14,7 @@ namespace Branca_De_Neve
 {
     public partial class pedidos : Form
     {
+        string pagamentos = string.Empty;
 
         public pedidos()
         {
@@ -501,6 +502,8 @@ namespace Branca_De_Neve
         #endregion
 
         #region CADASTRO TABELA
+
+        //BUSCAR CEP
         private void bt_buscar_cep_Click(object sender, EventArgs e)
         {
             using (var ws = new WSCorreios.AtendeClienteClient())
@@ -530,50 +533,74 @@ namespace Branca_De_Neve
                 }
             }
         }
-        #endregion
 
-        #region BOTÕES CONCLUIR E SAIR
+        //PAGAMENTOS
+        private void rad_debito_CheckedChanged(object sender, EventArgs e)
+        {
+            pagamentos = "Debito";
+        }
+
+        private void rad_credito_CheckedChanged(object sender, EventArgs e)
+        {
+            pagamentos = "Credito";
+        }
+
+        private void rad_pix_CheckedChanged(object sender, EventArgs e)
+        {
+            pagamentos = "PIX";
+        }
+
+        private void rd_dinheiro_CheckedChanged(object sender, EventArgs e)
+        {
+            pagamentos = "Dinheiro";
+        }
+        #endregion 
+
+        #region BOTÕES CONCLUIR E SAIR        
         private void bt_concluir_Click(object sender, EventArgs e)
         {
-            CampoVazio();
-            // banco de dados
-
+            //CampoVazio();
             database database = new database();
 
             database.openConnection();
 
+            // INSERT TABELA CLIENTE
             MySqlCommand objCmdCliente = new MySqlCommand("insert into cliente (id, nome, telefone, endereco, numero, cep, bairro, cidade, estado) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
 
             objCmdCliente.Parameters.Add("@nome", MySqlDbType.VarChar, 256).Value = txt_nome.Text;
-            objCmdCliente.Parameters.Add("@telefone", MySqlDbType.Int32).Value = txt_tel.Text;
-            objCmdCliente.Parameters.Add("@endereco", MySqlDbType.VarChar, 256).Value = txt_end.Text;
-            objCmdCliente.Parameters.Add("@numero", MySqlDbType.Int32).Value = txt_end_n.Text;
-            objCmdCliente.Parameters.Add("@cep", MySqlDbType.Int32).Value = txt_end_n.Text;
-            objCmdCliente.Parameters.Add("@bairro", MySqlDbType.VarChar, 256).Value = txt_bairro.Text;
-            objCmdCliente.Parameters.Add("@cidade", MySqlDbType.VarChar, 256).Value = txt_cidade.Text;
-            objCmdCliente.Parameters.Add("@estado", MySqlDbType.VarChar, 256).Value = txt_estado.Text;
+            objCmdCliente.Parameters.Add("@telefone", MySqlDbType.VarChar, 256).Value = txt_tel.Text;
+            objCmdCliente.Parameters.Add("@endereco", MySqlDbType.VarChar, 150).Value = txt_end.Text;
+            objCmdCliente.Parameters.Add("@numero", MySqlDbType.VarChar, 20).Value = txt_end_n.Text;
+            objCmdCliente.Parameters.Add("@cep", MySqlDbType.VarChar, 10).Value = txt_cep.Text;
+            objCmdCliente.Parameters.Add("@bairro", MySqlDbType.VarChar, 50).Value = txt_bairro.Text;
+            objCmdCliente.Parameters.Add("@cidade", MySqlDbType.VarChar, 50).Value = txt_cidade.Text;
+            objCmdCliente.Parameters.Add("@estado", MySqlDbType.VarChar, 2).Value = txt_estado.Text;
 
             objCmdCliente.ExecuteNonQuery();
             long idCliente = objCmdCliente.LastInsertedId;
 
+            // INSERT TABELA PAGAMENTO
             MySqlCommand objCmdPagamento = new MySqlCommand("insert into pagamento (id, forma_pagamento) value(null, ?)", database.getConnection());
 
-            //objCmdPagamento.Parameters.Add("@forma_pagamento", rad_credito.Checked);
+            objCmdPagamento.Parameters.Add("@forma_pagamento", MySqlDbType.VarChar, 256).Value = pagamentos;
 
             objCmdPagamento.ExecuteNonQuery();
             long idPagamento = objCmdPagamento.LastInsertedId;
 
+            // INSERT TABELA VENDAS
             MySqlCommand objCmdVendas = new MySqlCommand("insert into vendas (id, valor_total, data, cliente_id, pagamento_id) value(null, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdVendas.Parameters.Add("@valor_total", MySqlDbType.VarChar, 256).Value = txt_nome.Text;
-            objCmdVendas.Parameters.Add("@data", MySqlDbType.DateTime).Value = txt_tel.Text;
+            objCmdVendas.Parameters.Add("@valor_total", MySqlDbType.VarChar, 256).Value = txt_total_venda.Text;
+            objCmdVendas.Parameters.Add("@data", MySqlDbType.DateTime).Value = DateTime.Now;
             objCmdVendas.Parameters.Add("@cliente_id", MySqlDbType.Int32).Value = idCliente;
             objCmdVendas.Parameters.Add("@pagamento_id", MySqlDbType.Int32).Value = idPagamento;
 
             objCmdVendas.ExecuteNonQuery();
             long idVendas = objCmdVendas.LastInsertedId;
 
+            // INSERT TABELA PRODUTOS
             MySqlCommand objCmdProdutos = new MySqlCommand("insert into produtos (id, nome, preco, quantidade ) value(null, ?, ?, ?)", database.getConnection());
+            
             objCmdProdutos.Parameters.Add("@nome", MySqlDbType.VarChar, 256).Value = txt_produto_01.Text;
             objCmdProdutos.Parameters.Add("@preco", MySqlDbType.VarChar, 256).Value = txt_valor_01.Text;
             objCmdProdutos.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = txt_qt_01.Text;
@@ -581,7 +608,9 @@ namespace Branca_De_Neve
             objCmdProdutos.ExecuteNonQuery();
             long idProdutos = objCmdProdutos.LastInsertedId;
 
+            // INSERT TABELA VENDAS_PRODUTOS
             MySqlCommand objCmdVendasProdutos = new MySqlCommand("insert into vendas_produtos (id_vendas, id_produtos) value(?, ?)", database.getConnection());
+            
             objCmdVendasProdutos.Parameters.Add("@id_pessoa", MySqlDbType.Int32).Value = idVendas;
             objCmdVendasProdutos.Parameters.Add("@id_telefone", MySqlDbType.Int32).Value = idProdutos;
 
@@ -725,6 +754,40 @@ namespace Branca_De_Neve
             {
                 e.KeyChar = (Char)0;
             }
+        }
+
+        private void txt_produto_01_KeyDown(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void pedidos_Load(object sender, EventArgs e)
+        {
+            autocompletar();
+        }
+
+        public void autocompletar()
+        {
+            database database = new database();
+            database.openConnection();
+
+            MySqlCommand autoCardapio = new MySqlCommand("select nome from cardapio", database.getConnection());
+
+            //autoCardapio.Parameters.Add("@nome", MySqlDbType.VarChar, 256).Value = txt_produto_01.Text;
+            //autoCardapio.Parameters.Add("@preco", MySqlDbType.VarChar, 256).Value = txt_valor_01.Text;
+
+            MySqlDataReader rd = autoCardapio.ExecuteReader();
+
+            AutoCompleteStringCollection autoCo = new AutoCompleteStringCollection();
+            while (rd.Read())
+            {
+                autoCo.Add(rd.GetString(0));
+            }
+
+            txt_produto_01.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txt_produto_01.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txt_produto_01.AutoCompleteCustomSource = autoCo;
+
+            database.closeConnection();
         }
     }
 }

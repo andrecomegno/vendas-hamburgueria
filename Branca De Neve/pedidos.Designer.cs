@@ -37,18 +37,13 @@ namespace Branca_De_Neve
             this.cardápioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txt_produto_01 = new System.Windows.Forms.TextBox();
             this.lb_produto = new System.Windows.Forms.Label();
             this.lb_qt = new System.Windows.Forms.Label();
-            this.txt_produto_02 = new System.Windows.Forms.TextBox();
-            this.txt_produto_03 = new System.Windows.Forms.TextBox();
-            this.txt_produto_04 = new System.Windows.Forms.TextBox();
-            this.txt_produto_05 = new System.Windows.Forms.TextBox();
-            this.txt_valor_01 = new System.Windows.Forms.TextBox();
             this.lb_pagar = new System.Windows.Forms.Label();
             this.txt_total_venda = new System.Windows.Forms.TextBox();
             this.gp_pedido = new System.Windows.Forms.GroupBox();
             this.p_valores = new System.Windows.Forms.Panel();
+            this.txt_valor_01 = new System.Windows.Forms.TextBox();
             this.txt_total_10 = new System.Windows.Forms.TextBox();
             this.txt_valor_02 = new System.Windows.Forms.TextBox();
             this.txt_total_09 = new System.Windows.Forms.TextBox();
@@ -68,24 +63,29 @@ namespace Branca_De_Neve
             this.txt_total_02 = new System.Windows.Forms.TextBox();
             this.txt_valor_10 = new System.Windows.Forms.TextBox();
             this.txt_total_01 = new System.Windows.Forms.TextBox();
+            this.lb_total = new System.Windows.Forms.Label();
+            this.lb_valor_uni = new System.Windows.Forms.Label();
             this.p_qt = new System.Windows.Forms.Panel();
-            this.txt_qt_05 = new System.Windows.Forms.TextBox();
+            this.txt_qt_04 = new System.Windows.Forms.TextBox();
             this.txt_qt_01 = new System.Windows.Forms.TextBox();
             this.txt_qt_02 = new System.Windows.Forms.TextBox();
             this.txt_qt_03 = new System.Windows.Forms.TextBox();
-            this.txt_qt_04 = new System.Windows.Forms.TextBox();
+            this.txt_qt_05 = new System.Windows.Forms.TextBox();
             this.txt_qt_06 = new System.Windows.Forms.TextBox();
             this.txt_qt_07 = new System.Windows.Forms.TextBox();
             this.txt_qt_08 = new System.Windows.Forms.TextBox();
             this.txt_qt_09 = new System.Windows.Forms.TextBox();
             this.txt_qt_10 = new System.Windows.Forms.TextBox();
-            this.lb_total = new System.Windows.Forms.Label();
-            this.txt_produto_06 = new System.Windows.Forms.TextBox();
-            this.txt_produto_07 = new System.Windows.Forms.TextBox();
-            this.txt_produto_08 = new System.Windows.Forms.TextBox();
-            this.txt_produto_10 = new System.Windows.Forms.TextBox();
-            this.txt_produto_09 = new System.Windows.Forms.TextBox();
-            this.lb_valor_uni = new System.Windows.Forms.Label();
+            this.txt_produto_10 = new System.Windows.Forms.ComboBox();
+            this.txt_produto_01 = new System.Windows.Forms.ComboBox();
+            this.txt_produto_02 = new System.Windows.Forms.ComboBox();
+            this.txt_produto_03 = new System.Windows.Forms.ComboBox();
+            this.txt_produto_04 = new System.Windows.Forms.ComboBox();
+            this.txt_produto_05 = new System.Windows.Forms.ComboBox();
+            this.txt_produto_09 = new System.Windows.Forms.ComboBox();
+            this.txt_produto_06 = new System.Windows.Forms.ComboBox();
+            this.txt_produto_07 = new System.Windows.Forms.ComboBox();
+            this.txt_produto_08 = new System.Windows.Forms.ComboBox();
             this.lb_tel = new System.Windows.Forms.Label();
             this.lb_nome = new System.Windows.Forms.Label();
             this.txt_nome = new System.Windows.Forms.TextBox();
@@ -162,7 +162,7 @@ namespace Branca_De_Neve
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(680, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(682, 27);
             this.menuStrip1.TabIndex = 15;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -202,21 +202,10 @@ namespace Branca_De_Neve
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
-            // txt_produto_01
-            // 
-            this.txt_produto_01.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txt_produto_01.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txt_produto_01.Location = new System.Drawing.Point(82, 46);
-            this.txt_produto_01.MaxLength = 250;
-            this.txt_produto_01.Name = "txt_produto_01";
-            this.txt_produto_01.Size = new System.Drawing.Size(363, 20);
-            this.txt_produto_01.TabIndex = 0;
-            this.txt_produto_01.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_produto_01_KeyDown);
-            // 
             // lb_produto
             // 
             this.lb_produto.AutoSize = true;
-            this.lb_produto.Location = new System.Drawing.Point(79, 29);
+            this.lb_produto.Location = new System.Drawing.Point(236, 29);
             this.lb_produto.Name = "lb_produto";
             this.lb_produto.Size = new System.Drawing.Size(44, 13);
             this.lb_produto.TabIndex = 28;
@@ -225,66 +214,11 @@ namespace Branca_De_Neve
             // lb_qt
             // 
             this.lb_qt.AutoSize = true;
-            this.lb_qt.Location = new System.Drawing.Point(14, 29);
+            this.lb_qt.Location = new System.Drawing.Point(32, 29);
             this.lb_qt.Name = "lb_qt";
             this.lb_qt.Size = new System.Drawing.Size(24, 13);
             this.lb_qt.TabIndex = 29;
             this.lb_qt.Text = "Qtd";
-            // 
-            // txt_produto_02
-            // 
-            this.txt_produto_02.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txt_produto_02.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txt_produto_02.Location = new System.Drawing.Point(82, 72);
-            this.txt_produto_02.MaxLength = 250;
-            this.txt_produto_02.Name = "txt_produto_02";
-            this.txt_produto_02.Size = new System.Drawing.Size(363, 20);
-            this.txt_produto_02.TabIndex = 1;
-            // 
-            // txt_produto_03
-            // 
-            this.txt_produto_03.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txt_produto_03.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txt_produto_03.Location = new System.Drawing.Point(82, 98);
-            this.txt_produto_03.MaxLength = 250;
-            this.txt_produto_03.Name = "txt_produto_03";
-            this.txt_produto_03.Size = new System.Drawing.Size(363, 20);
-            this.txt_produto_03.TabIndex = 2;
-            // 
-            // txt_produto_04
-            // 
-            this.txt_produto_04.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txt_produto_04.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txt_produto_04.Location = new System.Drawing.Point(82, 124);
-            this.txt_produto_04.MaxLength = 250;
-            this.txt_produto_04.Name = "txt_produto_04";
-            this.txt_produto_04.Size = new System.Drawing.Size(363, 20);
-            this.txt_produto_04.TabIndex = 3;
-            // 
-            // txt_produto_05
-            // 
-            this.txt_produto_05.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txt_produto_05.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txt_produto_05.Location = new System.Drawing.Point(82, 150);
-            this.txt_produto_05.MaxLength = 250;
-            this.txt_produto_05.Name = "txt_produto_05";
-            this.txt_produto_05.Size = new System.Drawing.Size(363, 20);
-            this.txt_produto_05.TabIndex = 4;
-            // 
-            // txt_valor_01
-            // 
-            this.txt_valor_01.BackColor = System.Drawing.Color.White;
-            this.txt_valor_01.Enabled = false;
-            this.txt_valor_01.Location = new System.Drawing.Point(2, 0);
-            this.txt_valor_01.Name = "txt_valor_01";
-            this.txt_valor_01.Size = new System.Drawing.Size(92, 20);
-            this.txt_valor_01.TabIndex = 44;
-            this.txt_valor_01.TabStop = false;
-            this.txt_valor_01.Text = "0,00";
-            this.txt_valor_01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_valor_01.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_01_MouseClick);
-            this.txt_valor_01.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
-            this.txt_valor_01.Leave += new System.EventHandler(this.txt_valor_01_Leave);
             // 
             // lb_pagar
             // 
@@ -310,26 +244,25 @@ namespace Branca_De_Neve
             this.txt_total_venda.TabStop = false;
             this.txt_total_venda.Text = "0,00";
             this.txt_total_venda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_total_venda.Leave += new System.EventHandler(this.txt_total_venda_Leave);
             // 
             // gp_pedido
             // 
             this.gp_pedido.Controls.Add(this.p_valores);
-            this.gp_pedido.Controls.Add(this.p_qt);
             this.gp_pedido.Controls.Add(this.lb_total);
+            this.gp_pedido.Controls.Add(this.lb_valor_uni);
+            this.gp_pedido.Controls.Add(this.p_qt);
+            this.gp_pedido.Controls.Add(this.txt_produto_10);
+            this.gp_pedido.Controls.Add(this.lb_qt);
+            this.gp_pedido.Controls.Add(this.txt_produto_01);
+            this.gp_pedido.Controls.Add(this.lb_produto);
+            this.gp_pedido.Controls.Add(this.txt_produto_02);
+            this.gp_pedido.Controls.Add(this.txt_produto_03);
+            this.gp_pedido.Controls.Add(this.txt_produto_04);
+            this.gp_pedido.Controls.Add(this.txt_produto_05);
+            this.gp_pedido.Controls.Add(this.txt_produto_09);
             this.gp_pedido.Controls.Add(this.txt_produto_06);
             this.gp_pedido.Controls.Add(this.txt_produto_07);
             this.gp_pedido.Controls.Add(this.txt_produto_08);
-            this.gp_pedido.Controls.Add(this.txt_produto_10);
-            this.gp_pedido.Controls.Add(this.txt_produto_09);
-            this.gp_pedido.Controls.Add(this.txt_produto_01);
-            this.gp_pedido.Controls.Add(this.lb_valor_uni);
-            this.gp_pedido.Controls.Add(this.lb_produto);
-            this.gp_pedido.Controls.Add(this.lb_qt);
-            this.gp_pedido.Controls.Add(this.txt_produto_02);
-            this.gp_pedido.Controls.Add(this.txt_produto_03);
-            this.gp_pedido.Controls.Add(this.txt_produto_05);
-            this.gp_pedido.Controls.Add(this.txt_produto_04);
             this.gp_pedido.Location = new System.Drawing.Point(12, 359);
             this.gp_pedido.Name = "gp_pedido";
             this.gp_pedido.Size = new System.Drawing.Size(658, 326);
@@ -339,8 +272,8 @@ namespace Branca_De_Neve
             // 
             // p_valores
             // 
-            this.p_valores.Controls.Add(this.txt_total_10);
             this.p_valores.Controls.Add(this.txt_valor_01);
+            this.p_valores.Controls.Add(this.txt_total_10);
             this.p_valores.Controls.Add(this.txt_valor_02);
             this.p_valores.Controls.Add(this.txt_total_09);
             this.p_valores.Controls.Add(this.txt_valor_03);
@@ -359,16 +292,29 @@ namespace Branca_De_Neve
             this.p_valores.Controls.Add(this.txt_total_02);
             this.p_valores.Controls.Add(this.txt_valor_10);
             this.p_valores.Controls.Add(this.txt_total_01);
-            this.p_valores.Location = new System.Drawing.Point(449, 46);
+            this.p_valores.Location = new System.Drawing.Point(451, 45);
             this.p_valores.Name = "p_valores";
-            this.p_valores.Size = new System.Drawing.Size(198, 253);
+            this.p_valores.Size = new System.Drawing.Size(198, 274);
             this.p_valores.TabIndex = 104;
+            // 
+            // txt_valor_01
+            // 
+            this.txt_valor_01.BackColor = System.Drawing.Color.White;
+            this.txt_valor_01.Enabled = false;
+            this.txt_valor_01.Location = new System.Drawing.Point(2, 1);
+            this.txt_valor_01.Name = "txt_valor_01";
+            this.txt_valor_01.Size = new System.Drawing.Size(92, 20);
+            this.txt_valor_01.TabIndex = 100;
+            this.txt_valor_01.TabStop = false;
+            this.txt_valor_01.Text = "0,00";
+            this.txt_valor_01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_valor_01.TextChanged += new System.EventHandler(this.txt_valor_01_TextChanged);
             // 
             // txt_total_10
             // 
             this.txt_total_10.BackColor = System.Drawing.Color.White;
             this.txt_total_10.Enabled = false;
-            this.txt_total_10.Location = new System.Drawing.Point(100, 233);
+            this.txt_total_10.Location = new System.Drawing.Point(100, 244);
             this.txt_total_10.Name = "txt_total_10";
             this.txt_total_10.Size = new System.Drawing.Size(92, 20);
             this.txt_total_10.TabIndex = 99;
@@ -387,15 +333,13 @@ namespace Branca_De_Neve
             this.txt_valor_02.TabStop = false;
             this.txt_valor_02.Text = "0,00";
             this.txt_valor_02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_valor_02.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_02_MouseClick);
-            this.txt_valor_02.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
-            this.txt_valor_02.Leave += new System.EventHandler(this.txt_valor_02_Leave);
+            this.txt_valor_02.TextChanged += new System.EventHandler(this.txt_valor_02_TextChanged);
             // 
             // txt_total_09
             // 
             this.txt_total_09.BackColor = System.Drawing.Color.White;
             this.txt_total_09.Enabled = false;
-            this.txt_total_09.Location = new System.Drawing.Point(100, 208);
+            this.txt_total_09.Location = new System.Drawing.Point(100, 217);
             this.txt_total_09.Name = "txt_total_09";
             this.txt_total_09.Size = new System.Drawing.Size(92, 20);
             this.txt_total_09.TabIndex = 98;
@@ -407,22 +351,20 @@ namespace Branca_De_Neve
             // 
             this.txt_valor_03.BackColor = System.Drawing.Color.White;
             this.txt_valor_03.Enabled = false;
-            this.txt_valor_03.Location = new System.Drawing.Point(2, 52);
+            this.txt_valor_03.Location = new System.Drawing.Point(2, 54);
             this.txt_valor_03.Name = "txt_valor_03";
             this.txt_valor_03.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_03.TabIndex = 53;
             this.txt_valor_03.TabStop = false;
             this.txt_valor_03.Text = "0,00";
             this.txt_valor_03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_valor_03.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_03_MouseClick);
-            this.txt_valor_03.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
-            this.txt_valor_03.Leave += new System.EventHandler(this.txt_valor_03_Leave);
+            this.txt_valor_03.TextChanged += new System.EventHandler(this.txt_valor_03_TextChanged);
             // 
             // txt_total_08
             // 
             this.txt_total_08.BackColor = System.Drawing.Color.White;
             this.txt_total_08.Enabled = false;
-            this.txt_total_08.Location = new System.Drawing.Point(100, 181);
+            this.txt_total_08.Location = new System.Drawing.Point(100, 190);
             this.txt_total_08.Name = "txt_total_08";
             this.txt_total_08.Size = new System.Drawing.Size(92, 20);
             this.txt_total_08.TabIndex = 97;
@@ -434,22 +376,20 @@ namespace Branca_De_Neve
             // 
             this.txt_valor_04.BackColor = System.Drawing.Color.White;
             this.txt_valor_04.Enabled = false;
-            this.txt_valor_04.Location = new System.Drawing.Point(2, 79);
+            this.txt_valor_04.Location = new System.Drawing.Point(2, 82);
             this.txt_valor_04.Name = "txt_valor_04";
             this.txt_valor_04.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_04.TabIndex = 55;
             this.txt_valor_04.TabStop = false;
             this.txt_valor_04.Text = "0,00";
             this.txt_valor_04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_valor_04.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_04_MouseClick);
-            this.txt_valor_04.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
-            this.txt_valor_04.Leave += new System.EventHandler(this.txt_valor_04_Leave);
+            this.txt_valor_04.TextChanged += new System.EventHandler(this.txt_valor_04_TextChanged);
             // 
             // txt_total_07
             // 
             this.txt_total_07.BackColor = System.Drawing.Color.White;
             this.txt_total_07.Enabled = false;
-            this.txt_total_07.Location = new System.Drawing.Point(100, 156);
+            this.txt_total_07.Location = new System.Drawing.Point(100, 163);
             this.txt_total_07.Name = "txt_total_07";
             this.txt_total_07.Size = new System.Drawing.Size(92, 20);
             this.txt_total_07.TabIndex = 96;
@@ -461,22 +401,20 @@ namespace Branca_De_Neve
             // 
             this.txt_valor_05.BackColor = System.Drawing.Color.White;
             this.txt_valor_05.Enabled = false;
-            this.txt_valor_05.Location = new System.Drawing.Point(2, 104);
+            this.txt_valor_05.Location = new System.Drawing.Point(2, 109);
             this.txt_valor_05.Name = "txt_valor_05";
             this.txt_valor_05.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_05.TabIndex = 59;
             this.txt_valor_05.TabStop = false;
             this.txt_valor_05.Text = "0,00";
             this.txt_valor_05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_valor_05.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_05_MouseClick);
-            this.txt_valor_05.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
-            this.txt_valor_05.Leave += new System.EventHandler(this.txt_valor_05_Leave);
+            this.txt_valor_05.TextChanged += new System.EventHandler(this.txt_valor_05_TextChanged);
             // 
             // txt_total_06
             // 
             this.txt_total_06.BackColor = System.Drawing.Color.White;
             this.txt_total_06.Enabled = false;
-            this.txt_total_06.Location = new System.Drawing.Point(100, 129);
+            this.txt_total_06.Location = new System.Drawing.Point(100, 136);
             this.txt_total_06.Name = "txt_total_06";
             this.txt_total_06.Size = new System.Drawing.Size(92, 20);
             this.txt_total_06.TabIndex = 95;
@@ -488,22 +426,20 @@ namespace Branca_De_Neve
             // 
             this.txt_valor_06.BackColor = System.Drawing.Color.White;
             this.txt_valor_06.Enabled = false;
-            this.txt_valor_06.Location = new System.Drawing.Point(2, 129);
+            this.txt_valor_06.Location = new System.Drawing.Point(2, 136);
             this.txt_valor_06.Name = "txt_valor_06";
             this.txt_valor_06.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_06.TabIndex = 71;
             this.txt_valor_06.TabStop = false;
             this.txt_valor_06.Text = "0,00";
             this.txt_valor_06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_valor_06.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_06_MouseClick);
-            this.txt_valor_06.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
-            this.txt_valor_06.Leave += new System.EventHandler(this.txt_valor_06_Leave);
+            this.txt_valor_06.TextChanged += new System.EventHandler(this.txt_valor_06_TextChanged);
             // 
             // txt_total_05
             // 
             this.txt_total_05.BackColor = System.Drawing.Color.White;
             this.txt_total_05.Enabled = false;
-            this.txt_total_05.Location = new System.Drawing.Point(100, 104);
+            this.txt_total_05.Location = new System.Drawing.Point(100, 109);
             this.txt_total_05.Name = "txt_total_05";
             this.txt_total_05.Size = new System.Drawing.Size(92, 20);
             this.txt_total_05.TabIndex = 94;
@@ -515,22 +451,20 @@ namespace Branca_De_Neve
             // 
             this.txt_valor_07.BackColor = System.Drawing.Color.White;
             this.txt_valor_07.Enabled = false;
-            this.txt_valor_07.Location = new System.Drawing.Point(2, 156);
+            this.txt_valor_07.Location = new System.Drawing.Point(2, 163);
             this.txt_valor_07.Name = "txt_valor_07";
             this.txt_valor_07.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_07.TabIndex = 73;
             this.txt_valor_07.TabStop = false;
             this.txt_valor_07.Text = "0,00";
             this.txt_valor_07.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_valor_07.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_07_MouseClick);
-            this.txt_valor_07.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
-            this.txt_valor_07.Leave += new System.EventHandler(this.txt_valor_07_Leave);
+            this.txt_valor_07.TextChanged += new System.EventHandler(this.txt_valor_07_TextChanged);
             // 
             // txt_total_04
             // 
             this.txt_total_04.BackColor = System.Drawing.Color.White;
             this.txt_total_04.Enabled = false;
-            this.txt_total_04.Location = new System.Drawing.Point(100, 79);
+            this.txt_total_04.Location = new System.Drawing.Point(100, 82);
             this.txt_total_04.Name = "txt_total_04";
             this.txt_total_04.Size = new System.Drawing.Size(92, 20);
             this.txt_total_04.TabIndex = 93;
@@ -542,22 +476,20 @@ namespace Branca_De_Neve
             // 
             this.txt_valor_08.BackColor = System.Drawing.Color.White;
             this.txt_valor_08.Enabled = false;
-            this.txt_valor_08.Location = new System.Drawing.Point(2, 181);
+            this.txt_valor_08.Location = new System.Drawing.Point(2, 190);
             this.txt_valor_08.Name = "txt_valor_08";
             this.txt_valor_08.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_08.TabIndex = 75;
             this.txt_valor_08.TabStop = false;
             this.txt_valor_08.Text = "0,00";
             this.txt_valor_08.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_valor_08.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_08_MouseClick);
-            this.txt_valor_08.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
-            this.txt_valor_08.Leave += new System.EventHandler(this.txt_valor_08_Leave);
+            this.txt_valor_08.TextChanged += new System.EventHandler(this.txt_valor_08_TextChanged);
             // 
             // txt_total_03
             // 
             this.txt_total_03.BackColor = System.Drawing.Color.White;
             this.txt_total_03.Enabled = false;
-            this.txt_total_03.Location = new System.Drawing.Point(100, 52);
+            this.txt_total_03.Location = new System.Drawing.Point(100, 54);
             this.txt_total_03.Name = "txt_total_03";
             this.txt_total_03.Size = new System.Drawing.Size(92, 20);
             this.txt_total_03.TabIndex = 92;
@@ -569,16 +501,14 @@ namespace Branca_De_Neve
             // 
             this.txt_valor_09.BackColor = System.Drawing.Color.White;
             this.txt_valor_09.Enabled = false;
-            this.txt_valor_09.Location = new System.Drawing.Point(2, 208);
+            this.txt_valor_09.Location = new System.Drawing.Point(2, 217);
             this.txt_valor_09.Name = "txt_valor_09";
             this.txt_valor_09.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_09.TabIndex = 77;
             this.txt_valor_09.TabStop = false;
             this.txt_valor_09.Text = "0,00";
             this.txt_valor_09.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_valor_09.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_09_MouseClick);
-            this.txt_valor_09.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
-            this.txt_valor_09.Leave += new System.EventHandler(this.txt_valor_09_Leave);
+            this.txt_valor_09.TextChanged += new System.EventHandler(this.txt_valor_09_TextChanged);
             // 
             // txt_total_02
             // 
@@ -596,22 +526,20 @@ namespace Branca_De_Neve
             // 
             this.txt_valor_10.BackColor = System.Drawing.Color.White;
             this.txt_valor_10.Enabled = false;
-            this.txt_valor_10.Location = new System.Drawing.Point(2, 233);
+            this.txt_valor_10.Location = new System.Drawing.Point(2, 244);
             this.txt_valor_10.Name = "txt_valor_10";
             this.txt_valor_10.Size = new System.Drawing.Size(92, 20);
             this.txt_valor_10.TabIndex = 79;
             this.txt_valor_10.TabStop = false;
             this.txt_valor_10.Text = "0,00";
             this.txt_valor_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_valor_10.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_valor_10_MouseClick);
-            this.txt_valor_10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
-            this.txt_valor_10.Leave += new System.EventHandler(this.txt_valor_10_Leave);
+            this.txt_valor_10.TextChanged += new System.EventHandler(this.txt_valor_10_TextChanged);
             // 
             // txt_total_01
             // 
             this.txt_total_01.BackColor = System.Drawing.Color.White;
             this.txt_total_01.Enabled = false;
-            this.txt_total_01.Location = new System.Drawing.Point(100, 0);
+            this.txt_total_01.Location = new System.Drawing.Point(100, 1);
             this.txt_total_01.Name = "txt_total_01";
             this.txt_total_01.Size = new System.Drawing.Size(92, 20);
             this.txt_total_01.TabIndex = 90;
@@ -619,40 +547,58 @@ namespace Branca_De_Neve
             this.txt_total_01.Text = "0,00";
             this.txt_total_01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // lb_total
+            // 
+            this.lb_total.AutoSize = true;
+            this.lb_total.Location = new System.Drawing.Point(578, 29);
+            this.lb_total.Name = "lb_total";
+            this.lb_total.Size = new System.Drawing.Size(31, 13);
+            this.lb_total.TabIndex = 100;
+            this.lb_total.Text = "Total";
+            // 
+            // lb_valor_uni
+            // 
+            this.lb_valor_uni.AutoSize = true;
+            this.lb_valor_uni.Location = new System.Drawing.Point(463, 29);
+            this.lb_valor_uni.Name = "lb_valor_uni";
+            this.lb_valor_uni.Size = new System.Drawing.Size(70, 13);
+            this.lb_valor_uni.TabIndex = 48;
+            this.lb_valor_uni.Text = "Valor Unitario";
+            // 
             // p_qt
             // 
-            this.p_qt.Controls.Add(this.txt_qt_05);
+            this.p_qt.Controls.Add(this.txt_qt_04);
             this.p_qt.Controls.Add(this.txt_qt_01);
             this.p_qt.Controls.Add(this.txt_qt_02);
             this.p_qt.Controls.Add(this.txt_qt_03);
-            this.p_qt.Controls.Add(this.txt_qt_04);
+            this.p_qt.Controls.Add(this.txt_qt_05);
             this.p_qt.Controls.Add(this.txt_qt_06);
             this.p_qt.Controls.Add(this.txt_qt_07);
             this.p_qt.Controls.Add(this.txt_qt_08);
             this.p_qt.Controls.Add(this.txt_qt_09);
             this.p_qt.Controls.Add(this.txt_qt_10);
-            this.p_qt.Location = new System.Drawing.Point(15, 43);
+            this.p_qt.Location = new System.Drawing.Point(16, 45);
             this.p_qt.Name = "p_qt";
-            this.p_qt.Size = new System.Drawing.Size(66, 256);
+            this.p_qt.Size = new System.Drawing.Size(61, 275);
             this.p_qt.TabIndex = 103;
             // 
-            // txt_qt_05
+            // txt_qt_04
             // 
-            this.txt_qt_05.Location = new System.Drawing.Point(3, 107);
-            this.txt_qt_05.MaxLength = 2;
-            this.txt_qt_05.Name = "txt_qt_05";
-            this.txt_qt_05.Size = new System.Drawing.Size(59, 20);
-            this.txt_qt_05.TabIndex = 4;
-            this.txt_qt_05.Tag = "";
-            this.txt_qt_05.Text = "0";
-            this.txt_qt_05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_qt_05.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_qt_05_MouseClick);
-            this.txt_qt_05.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
-            this.txt_qt_05.Leave += new System.EventHandler(this.txt_qt_05_Leave);
+            this.txt_qt_04.Location = new System.Drawing.Point(0, 82);
+            this.txt_qt_04.MaxLength = 2;
+            this.txt_qt_04.Name = "txt_qt_04";
+            this.txt_qt_04.Size = new System.Drawing.Size(59, 20);
+            this.txt_qt_04.TabIndex = 4;
+            this.txt_qt_04.Tag = "";
+            this.txt_qt_04.Text = "0";
+            this.txt_qt_04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_qt_04.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_qt_04_MouseClick);
+            this.txt_qt_04.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
+            this.txt_qt_04.Leave += new System.EventHandler(this.txt_qt_04_Leave);
             // 
             // txt_qt_01
             // 
-            this.txt_qt_01.Location = new System.Drawing.Point(3, 3);
+            this.txt_qt_01.Location = new System.Drawing.Point(0, 1);
             this.txt_qt_01.MaxLength = 2;
             this.txt_qt_01.Name = "txt_qt_01";
             this.txt_qt_01.Size = new System.Drawing.Size(59, 20);
@@ -666,7 +612,7 @@ namespace Branca_De_Neve
             // 
             // txt_qt_02
             // 
-            this.txt_qt_02.Location = new System.Drawing.Point(3, 29);
+            this.txt_qt_02.Location = new System.Drawing.Point(0, 27);
             this.txt_qt_02.MaxLength = 2;
             this.txt_qt_02.Name = "txt_qt_02";
             this.txt_qt_02.Size = new System.Drawing.Size(59, 20);
@@ -680,7 +626,7 @@ namespace Branca_De_Neve
             // 
             // txt_qt_03
             // 
-            this.txt_qt_03.Location = new System.Drawing.Point(3, 55);
+            this.txt_qt_03.Location = new System.Drawing.Point(0, 54);
             this.txt_qt_03.MaxLength = 2;
             this.txt_qt_03.Name = "txt_qt_03";
             this.txt_qt_03.Size = new System.Drawing.Size(59, 20);
@@ -692,23 +638,23 @@ namespace Branca_De_Neve
             this.txt_qt_03.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
             this.txt_qt_03.Leave += new System.EventHandler(this.txt_qt_03_Leave);
             // 
-            // txt_qt_04
+            // txt_qt_05
             // 
-            this.txt_qt_04.Location = new System.Drawing.Point(3, 81);
-            this.txt_qt_04.MaxLength = 2;
-            this.txt_qt_04.Name = "txt_qt_04";
-            this.txt_qt_04.Size = new System.Drawing.Size(59, 20);
-            this.txt_qt_04.TabIndex = 3;
-            this.txt_qt_04.Tag = "";
-            this.txt_qt_04.Text = "0";
-            this.txt_qt_04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_qt_04.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_qt_04_MouseClick);
-            this.txt_qt_04.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
-            this.txt_qt_04.Leave += new System.EventHandler(this.txt_qt_04_Leave);
+            this.txt_qt_05.Location = new System.Drawing.Point(0, 109);
+            this.txt_qt_05.MaxLength = 2;
+            this.txt_qt_05.Name = "txt_qt_05";
+            this.txt_qt_05.Size = new System.Drawing.Size(59, 20);
+            this.txt_qt_05.TabIndex = 3;
+            this.txt_qt_05.Tag = "";
+            this.txt_qt_05.Text = "0";
+            this.txt_qt_05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_qt_05.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_qt_05_MouseClick);
+            this.txt_qt_05.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
+            this.txt_qt_05.Leave += new System.EventHandler(this.txt_qt_05_Leave);
             // 
             // txt_qt_06
             // 
-            this.txt_qt_06.Location = new System.Drawing.Point(3, 132);
+            this.txt_qt_06.Location = new System.Drawing.Point(0, 136);
             this.txt_qt_06.MaxLength = 2;
             this.txt_qt_06.Name = "txt_qt_06";
             this.txt_qt_06.Size = new System.Drawing.Size(59, 20);
@@ -722,7 +668,7 @@ namespace Branca_De_Neve
             // 
             // txt_qt_07
             // 
-            this.txt_qt_07.Location = new System.Drawing.Point(3, 158);
+            this.txt_qt_07.Location = new System.Drawing.Point(0, 163);
             this.txt_qt_07.MaxLength = 2;
             this.txt_qt_07.Name = "txt_qt_07";
             this.txt_qt_07.Size = new System.Drawing.Size(59, 20);
@@ -736,7 +682,7 @@ namespace Branca_De_Neve
             // 
             // txt_qt_08
             // 
-            this.txt_qt_08.Location = new System.Drawing.Point(3, 184);
+            this.txt_qt_08.Location = new System.Drawing.Point(0, 190);
             this.txt_qt_08.MaxLength = 2;
             this.txt_qt_08.Name = "txt_qt_08";
             this.txt_qt_08.Size = new System.Drawing.Size(59, 20);
@@ -750,7 +696,7 @@ namespace Branca_De_Neve
             // 
             // txt_qt_09
             // 
-            this.txt_qt_09.Location = new System.Drawing.Point(3, 210);
+            this.txt_qt_09.Location = new System.Drawing.Point(0, 216);
             this.txt_qt_09.MaxLength = 2;
             this.txt_qt_09.Name = "txt_qt_09";
             this.txt_qt_09.Size = new System.Drawing.Size(59, 20);
@@ -764,7 +710,7 @@ namespace Branca_De_Neve
             // 
             // txt_qt_10
             // 
-            this.txt_qt_10.Location = new System.Drawing.Point(3, 236);
+            this.txt_qt_10.Location = new System.Drawing.Point(0, 244);
             this.txt_qt_10.MaxLength = 2;
             this.txt_qt_10.Name = "txt_qt_10";
             this.txt_qt_10.Size = new System.Drawing.Size(59, 20);
@@ -776,73 +722,115 @@ namespace Branca_De_Neve
             this.txt_qt_10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
             this.txt_qt_10.Leave += new System.EventHandler(this.txt_qt_10_Leave);
             // 
-            // lb_total
-            // 
-            this.lb_total.AutoSize = true;
-            this.lb_total.Location = new System.Drawing.Point(546, 30);
-            this.lb_total.Name = "lb_total";
-            this.lb_total.Size = new System.Drawing.Size(31, 13);
-            this.lb_total.TabIndex = 100;
-            this.lb_total.Text = "Total";
-            // 
-            // txt_produto_06
-            // 
-            this.txt_produto_06.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txt_produto_06.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txt_produto_06.Location = new System.Drawing.Point(82, 175);
-            this.txt_produto_06.MaxLength = 250;
-            this.txt_produto_06.Name = "txt_produto_06";
-            this.txt_produto_06.Size = new System.Drawing.Size(363, 20);
-            this.txt_produto_06.TabIndex = 5;
-            // 
-            // txt_produto_07
-            // 
-            this.txt_produto_07.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txt_produto_07.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txt_produto_07.Location = new System.Drawing.Point(82, 201);
-            this.txt_produto_07.MaxLength = 250;
-            this.txt_produto_07.Name = "txt_produto_07";
-            this.txt_produto_07.Size = new System.Drawing.Size(363, 20);
-            this.txt_produto_07.TabIndex = 6;
-            // 
-            // txt_produto_08
-            // 
-            this.txt_produto_08.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txt_produto_08.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txt_produto_08.Location = new System.Drawing.Point(82, 227);
-            this.txt_produto_08.MaxLength = 250;
-            this.txt_produto_08.Name = "txt_produto_08";
-            this.txt_produto_08.Size = new System.Drawing.Size(363, 20);
-            this.txt_produto_08.TabIndex = 7;
-            // 
             // txt_produto_10
             // 
-            this.txt_produto_10.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txt_produto_10.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txt_produto_10.Location = new System.Drawing.Point(82, 279);
-            this.txt_produto_10.MaxLength = 250;
+            this.txt_produto_10.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_produto_10.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_produto_10.FormattingEnabled = true;
+            this.txt_produto_10.Location = new System.Drawing.Point(83, 288);
             this.txt_produto_10.Name = "txt_produto_10";
-            this.txt_produto_10.Size = new System.Drawing.Size(363, 20);
-            this.txt_produto_10.TabIndex = 9;
+            this.txt_produto_10.Size = new System.Drawing.Size(363, 21);
+            this.txt_produto_10.TabIndex = 113;
+            this.txt_produto_10.SelectedIndexChanged += new System.EventHandler(this.txt_produto_10_SelectedIndexChanged);
+            // 
+            // txt_produto_01
+            // 
+            this.txt_produto_01.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_produto_01.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_produto_01.FormattingEnabled = true;
+            this.txt_produto_01.Location = new System.Drawing.Point(83, 45);
+            this.txt_produto_01.Name = "txt_produto_01";
+            this.txt_produto_01.Size = new System.Drawing.Size(363, 21);
+            this.txt_produto_01.TabIndex = 67;
+            this.txt_produto_01.SelectedIndexChanged += new System.EventHandler(this.txt_produto_01_SelectedIndexChanged);
+            // 
+            // txt_produto_02
+            // 
+            this.txt_produto_02.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_produto_02.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_produto_02.FormattingEnabled = true;
+            this.txt_produto_02.Location = new System.Drawing.Point(83, 71);
+            this.txt_produto_02.Name = "txt_produto_02";
+            this.txt_produto_02.Size = new System.Drawing.Size(363, 21);
+            this.txt_produto_02.TabIndex = 105;
+            this.txt_produto_02.SelectedIndexChanged += new System.EventHandler(this.txt_produto_02_SelectedIndexChanged);
+            // 
+            // txt_produto_03
+            // 
+            this.txt_produto_03.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_produto_03.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_produto_03.FormattingEnabled = true;
+            this.txt_produto_03.Location = new System.Drawing.Point(83, 98);
+            this.txt_produto_03.Name = "txt_produto_03";
+            this.txt_produto_03.Size = new System.Drawing.Size(363, 21);
+            this.txt_produto_03.TabIndex = 106;
+            this.txt_produto_03.SelectedIndexChanged += new System.EventHandler(this.txt_produto_03_SelectedIndexChanged);
+            // 
+            // txt_produto_04
+            // 
+            this.txt_produto_04.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_produto_04.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_produto_04.FormattingEnabled = true;
+            this.txt_produto_04.Location = new System.Drawing.Point(83, 126);
+            this.txt_produto_04.Name = "txt_produto_04";
+            this.txt_produto_04.Size = new System.Drawing.Size(363, 21);
+            this.txt_produto_04.TabIndex = 107;
+            this.txt_produto_04.SelectedIndexChanged += new System.EventHandler(this.txt_produto_04_SelectedIndexChanged);
+            // 
+            // txt_produto_05
+            // 
+            this.txt_produto_05.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_produto_05.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_produto_05.FormattingEnabled = true;
+            this.txt_produto_05.Location = new System.Drawing.Point(83, 153);
+            this.txt_produto_05.Name = "txt_produto_05";
+            this.txt_produto_05.Size = new System.Drawing.Size(363, 21);
+            this.txt_produto_05.TabIndex = 108;
+            this.txt_produto_05.SelectedIndexChanged += new System.EventHandler(this.txt_produto_05_SelectedIndexChanged);
             // 
             // txt_produto_09
             // 
-            this.txt_produto_09.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.txt_produto_09.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txt_produto_09.Location = new System.Drawing.Point(82, 253);
-            this.txt_produto_09.MaxLength = 250;
+            this.txt_produto_09.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_produto_09.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_produto_09.FormattingEnabled = true;
+            this.txt_produto_09.Location = new System.Drawing.Point(83, 261);
             this.txt_produto_09.Name = "txt_produto_09";
-            this.txt_produto_09.Size = new System.Drawing.Size(363, 20);
-            this.txt_produto_09.TabIndex = 8;
+            this.txt_produto_09.Size = new System.Drawing.Size(363, 21);
+            this.txt_produto_09.TabIndex = 112;
+            this.txt_produto_09.SelectedIndexChanged += new System.EventHandler(this.txt_produto_09_SelectedIndexChanged);
             // 
-            // lb_valor_uni
+            // txt_produto_06
             // 
-            this.lb_valor_uni.AutoSize = true;
-            this.lb_valor_uni.Location = new System.Drawing.Point(451, 30);
-            this.lb_valor_uni.Name = "lb_valor_uni";
-            this.lb_valor_uni.Size = new System.Drawing.Size(70, 13);
-            this.lb_valor_uni.TabIndex = 48;
-            this.lb_valor_uni.Text = "Valor Unitario";
+            this.txt_produto_06.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_produto_06.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_produto_06.FormattingEnabled = true;
+            this.txt_produto_06.Location = new System.Drawing.Point(83, 180);
+            this.txt_produto_06.Name = "txt_produto_06";
+            this.txt_produto_06.Size = new System.Drawing.Size(363, 21);
+            this.txt_produto_06.TabIndex = 109;
+            this.txt_produto_06.SelectedIndexChanged += new System.EventHandler(this.txt_produto_06_SelectedIndexChanged);
+            // 
+            // txt_produto_07
+            // 
+            this.txt_produto_07.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_produto_07.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_produto_07.FormattingEnabled = true;
+            this.txt_produto_07.Location = new System.Drawing.Point(83, 207);
+            this.txt_produto_07.Name = "txt_produto_07";
+            this.txt_produto_07.Size = new System.Drawing.Size(363, 21);
+            this.txt_produto_07.TabIndex = 110;
+            this.txt_produto_07.SelectedIndexChanged += new System.EventHandler(this.txt_produto_07_SelectedIndexChanged);
+            // 
+            // txt_produto_08
+            // 
+            this.txt_produto_08.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_produto_08.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_produto_08.FormattingEnabled = true;
+            this.txt_produto_08.Location = new System.Drawing.Point(83, 234);
+            this.txt_produto_08.Name = "txt_produto_08";
+            this.txt_produto_08.Size = new System.Drawing.Size(363, 21);
+            this.txt_produto_08.TabIndex = 111;
+            this.txt_produto_08.SelectedIndexChanged += new System.EventHandler(this.txt_produto_08_SelectedIndexChanged);
             // 
             // lb_tel
             // 
@@ -1130,7 +1118,7 @@ namespace Branca_De_Neve
             this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rodape.Location = new System.Drawing.Point(0, 838);
             this.rodape.Name = "rodape";
-            this.rodape.Size = new System.Drawing.Size(680, 30);
+            this.rodape.Size = new System.Drawing.Size(682, 30);
             this.rodape.TabIndex = 67;
             // 
             // pedidos
@@ -1138,7 +1126,7 @@ namespace Branca_De_Neve
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(680, 868);
+            this.ClientSize = new System.Drawing.Size(682, 868);
             this.Controls.Add(this.rodape);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gp_cad);
@@ -1182,14 +1170,8 @@ namespace Branca_De_Neve
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.TextBox txt_produto_01;
         private System.Windows.Forms.Label lb_produto;
         private System.Windows.Forms.Label lb_qt;
-        private System.Windows.Forms.TextBox txt_produto_02;
-        private System.Windows.Forms.TextBox txt_produto_03;
-        private System.Windows.Forms.TextBox txt_produto_04;
-        private System.Windows.Forms.TextBox txt_produto_05;
-        private System.Windows.Forms.TextBox txt_valor_01;
         private System.Windows.Forms.Label lb_pagar;
         private System.Windows.Forms.TextBox txt_total_venda;
         private System.Windows.Forms.GroupBox gp_pedido;
@@ -1201,12 +1183,7 @@ namespace Branca_De_Neve
         private System.Windows.Forms.TextBox txt_valor_09;
         private System.Windows.Forms.TextBox txt_valor_08;
         private System.Windows.Forms.TextBox txt_valor_07;
-        private System.Windows.Forms.TextBox txt_produto_06;
-        private System.Windows.Forms.TextBox txt_produto_07;
         private System.Windows.Forms.TextBox txt_valor_06;
-        private System.Windows.Forms.TextBox txt_produto_08;
-        private System.Windows.Forms.TextBox txt_produto_10;
-        private System.Windows.Forms.TextBox txt_produto_09;
         private System.Windows.Forms.Label lb_tel;
         private System.Windows.Forms.Label lb_nome;
         private System.Windows.Forms.TextBox txt_nome;
@@ -1226,8 +1203,8 @@ namespace Branca_De_Neve
         private System.Windows.Forms.TextBox txt_qt_08;
         private System.Windows.Forms.TextBox txt_qt_07;
         private System.Windows.Forms.TextBox txt_qt_06;
-        private System.Windows.Forms.TextBox txt_qt_05;
         private System.Windows.Forms.TextBox txt_qt_04;
+        private System.Windows.Forms.TextBox txt_qt_05;
         private System.Windows.Forms.TextBox txt_qt_03;
         private System.Windows.Forms.TextBox txt_qt_02;
         private System.Windows.Forms.TextBox txt_qt_01;
@@ -1260,5 +1237,16 @@ namespace Branca_De_Neve
         private System.Windows.Forms.Panel rodape;
         private System.Windows.Forms.MaskedTextBox txt_cep;
         private System.Windows.Forms.MaskedTextBox txt_tel;
+        private System.Windows.Forms.ComboBox txt_produto_01;
+        private System.Windows.Forms.ComboBox txt_produto_10;
+        private System.Windows.Forms.ComboBox txt_produto_09;
+        private System.Windows.Forms.ComboBox txt_produto_08;
+        private System.Windows.Forms.ComboBox txt_produto_07;
+        private System.Windows.Forms.ComboBox txt_produto_06;
+        private System.Windows.Forms.ComboBox txt_produto_05;
+        private System.Windows.Forms.ComboBox txt_produto_04;
+        private System.Windows.Forms.ComboBox txt_produto_03;
+        private System.Windows.Forms.ComboBox txt_produto_02;
+        private System.Windows.Forms.TextBox txt_valor_01;
     }
 }

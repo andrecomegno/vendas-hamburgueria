@@ -19,275 +19,11 @@ namespace Branca_De_Neve
         public pedidos()
         {
             InitializeComponent();
-            Start();
-        }
-
-        private void Start()
-        {
-            txt_valor_01.Text = Convert.ToDouble(txt_valor_01.Text).ToString("F");
-            txt_valor_02.Text = Convert.ToDouble(txt_valor_02.Text).ToString("F");
-            txt_valor_03.Text = Convert.ToDouble(txt_valor_03.Text).ToString("F");
-            txt_valor_04.Text = Convert.ToDouble(txt_valor_04.Text).ToString("F");
-            txt_valor_05.Text = Convert.ToDouble(txt_valor_05.Text).ToString("F");
-            txt_valor_06.Text = Convert.ToDouble(txt_valor_06.Text).ToString("F");
-            txt_valor_07.Text = Convert.ToDouble(txt_valor_07.Text).ToString("F");
-            txt_valor_08.Text = Convert.ToDouble(txt_valor_08.Text).ToString("F");
-            txt_valor_09.Text = Convert.ToDouble(txt_valor_09.Text).ToString("F");
-            txt_valor_10.Text = Convert.ToDouble(txt_valor_10.Text).ToString("F");
-
-            txt_total_01.Text = Convert.ToDouble(txt_total_01.Text).ToString("F");
-            txt_total_02.Text = Convert.ToDouble(txt_total_02.Text).ToString("F");
-            txt_total_03.Text = Convert.ToDouble(txt_total_03.Text).ToString("F");
-            txt_total_04.Text = Convert.ToDouble(txt_total_04.Text).ToString("F");
-            txt_total_05.Text = Convert.ToDouble(txt_total_05.Text).ToString("F");
-            txt_total_06.Text = Convert.ToDouble(txt_total_06.Text).ToString("F");
-            txt_total_07.Text = Convert.ToDouble(txt_total_07.Text).ToString("F");
-            txt_total_08.Text = Convert.ToDouble(txt_total_08.Text).ToString("F");
-            txt_total_09.Text = Convert.ToDouble(txt_total_09.Text).ToString("F");
-            txt_total_10.Text = Convert.ToDouble(txt_total_10.Text).ToString("F");
-
-            txt_total_venda.Text = Convert.ToDouble(txt_total_venda.Text).ToString("F");
-
         }
 
         #region PEDIDO TABELA
 
-        private void TotalPagar()
-        {
-            double res = Convert.ToDouble(txt_total_01.Text) + Convert.ToDouble(txt_total_02.Text) + Convert.ToDouble(txt_total_03.Text) +
-                Convert.ToDouble(txt_total_04.Text) + Convert.ToDouble(txt_total_05.Text) + Convert.ToDouble(txt_total_06.Text) +
-                Convert.ToDouble(txt_total_07.Text) + Convert.ToDouble(txt_total_08.Text) + Convert.ToDouble(txt_total_09.Text) +
-                Convert.ToDouble(txt_total_10.Text);
-
-            txt_total_venda.Text = res.ToString();
-
-            txt_total_venda.Text = Convert.ToDouble(txt_total_venda.Text).ToString("C");
-        }
-
-        Int32 Calculador(Int32 a, Int32 b)
-        {
-            return a * b;
-        }
-
-        private void txt_valor_01_Leave(object sender, EventArgs e)
-        {         
-            if (txt_valor_01.Text == "")
-            {
-                txt_valor_01.Text = "0";
-            }
-
-            Int32 a, b;
-
-            a = Convert.ToInt32(txt_qt_01.Text);
-            b = Convert.ToInt32(txt_valor_01.Text);
-
-            txt_total_01.Text = Calculador(a, b).ToString();
-
-            TotalPagar();
-
-            txt_valor_01.Text = Convert.ToDouble(txt_valor_01.Text).ToString("F");
-            txt_total_01.Text = Convert.ToDouble(txt_total_01.Text).ToString("F");
-        }
-
-        private void txt_valor_02_Leave(object sender, EventArgs e)
-        {
-            if (txt_valor_02.Text == "")
-            {
-                txt_valor_02.Text = "0";
-            }
-
-            Int32 a, b;
-
-            a = Convert.ToInt32(txt_qt_02.Text);
-            b = Convert.ToInt32(txt_valor_02.Text);
-
-            txt_total_02.Text = Calculador(a, b).ToString();
-
-            TotalPagar();
-
-            txt_valor_02.Text = Convert.ToDouble(txt_valor_02.Text).ToString("F");
-            txt_total_02.Text = Convert.ToDouble(txt_total_02.Text).ToString("F");
-        }
-
-        private void txt_valor_03_Leave(object sender, EventArgs e)
-        {
-            if (txt_valor_03.Text == "")
-            {
-                txt_valor_03.Text = "0";
-            }
-
-            Int32 a, b;
-
-            a = Convert.ToInt32(txt_qt_03.Text);
-            b = Convert.ToInt32(txt_valor_03.Text);
-
-            txt_total_03.Text = Calculador(a, b).ToString();
-
-            TotalPagar();
-
-            txt_total_venda.Text = Convert.ToDouble(txt_total_venda.Text).ToString("F");
-            txt_valor_03.Text = Convert.ToDouble(txt_valor_03.Text).ToString("F");
-            txt_total_03.Text = Convert.ToDouble(txt_total_03.Text).ToString("F");
-        }
-
-        private void txt_valor_04_Leave(object sender, EventArgs e)
-        {
-            if (txt_valor_04.Text == "")
-            {
-                txt_valor_04.Text = "0";
-            }
-
-            Int32 a, b;
-
-            a = Convert.ToInt32(txt_qt_04.Text);
-            b = Convert.ToInt32(txt_valor_04.Text);
-
-            txt_total_04.Text = Calculador(a, b).ToString();
-
-            TotalPagar();
-
-            txt_total_venda.Text = Convert.ToDouble(txt_total_venda.Text).ToString("F");
-            txt_valor_04.Text = Convert.ToDouble(txt_valor_04.Text).ToString("F");
-            txt_total_04.Text = Convert.ToDouble(txt_total_04.Text).ToString("F");
-        }
-
-        private void txt_valor_05_Leave(object sender, EventArgs e)
-        {
-            if (txt_valor_05.Text == "")
-            {
-                txt_valor_05.Text = "0";
-            }
-
-            Int32 a, b;
-
-            a = Convert.ToInt32(txt_qt_05.Text);
-            b = Convert.ToInt32(txt_valor_05.Text);
-
-            txt_total_05.Text = Calculador(a, b).ToString();
-
-            TotalPagar();
-
-            txt_total_venda.Text = Convert.ToDouble(txt_total_venda.Text).ToString("F");
-            txt_valor_05.Text = Convert.ToDouble(txt_valor_05.Text).ToString("F");
-            txt_total_05.Text = Convert.ToDouble(txt_total_05.Text).ToString("F");
-        }
-
-        private void txt_valor_06_Leave(object sender, EventArgs e)
-        {
-            if (txt_valor_06.Text == "")
-            {
-                txt_valor_06.Text = "0";
-            }
-
-            Int32 a, b;
-
-            a = Convert.ToInt32(txt_qt_06.Text);
-            b = Convert.ToInt32(txt_valor_06.Text);
-
-            txt_total_06.Text = Calculador(a, b).ToString();
-
-            TotalPagar();
-
-            txt_total_venda.Text = Convert.ToDouble(txt_total_venda.Text).ToString("F");
-            txt_valor_06.Text = Convert.ToDouble(txt_valor_06.Text).ToString("F");
-            txt_total_06.Text = Convert.ToDouble(txt_total_06.Text).ToString("F");
-        }
-
-        private void txt_valor_07_Leave(object sender, EventArgs e)
-        {
-            if (txt_valor_07.Text == "")
-            {
-                txt_valor_07.Text = "0";
-            }
-
-            Int32 a, b;
-
-            a = Convert.ToInt32(txt_qt_07.Text);
-            b = Convert.ToInt32(txt_valor_07.Text);
-
-            txt_total_07.Text = Calculador(a, b).ToString();
-
-            TotalPagar();
-
-            txt_total_venda.Text = Convert.ToDouble(txt_total_venda.Text).ToString("F");
-            txt_valor_07.Text = Convert.ToDouble(txt_valor_07.Text).ToString("F");
-            txt_total_07.Text = Convert.ToDouble(txt_total_07.Text).ToString("F");
-        }
-
-        private void txt_valor_08_Leave(object sender, EventArgs e)
-        {
-            if (txt_valor_08.Text == "")
-            {
-                txt_valor_08.Text = "0";
-            }
-
-            Int32 a, b;
-
-            a = Convert.ToInt32(txt_qt_08.Text);
-            b = Convert.ToInt32(txt_valor_08.Text);
-
-            txt_total_08.Text = Calculador(a, b).ToString();
-
-            TotalPagar();
-
-            txt_total_venda.Text = Convert.ToDouble(txt_total_venda.Text).ToString("F");
-            txt_valor_08.Text = Convert.ToDouble(txt_valor_08.Text).ToString("F");
-            txt_total_08.Text = Convert.ToDouble(txt_total_08.Text).ToString("F");
-        }
-
-        private void txt_valor_09_Leave(object sender, EventArgs e)
-        {
-            if (txt_valor_09.Text == "")
-            {
-                txt_valor_09.Text = "0";
-            }
-
-            Int32 a, b;
-
-            a = Convert.ToInt32(txt_qt_09.Text);
-            b = Convert.ToInt32(txt_valor_09.Text);
-
-            txt_total_09.Text = Calculador(a, b).ToString();
-
-            TotalPagar();
-
-            txt_total_venda.Text = Convert.ToDouble(txt_total_venda.Text).ToString("F");
-            txt_valor_09.Text = Convert.ToDouble(txt_valor_09.Text).ToString("F");
-            txt_total_09.Text = Convert.ToDouble(txt_total_09.Text).ToString("F");
-
-        }
-
-        private void txt_valor_10_Leave(object sender, EventArgs e)
-        {
-            if (txt_valor_10.Text == "")
-            {
-                txt_valor_10.Text = "0";
-            }
-
-            Int32 a, b;
-
-            a = Convert.ToInt32(txt_qt_10.Text);
-            b = Convert.ToInt32(txt_valor_10.Text);
-
-            txt_total_10.Text = Calculador(a, b).ToString();
-
-            TotalPagar();
-
-            txt_total_venda.Text = Convert.ToDouble(txt_total_venda.Text).ToString("F");
-            txt_valor_10.Text = Convert.ToDouble(txt_valor_10.Text).ToString("F");
-            txt_total_10.Text = Convert.ToDouble(txt_total_10.Text).ToString("F");
-        }
-
-        private void txt_total_venda_Leave(object sender, EventArgs e)
-        {
-            if (txt_total_venda.Text == "")
-            {
-                txt_total_venda.Text = "0";
-            }
-
-            txt_total_venda.Text = Convert.ToDouble(txt_total_venda.Text).ToString("F");
-        }
-
+        // QUANTIDADE DE PRODUTO
         private void txt_qt_01_Leave(object sender, EventArgs e)
         {
             if (txt_qt_01.Text == "")
@@ -368,6 +104,202 @@ namespace Branca_De_Neve
             }
         }
 
+        // VALOR DO PRODUTO
+        private void txt_valor_01_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double res = Convert.ToDouble(txt_qt_01.Text) * Convert.ToDouble(txt_valor_01.Text);
+
+                txt_total_01.Text = res.ToString();
+
+                TotalPagar();
+            }
+            catch
+            {
+                MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+            finally
+            {                      
+                //txt_total_01.Text = Convert.ToDouble(txt_total_01.Text).ToString("C");
+                //txt_valor_01.Text = Convert.ToDouble(txt_valor_01.Text).ToString("C");
+            }   
+        }
+
+        private void txt_valor_02_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double res = Convert.ToDouble(txt_qt_02.Text) * Convert.ToDouble(txt_valor_02.Text);
+
+                txt_total_02.Text = res.ToString();
+
+                TotalPagar();
+            }
+            catch
+            {
+                MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+        }
+
+        private void txt_valor_03_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double res = Convert.ToDouble(txt_qt_03.Text) * Convert.ToDouble(txt_valor_03.Text);
+
+                txt_total_03.Text = res.ToString();
+
+                TotalPagar();
+            }
+            catch
+            {
+                MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+
+        }
+
+        private void txt_valor_04_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double res = Convert.ToDouble(txt_qt_04.Text) * Convert.ToDouble(txt_valor_04.Text);
+
+                txt_total_04.Text = res.ToString();
+
+                TotalPagar();
+            }
+            catch
+            {
+                MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+
+        }
+
+        private void txt_valor_05_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double res = Convert.ToDouble(txt_qt_05.Text) * Convert.ToDouble(txt_valor_05.Text);
+
+                txt_total_05.Text = res.ToString();
+
+                TotalPagar();
+            }
+            catch
+            {
+                MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+
+        }
+
+        private void txt_valor_06_TextChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                double res = Convert.ToDouble(txt_qt_06.Text) * Convert.ToDouble(txt_valor_06.Text);
+
+                txt_total_06.Text = res.ToString();
+
+                TotalPagar();
+            }
+            catch
+            {
+                MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+
+        }
+
+        private void txt_valor_07_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double res = Convert.ToDouble(txt_qt_07.Text) * Convert.ToDouble(txt_valor_07.Text);
+
+                txt_total_07.Text = res.ToString();
+
+                TotalPagar();
+            }
+            catch
+            {
+                MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+        }
+
+        private void txt_valor_08_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double res = Convert.ToDouble(txt_qt_08.Text) * Convert.ToDouble(txt_valor_08.Text);
+
+                txt_total_08.Text = res.ToString();
+
+                TotalPagar();
+            }
+            catch
+            {
+                MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+
+        }
+
+        private void txt_valor_09_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double res = Convert.ToDouble(txt_qt_09.Text) * Convert.ToDouble(txt_valor_09.Text);
+
+                txt_total_09.Text = res.ToString();
+
+                TotalPagar();
+            }
+            catch
+            {
+                MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+
+        }
+
+        private void txt_valor_10_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double res = Convert.ToDouble(txt_qt_10.Text) * Convert.ToDouble(txt_valor_10.Text);
+
+                txt_total_10.Text = res.ToString();
+
+                TotalPagar();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+
+        }
+
+        // SOMA DO VALOR TOTAL
+        private void TotalPagar()
+        {
+            try
+            {
+                double res = Convert.ToDouble(txt_total_01.Text) + Convert.ToDouble(txt_total_02.Text) + Convert.ToDouble(txt_total_03.Text) +
+                    Convert.ToDouble(txt_total_04.Text) + Convert.ToDouble(txt_total_05.Text) + Convert.ToDouble(txt_total_06.Text) +
+                    Convert.ToDouble(txt_total_07.Text) + Convert.ToDouble(txt_total_08.Text) + Convert.ToDouble(txt_total_09.Text) +
+                    Convert.ToDouble(txt_total_10.Text);
+
+                txt_total_venda.Text = res.ToString();
+            }
+            catch
+            {
+                MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                txt_total_venda.Text = Convert.ToDouble(txt_total_venda.Text).ToString("C");
+            }            
+        }
+
         #endregion
 
         #region MOUSE CLICK
@@ -387,9 +319,6 @@ namespace Branca_De_Neve
         {
             txt_end_n.BackColor = Color.White;
         }
-
-        // PAGAMENTO
-
 
         // QUANTIDADE
         private void txt_qt_01_MouseClick(object sender, MouseEventArgs e)
@@ -440,12 +369,6 @@ namespace Branca_De_Neve
         private void txt_qt_10_MouseClick(object sender, MouseEventArgs e)
         {
             txt_qt_10.Text = "";
-        }
-
-        // NOME DO PRODUTO
-        private void txt_produto_01_MouseClick(object sender, MouseEventArgs e)
-        {
-
         }
 
         // VALOR UNITARIO
@@ -501,7 +424,7 @@ namespace Branca_De_Neve
 
         #endregion
 
-        #region CADASTRO TABELA
+        #region CADASTRO
 
         //BUSCAR CEP
         private void bt_buscar_cep_Click(object sender, EventArgs e)
@@ -511,6 +434,8 @@ namespace Branca_De_Neve
                 try
                 {
                     var resultado = ws.consultaCEP(txt_cep.Text);
+
+                    txt_cep.Text.Replace("-", "");
                     txt_end.Text = resultado.end;
                     txt_cidade.Text = resultado.cidade;
                     txt_bairro.Text = resultado.bairro;
@@ -556,7 +481,9 @@ namespace Branca_De_Neve
         }
         #endregion 
 
-        #region BOTÕES CONCLUIR E SAIR        
+        #region BOTÕES CONCLUIR E SAIR 
+        
+        // CONCLUIR PEDIDO
         private void bt_concluir_Click(object sender, EventArgs e)
         {
             //CampoVazio();
@@ -590,7 +517,7 @@ namespace Branca_De_Neve
             // INSERT TABELA VENDAS
             MySqlCommand objCmdVendas = new MySqlCommand("insert into vendas (id, valor_total, data, cliente_id, pagamento_id) value(null, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdVendas.Parameters.Add("@valor_total", MySqlDbType.VarChar, 256).Value = txt_total_venda.Text;
+            objCmdVendas.Parameters.Add("@valor_total", MySqlDbType.Decimal).Value = txt_total_venda.Text.Replace("R$", "");
             objCmdVendas.Parameters.Add("@data", MySqlDbType.DateTime).Value = DateTime.Now;
             objCmdVendas.Parameters.Add("@cliente_id", MySqlDbType.Int32).Value = idCliente;
             objCmdVendas.Parameters.Add("@pagamento_id", MySqlDbType.Int32).Value = idPagamento;
@@ -602,7 +529,7 @@ namespace Branca_De_Neve
             MySqlCommand objCmdProdutos = new MySqlCommand("insert into produtos (id, nome, preco, quantidade ) value(null, ?, ?, ?)", database.getConnection());
             
             objCmdProdutos.Parameters.Add("@nome", MySqlDbType.VarChar, 256).Value = txt_produto_01.Text;
-            objCmdProdutos.Parameters.Add("@preco", MySqlDbType.VarChar, 256).Value = txt_valor_01.Text;
+            objCmdProdutos.Parameters.Add("@preco", MySqlDbType.Decimal).Value = txt_valor_01.Text;
             objCmdProdutos.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = txt_qt_01.Text;
 
             objCmdProdutos.ExecuteNonQuery();
@@ -620,6 +547,7 @@ namespace Branca_De_Neve
 
         }
 
+        // LIMPAR FORMULARIO 
         private void LimparTextBox(Control.ControlCollection control)
         {
             foreach (Control c in control)
@@ -653,11 +581,30 @@ namespace Branca_De_Neve
             }
         }
 
+        // SAIR
         private void bt_sair_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        private void pedidos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Deseja Mesmo Sair ?", "AVISO !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    e.Cancel = false;
+                    break;
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        // VERIFICAR COMPOS VAZIOS 
         public void CampoVazio()
         {
 
@@ -685,13 +632,13 @@ namespace Branca_De_Neve
                 LimparTextBox3(p_valores.Controls);
                 LimparTextBox3(this.Controls);
             }
-
         }
 
         #endregion
 
         #region MENU TOP
 
+        // NOVO PEDIDO
         private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<pedidos>().Count() > 0)
@@ -704,6 +651,7 @@ namespace Branca_De_Neve
             }
         }
 
+        // CARDÁPIO
         private void cardápioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<cardapio>().Count() > 0)
@@ -719,6 +667,7 @@ namespace Branca_De_Neve
             }
         }
 
+        // SAIR
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -726,24 +675,177 @@ namespace Branca_De_Neve
 
         #endregion
 
-        #region SAIR DO APLICATIVO
-        private void pedidos_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Deseja Mesmo Sair ?", "AVISO !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+        #region COMBOBOX PRODUTOS
 
-            switch (dr)
+        private void txt_produto_01_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select * from cardapio where nome ='"+ txt_produto_01.Text +"'", database.getConnection());
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
             {
-                case DialogResult.Yes:
-                    e.Cancel = false;
-                    break;
-                case DialogResult.No:
-                    e.Cancel = true;
-                    break;
-                default:
-                    break;
+                string preco = (string)rd["preco"].ToString();
+                txt_valor_01.Text = preco;
             }
+
+            database.closeConnection();
         }
 
+        private void txt_produto_02_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select * from cardapio where nome ='" + txt_produto_02.Text + "'", database.getConnection());
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                string preco = (string)rd["preco"].ToString();
+                txt_valor_02.Text = preco;
+            }
+
+            database.closeConnection();
+        }
+
+        private void txt_produto_03_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select * from cardapio where nome ='" + txt_produto_03.Text + "'", database.getConnection());
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                string preco = (string)rd["preco"].ToString();
+                txt_valor_03.Text = preco;
+            }
+
+            database.closeConnection();
+        }
+
+        private void txt_produto_04_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select * from cardapio where nome ='" + txt_produto_04.Text + "'", database.getConnection());
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                string preco = (string)rd["preco"].ToString();
+                txt_valor_04.Text = preco;
+            }
+
+            database.closeConnection();
+        }
+
+        private void txt_produto_05_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select * from cardapio where nome ='" + txt_produto_05.Text + "'", database.getConnection());
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                string preco = (string)rd["preco"].ToString();
+                txt_valor_05.Text = preco;
+            }
+
+            database.closeConnection();
+        }
+
+        private void txt_produto_06_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select * from cardapio where nome ='" + txt_produto_06.Text + "'", database.getConnection());
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                string preco = (string)rd["preco"].ToString();
+                txt_valor_06.Text = preco;
+            }
+
+            database.closeConnection();
+        }
+
+        private void txt_produto_07_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select * from cardapio where nome ='" + txt_produto_07.Text + "'", database.getConnection());
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                string preco = (string)rd["preco"].ToString();
+                txt_valor_07.Text = preco;
+            }
+
+            database.closeConnection();
+        }
+
+        private void txt_produto_08_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select * from cardapio where nome ='" + txt_produto_08.Text + "'", database.getConnection());
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                string preco = (string)rd["preco"].ToString();
+                txt_valor_08.Text = preco;
+            }
+
+            database.closeConnection();
+        }
+
+        private void txt_produto_09_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select * from cardapio where nome ='" + txt_produto_09.Text + "'", database.getConnection());
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                string preco = (string)rd["preco"].ToString();
+                txt_valor_09.Text = preco;
+            }
+
+            database.closeConnection();
+        }
+
+        private void txt_produto_10_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select * from cardapio where nome ='" + txt_produto_10.Text + "'", database.getConnection());
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                string preco = (string)rd["preco"].ToString();
+                txt_valor_10.Text = preco;
+            }
+
+            database.closeConnection();
+        }
 
         #endregion
 
@@ -756,38 +858,34 @@ namespace Branca_De_Neve
             }
         }
 
-        private void txt_produto_01_KeyDown(object sender, KeyEventArgs e)
-        {
-        }
-
+        // JANELA PEPEDIDO
         private void pedidos_Load(object sender, EventArgs e)
-        {
-            autocompletar();
-        }
-
-        public void autocompletar()
         {
             database database = new database();
             database.openConnection();
 
-            MySqlCommand autoCardapio = new MySqlCommand("select nome from cardapio", database.getConnection());
+            MySqlCommand cmd = new MySqlCommand("select nome from cardapio", database.getConnection());
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            da.Fill(dt);
 
-            //autoCardapio.Parameters.Add("@nome", MySqlDbType.VarChar, 256).Value = txt_produto_01.Text;
-            //autoCardapio.Parameters.Add("@preco", MySqlDbType.VarChar, 256).Value = txt_valor_01.Text;
-
-            MySqlDataReader rd = autoCardapio.ExecuteReader();
-
-            AutoCompleteStringCollection autoCo = new AutoCompleteStringCollection();
-            while (rd.Read())
+            foreach (DataRow dr in dt.Rows)
             {
-                autoCo.Add(rd.GetString(0));
+                txt_produto_01.Items.Add(dr["nome"].ToString());
+                txt_produto_02.Items.Add(dr["nome"].ToString());
+                txt_produto_03.Items.Add(dr["nome"].ToString());
+                txt_produto_04.Items.Add(dr["nome"].ToString());
+                txt_produto_05.Items.Add(dr["nome"].ToString());
+                txt_produto_06.Items.Add(dr["nome"].ToString());
+                txt_produto_07.Items.Add(dr["nome"].ToString());
+                txt_produto_08.Items.Add(dr["nome"].ToString());
+                txt_produto_09.Items.Add(dr["nome"].ToString());
+                txt_produto_10.Items.Add(dr["nome"].ToString());
             }
-
-            txt_produto_01.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txt_produto_01.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            txt_produto_01.AutoCompleteCustomSource = autoCo;
 
             database.closeConnection();
         }
+
+
     }
 }

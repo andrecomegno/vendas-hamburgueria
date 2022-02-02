@@ -105,7 +105,7 @@ namespace Branca_De_Neve
             this.lb_end_n = new System.Windows.Forms.Label();
             this.txt_end_n = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rd_dinheiro = new System.Windows.Forms.RadioButton();
+            this.rad_dinheiro = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.rad_credito = new System.Windows.Forms.RadioButton();
             this.rad_pix = new System.Windows.Forms.RadioButton();
@@ -1014,7 +1014,7 @@ namespace Branca_De_Neve
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rd_dinheiro);
+            this.groupBox1.Controls.Add(this.rad_dinheiro);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.rad_credito);
             this.groupBox1.Controls.Add(this.rad_pix);
@@ -1029,18 +1029,18 @@ namespace Branca_De_Neve
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pagamento";
             // 
-            // rd_dinheiro
+            // rad_dinheiro
             // 
-            this.rd_dinheiro.AutoSize = true;
-            this.rd_dinheiro.Location = new System.Drawing.Point(516, 46);
-            this.rd_dinheiro.Name = "rd_dinheiro";
-            this.rd_dinheiro.Size = new System.Drawing.Size(64, 17);
-            this.rd_dinheiro.TabIndex = 3;
-            this.rd_dinheiro.TabStop = true;
-            this.rd_dinheiro.Tag = "pagamento";
-            this.rd_dinheiro.Text = "Dinheiro";
-            this.rd_dinheiro.UseVisualStyleBackColor = true;
-            this.rd_dinheiro.CheckedChanged += new System.EventHandler(this.rd_dinheiro_CheckedChanged);
+            this.rad_dinheiro.AutoSize = true;
+            this.rad_dinheiro.Location = new System.Drawing.Point(516, 46);
+            this.rad_dinheiro.Name = "rad_dinheiro";
+            this.rad_dinheiro.Size = new System.Drawing.Size(64, 17);
+            this.rad_dinheiro.TabIndex = 3;
+            this.rad_dinheiro.TabStop = true;
+            this.rad_dinheiro.Tag = "pagamento";
+            this.rad_dinheiro.Text = "Dinheiro";
+            this.rad_dinheiro.UseVisualStyleBackColor = true;
+            this.rad_dinheiro.CheckedChanged += new System.EventHandler(this.rd_dinheiro_CheckedChanged);
             // 
             // pictureBox2
             // 
@@ -1233,7 +1233,7 @@ namespace Branca_De_Neve
         private System.Windows.Forms.RadioButton rad_pix;
         private System.Windows.Forms.RadioButton rad_credito;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.RadioButton rd_dinheiro;
+        private System.Windows.Forms.RadioButton rad_dinheiro;
         private System.Windows.Forms.Panel rodape;
         private System.Windows.Forms.MaskedTextBox txt_cep;
         private System.Windows.Forms.MaskedTextBox txt_tel;

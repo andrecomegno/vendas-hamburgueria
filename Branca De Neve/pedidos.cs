@@ -121,8 +121,7 @@ namespace Branca_De_Neve
             }
             finally
             {                      
-                //txt_total_01.Text = Convert.ToDouble(txt_total_01.Text).ToString("C");
-                //txt_valor_01.Text = Convert.ToDouble(txt_valor_01.Text).ToString("C");
+                txt_total_01.Text = Convert.ToDouble(txt_total_01.Text).ToString("N2");
             }   
         }
 
@@ -140,6 +139,10 @@ namespace Branca_De_Neve
             {
                 MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
             }
+            finally
+            {
+                txt_total_02.Text = Convert.ToDouble(txt_total_02.Text).ToString("N2");
+            }
         }
 
         private void txt_valor_03_TextChanged(object sender, EventArgs e)
@@ -155,6 +158,10 @@ namespace Branca_De_Neve
             catch
             {
                 MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                txt_total_03.Text = Convert.ToDouble(txt_total_03.Text).ToString("N2");
             }
 
         }
@@ -173,6 +180,10 @@ namespace Branca_De_Neve
             {
                 MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
             }
+            finally
+            {
+                txt_total_04.Text = Convert.ToDouble(txt_total_04.Text).ToString("N2");
+            }
 
         }
 
@@ -189,6 +200,10 @@ namespace Branca_De_Neve
             catch
             {
                 MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                txt_total_05.Text = Convert.ToDouble(txt_total_05.Text).ToString("N2");
             }
 
         }
@@ -208,6 +223,10 @@ namespace Branca_De_Neve
             {
                 MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
             }
+            finally
+            {
+                txt_total_06.Text = Convert.ToDouble(txt_total_06.Text).ToString("N2");
+            }
 
         }
 
@@ -225,6 +244,10 @@ namespace Branca_De_Neve
             {
                 MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
             }
+            finally
+            {
+                txt_total_07.Text = Convert.ToDouble(txt_total_07.Text).ToString("N2");
+            }
         }
 
         private void txt_valor_08_TextChanged(object sender, EventArgs e)
@@ -240,6 +263,10 @@ namespace Branca_De_Neve
             catch
             {
                 MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                txt_total_08.Text = Convert.ToDouble(txt_total_08.Text).ToString("N2");
             }
 
         }
@@ -258,6 +285,10 @@ namespace Branca_De_Neve
             {
                 MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
             }
+            finally
+            {
+                txt_total_09.Text = Convert.ToDouble(txt_total_09.Text).ToString("N2");
+            }
 
         }
 
@@ -274,6 +305,10 @@ namespace Branca_De_Neve
             catch (Exception)
             {
                 MessageBox.Show(" Código de erro interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                txt_total_10.Text = Convert.ToDouble(txt_total_10.Text).ToString("N2");
             }
 
         }
@@ -484,24 +519,83 @@ namespace Branca_De_Neve
         #region BOTÕES CONCLUIR E SAIR 
         
         // CONCLUIR PEDIDO
-        private void bt_concluir_Click(object sender, EventArgs e)
+
+        private void VerificarConcluir()
         {
-            //CampoVazio();
+            // VERIFICA SE TODOS OS COMPOS ESTAO PREENCHIDOS
+            if (String.IsNullOrEmpty(txt_nome.Text))
+            {
+                txt_nome.BackColor = Color.FromArgb(255, 139, 139);
+            }
+            else if (String.IsNullOrEmpty(txt_end.Text))
+            {
+                txt_end.BackColor = Color.FromArgb(255, 139, 139);
+            }
+            else if (String.IsNullOrEmpty(txt_end_n.Text))
+            {
+                txt_end_n.BackColor = Color.FromArgb(255, 139, 139);
+            }
+            else if (rad_credito.Checked == false && rad_debito.Checked == false &&
+                rad_pix.Checked == false && rad_dinheiro.Checked == false)
+            {
+                MessageBox.Show("Selecione Um Pagamento ", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (String.IsNullOrEmpty(txt_qt_01.Text))
+            {
+                txt_qt_01.BackColor = Color.FromArgb(255, 139, 139);
+
+            }
+            else if (String.IsNullOrEmpty(txt_produto_01.Text))
+            {
+                txt_nome.BackColor = Color.FromArgb(255, 139, 139);
+            }
+            else
+            {
+                ConcluirPedido();
+
+                DialogResult dr = MessageBox.Show("Pedido Salvo Com Sucesso ! \n Deseja Fazer Mais Pedidos ?", "Novo Pedido ?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                switch (dr)
+                {
+                    case DialogResult.Yes:
+                        LimparFormulario();
+                        break;
+                    case DialogResult.No:
+                        this.Close();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+        }
+
+        // BANCO DE DADOS 
+        private void ConcluirPedido()
+        {
             database database = new database();
 
             database.openConnection();
 
+            // INSERT TABELA ENDERECO
+            MySqlCommand objCmdEndereco = new MySqlCommand("insert into endereco (id, endereco, numero, cep, bairro, cidade, estado) values (null, ?, ?, ?, ?, ?, ?)", database.getConnection());
+
+            objCmdEndereco.Parameters.Add("@endereco", MySqlDbType.VarChar, 150).Value = txt_end.Text;
+            objCmdEndereco.Parameters.Add("@numero", MySqlDbType.VarChar, 20).Value = txt_end_n.Text;
+            objCmdEndereco.Parameters.Add("@cep", MySqlDbType.VarChar, 10).Value = txt_cep.Text;
+            objCmdEndereco.Parameters.Add("@bairro", MySqlDbType.VarChar, 50).Value = txt_bairro.Text;
+            objCmdEndereco.Parameters.Add("@cidade", MySqlDbType.VarChar, 50).Value = txt_cidade.Text;
+            objCmdEndereco.Parameters.Add("@estado", MySqlDbType.VarChar, 2).Value = txt_estado.Text;
+
+            objCmdEndereco.ExecuteNonQuery();
+            long idEndereco = objCmdEndereco.LastInsertedId;
+
             // INSERT TABELA CLIENTE
-            MySqlCommand objCmdCliente = new MySqlCommand("insert into cliente (id, nome, telefone, endereco, numero, cep, bairro, cidade, estado) values (null, ?, ?, ?, ?, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdCliente = new MySqlCommand("insert into cliente (id, nome, telefone, endereco_id) values (null, ?, ?, ?)", database.getConnection());
 
             objCmdCliente.Parameters.Add("@nome", MySqlDbType.VarChar, 256).Value = txt_nome.Text;
             objCmdCliente.Parameters.Add("@telefone", MySqlDbType.VarChar, 256).Value = txt_tel.Text;
-            objCmdCliente.Parameters.Add("@endereco", MySqlDbType.VarChar, 150).Value = txt_end.Text;
-            objCmdCliente.Parameters.Add("@numero", MySqlDbType.VarChar, 20).Value = txt_end_n.Text;
-            objCmdCliente.Parameters.Add("@cep", MySqlDbType.VarChar, 10).Value = txt_cep.Text;
-            objCmdCliente.Parameters.Add("@bairro", MySqlDbType.VarChar, 50).Value = txt_bairro.Text;
-            objCmdCliente.Parameters.Add("@cidade", MySqlDbType.VarChar, 50).Value = txt_cidade.Text;
-            objCmdCliente.Parameters.Add("@estado", MySqlDbType.VarChar, 2).Value = txt_estado.Text;
+            objCmdCliente.Parameters.Add("@endereco_id", MySqlDbType.VarChar, 256).Value = idEndereco;
 
             objCmdCliente.ExecuteNonQuery();
             long idCliente = objCmdCliente.LastInsertedId;
@@ -515,11 +609,11 @@ namespace Branca_De_Neve
             long idPagamento = objCmdPagamento.LastInsertedId;
 
             // INSERT TABELA VENDAS
-            MySqlCommand objCmdVendas = new MySqlCommand("insert into vendas (id, valor_total, data, cliente_id, pagamento_id) value(null, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdVendas = new MySqlCommand("insert into vendas (id, valor_total, data, endereco_id, pagamento_id) value(null, ?, ?, ?, ?)", database.getConnection());
 
             objCmdVendas.Parameters.Add("@valor_total", MySqlDbType.Decimal).Value = txt_total_venda.Text.Replace("R$", "");
             objCmdVendas.Parameters.Add("@data", MySqlDbType.DateTime).Value = DateTime.Now;
-            objCmdVendas.Parameters.Add("@cliente_id", MySqlDbType.Int32).Value = idCliente;
+            objCmdVendas.Parameters.Add("@endereco_id", MySqlDbType.Int32).Value = idEndereco;
             objCmdVendas.Parameters.Add("@pagamento_id", MySqlDbType.Int32).Value = idPagamento;
 
             objCmdVendas.ExecuteNonQuery();
@@ -527,7 +621,7 @@ namespace Branca_De_Neve
 
             // INSERT TABELA PRODUTOS
             MySqlCommand objCmdProdutos = new MySqlCommand("insert into produtos (id, nome, preco, quantidade ) value(null, ?, ?, ?)", database.getConnection());
-            
+
             objCmdProdutos.Parameters.Add("@nome", MySqlDbType.VarChar, 256).Value = txt_produto_01.Text;
             objCmdProdutos.Parameters.Add("@preco", MySqlDbType.Decimal).Value = txt_valor_01.Text;
             objCmdProdutos.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = txt_qt_01.Text;
@@ -537,17 +631,30 @@ namespace Branca_De_Neve
 
             // INSERT TABELA VENDAS_PRODUTOS
             MySqlCommand objCmdVendasProdutos = new MySqlCommand("insert into vendas_produtos (id_vendas, id_produtos) value(?, ?)", database.getConnection());
-            
+
             objCmdVendasProdutos.Parameters.Add("@id_pessoa", MySqlDbType.Int32).Value = idVendas;
             objCmdVendasProdutos.Parameters.Add("@id_telefone", MySqlDbType.Int32).Value = idProdutos;
 
             objCmdVendasProdutos.ExecuteNonQuery();
 
             database.closeConnection();
-
         }
 
-        // LIMPAR FORMULARIO 
+        private void bt_concluir_Click(object sender, EventArgs e)
+        {
+            VerificarConcluir();
+        }
+
+        // LIMPAR FORMULARIO
+        
+        private void LimparFormulario()
+        {
+            LimparTextBox(gp_cad.Controls);
+            LimparTextBox2(p_qt.Controls);
+            LimparTextBox3(p_valores.Controls);
+            LimparTextBox3(this.Controls);
+        }
+
         private void LimparTextBox(Control.ControlCollection control)
         {
             foreach (Control c in control)
@@ -603,37 +710,6 @@ namespace Branca_De_Neve
                     break;
             }
         }
-
-        // VERIFICAR COMPOS VAZIOS 
-        public void CampoVazio()
-        {
-
-            if (String.IsNullOrEmpty(txt_nome.Text))
-            {
-                txt_nome.BackColor = Color.FromArgb(255, 139, 139);
-            }
-            else if (String.IsNullOrEmpty(txt_end.Text))
-            {
-                txt_end.BackColor = Color.FromArgb(255, 139, 139);
-            }
-            else if (String.IsNullOrEmpty(txt_end_n.Text))
-            {
-                txt_end_n.BackColor = Color.FromArgb(255, 139, 139);
-            }
-            else if(rad_credito.Checked == false && rad_debito.Checked == false && rad_pix.Checked == false)
-            {
-                MessageBox.Show("Selecione Um Pagamento ", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Pedido Salvo Com Sucesso ", "Tudo Certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LimparTextBox(gp_cad.Controls);
-                LimparTextBox2(p_qt.Controls);
-                LimparTextBox3(p_valores.Controls);
-                LimparTextBox3(this.Controls);
-            }
-        }
-
         #endregion
 
         #region MENU TOP
@@ -885,7 +961,5 @@ namespace Branca_De_Neve
 
             database.closeConnection();
         }
-
-
     }
 }

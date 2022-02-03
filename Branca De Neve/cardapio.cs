@@ -14,6 +14,8 @@ namespace Branca_De_Neve
 {
     public partial class cardapio : Form
     {
+        string id = "";
+
         public cardapio()
         {
             InitializeComponent();
@@ -89,13 +91,69 @@ namespace Branca_De_Neve
             }
         }
 
+        private void bt_add_Click(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            // ADICIONAR NOVO PRODUTO NO CATALOGO 
+
+            database.closeConnection();
+        }
+
+        private void bt_editar_Click(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            // ADICIONAR EDITAR O PRODUTO 
+
+            database.closeConnection();
+        }
+
+        private void bt_excluir_Click(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            // EXCLUIR NOVO PRODUTO 
+
+            database.closeConnection();
+        }
+
+        private void bt_pesquisar_Click(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            MySqlCommand cmd = new MySqlCommand("select * from cardapio where nome like @nome '%' ", database.getConnection());
+            cmd.Parameters.AddWithValue("@nome", txt_produto.Text);
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+
+            database.closeConnection();
+        }
+
         private void cardapio_Load(object sender, EventArgs e)
         {
             database database = new database();
-
             database.openConnection();
-            // TODO: esta linha de código carrega dados na tabela 'brancadeneveDataSet.produtos'. Você pode movê-la ou removê-la conforme necessário.
-            //this.produtosTableAdapter.Fill(this.brancadeneveDataSet.produtos);
+
+            MySqlCommand cmd = new MySqlCommand("select * from cardapio", database.getConnection());
+
+            using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
+            {
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dataGridView1.DataSource = dt;
+            }
+
             database.closeConnection();
         }
     }

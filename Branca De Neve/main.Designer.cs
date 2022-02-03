@@ -34,6 +34,7 @@ namespace Branca_De_Neve
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cardápioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatórioDeVendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rodape = new System.Windows.Forms.Panel();
@@ -45,7 +46,6 @@ namespace Branca_De_Neve
             this.im_novo_pedido = new System.Windows.Forms.PictureBox();
             this.im_ = new System.Windows.Forms.PictureBox();
             this.im_historico = new System.Windows.Forms.PictureBox();
-            this.relatórioDeVendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.im_cardapio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_novo_pedido)).BeginInit();
@@ -108,6 +108,13 @@ namespace Branca_De_Neve
             this.cardápioToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.cardápioToolStripMenuItem.Text = "Cardápio";
             this.cardápioToolStripMenuItem.Click += new System.EventHandler(this.cardápioToolStripMenuItem_Click);
+            // 
+            // relatórioDeVendasToolStripMenuItem
+            // 
+            this.relatórioDeVendasToolStripMenuItem.Name = "relatórioDeVendasToolStripMenuItem";
+            this.relatórioDeVendasToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.relatórioDeVendasToolStripMenuItem.Text = "Relatório De Vendas";
+            this.relatórioDeVendasToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeVendasToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -245,13 +252,6 @@ namespace Branca_De_Neve
             this.im_historico.Size = new System.Drawing.Size(30, 30);
             this.im_historico.TabIndex = 24;
             this.im_historico.TabStop = false;
-            // 
-            // relatórioDeVendasToolStripMenuItem
-            // 
-            this.relatórioDeVendasToolStripMenuItem.Name = "relatórioDeVendasToolStripMenuItem";
-            this.relatórioDeVendasToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
-            this.relatórioDeVendasToolStripMenuItem.Text = "Relatório De Vendas";
-            this.relatórioDeVendasToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeVendasToolStripMenuItem_Click);
             // 
             // Branca_Neve
             // 

@@ -645,14 +645,15 @@ namespace Branca_De_Neve
             VerificarConcluir();
         }
 
-        // LIMPAR FORMULARIO
-        
+        // LIMPAR FORMULARIO        
         private void LimparFormulario()
         {
             LimparTextBox(gp_cad.Controls);
             LimparTextBox2(p_qt.Controls);
             LimparTextBox3(p_valores.Controls);
             LimparTextBox3(this.Controls);
+            LimparTextBox4(gp_pedido.Controls);
+            LimparTextBox5(gp_pag.Controls);
         }
 
         private void LimparTextBox(Control.ControlCollection control)
@@ -662,6 +663,11 @@ namespace Branca_De_Neve
                 if(c is TextBox)
                 {
                     ((TextBox)(c)).Text = string.Empty;
+                }
+
+                if(c is MaskedTextBox)
+                {
+                    ((MaskedTextBox)(c)).Text = string.Empty;
                 }
             }
         }
@@ -684,6 +690,28 @@ namespace Branca_De_Neve
                 if (c is TextBox)
                 {
                     ((TextBox)(c)).Text = "0,00";
+                }
+            }
+        }
+
+        private void LimparTextBox4(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is ComboBox)
+                {
+                    ((ComboBox)(c)).SelectedIndex = -1;
+                }
+            }
+        }
+
+        private void LimparTextBox5(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is CheckBox)
+                {
+                    ((CheckBox)(c)).Checked = false;
                 }
             }
         }

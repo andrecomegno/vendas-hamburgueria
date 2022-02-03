@@ -31,6 +31,12 @@ namespace Branca_De_Neve
         {
             this.components = new System.ComponentModel.Container();
             this.gp_menu = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nOMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRECODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tIPODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cardapioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.brancadeneveDataSet = new Branca_De_Neve.brancadeneveDataSet();
             this.bt_sair = new System.Windows.Forms.Button();
             this.rodape = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -48,24 +54,19 @@ namespace Branca_De_Neve
             this.bt_excluir = new System.Windows.Forms.Button();
             this.bt_editar = new System.Windows.Forms.Button();
             this.txt_preco = new System.Windows.Forms.TextBox();
-            this.txt_produto = new System.Windows.Forms.TextBox();
             this.lb_preco = new System.Windows.Forms.Label();
             this.lb_produto = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nOMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRECODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qUANTIDADEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produtosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.brancadeneveDataSet = new Branca_De_Neve.brancadeneveDataSet();
-            this.produtosTableAdapter = new Branca_De_Neve.brancadeneveDataSetTableAdapters.produtosTableAdapter();
+            this.cardapioTableAdapter = new Branca_De_Neve.brancadeneveDataSetTableAdapters.cardapioTableAdapter();
+            this.txt_produto = new System.Windows.Forms.TextBox();
+            this.txt_tipo = new System.Windows.Forms.TextBox();
+            this.lb_tipo = new System.Windows.Forms.Label();
             this.gp_menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brancadeneveDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gp_pesquisar.SuspendLayout();
             this.gp_visualizar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brancadeneveDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // gp_menu
@@ -78,6 +79,51 @@ namespace Branca_De_Neve
             this.gp_menu.TabIndex = 0;
             this.gp_menu.TabStop = false;
             this.gp_menu.Text = "Menu";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nOMEDataGridViewTextBoxColumn,
+            this.pRECODataGridViewTextBoxColumn,
+            this.tIPODataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.cardapioBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(23, 30);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(702, 444);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // nOMEDataGridViewTextBoxColumn
+            // 
+            this.nOMEDataGridViewTextBoxColumn.DataPropertyName = "NOME";
+            this.nOMEDataGridViewTextBoxColumn.HeaderText = "NOME";
+            this.nOMEDataGridViewTextBoxColumn.Name = "nOMEDataGridViewTextBoxColumn";
+            this.nOMEDataGridViewTextBoxColumn.Width = 310;
+            // 
+            // pRECODataGridViewTextBoxColumn
+            // 
+            this.pRECODataGridViewTextBoxColumn.DataPropertyName = "PRECO";
+            this.pRECODataGridViewTextBoxColumn.HeaderText = "PRECO";
+            this.pRECODataGridViewTextBoxColumn.Name = "pRECODataGridViewTextBoxColumn";
+            this.pRECODataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tIPODataGridViewTextBoxColumn
+            // 
+            this.tIPODataGridViewTextBoxColumn.DataPropertyName = "TIPO";
+            this.tIPODataGridViewTextBoxColumn.HeaderText = "TIPO";
+            this.tIPODataGridViewTextBoxColumn.Name = "tIPODataGridViewTextBoxColumn";
+            this.tIPODataGridViewTextBoxColumn.Width = 200;
+            // 
+            // cardapioBindingSource
+            // 
+            this.cardapioBindingSource.DataMember = "cardapio";
+            this.cardapioBindingSource.DataSource = this.brancadeneveDataSet;
+            // 
+            // brancadeneveDataSet
+            // 
+            this.brancadeneveDataSet.DataSetName = "brancadeneveDataSet";
+            this.brancadeneveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bt_sair
             // 
@@ -158,9 +204,9 @@ namespace Branca_De_Neve
             // 
             // txt_pesquisar
             // 
-            this.txt_pesquisar.Location = new System.Drawing.Point(59, 25);
+            this.txt_pesquisar.Location = new System.Drawing.Point(56, 25);
             this.txt_pesquisar.Name = "txt_pesquisar";
-            this.txt_pesquisar.Size = new System.Drawing.Size(515, 20);
+            this.txt_pesquisar.Size = new System.Drawing.Size(535, 20);
             this.txt_pesquisar.TabIndex = 24;
             // 
             // bt_pesquisar
@@ -169,12 +215,13 @@ namespace Branca_De_Neve
             this.bt_pesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_pesquisar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_pesquisar.ForeColor = System.Drawing.Color.White;
-            this.bt_pesquisar.Location = new System.Drawing.Point(580, 17);
+            this.bt_pesquisar.Location = new System.Drawing.Point(597, 17);
             this.bt_pesquisar.Name = "bt_pesquisar";
             this.bt_pesquisar.Size = new System.Drawing.Size(87, 28);
             this.bt_pesquisar.TabIndex = 25;
             this.bt_pesquisar.Text = "Pesquisar";
             this.bt_pesquisar.UseVisualStyleBackColor = false;
+            this.bt_pesquisar.Click += new System.EventHandler(this.bt_pesquisar_Click);
             // 
             // gp_pesquisar
             // 
@@ -189,11 +236,13 @@ namespace Branca_De_Neve
             // 
             // gp_visualizar
             // 
+            this.gp_visualizar.Controls.Add(this.lb_tipo);
+            this.gp_visualizar.Controls.Add(this.txt_tipo);
+            this.gp_visualizar.Controls.Add(this.txt_produto);
             this.gp_visualizar.Controls.Add(this.bt_add);
             this.gp_visualizar.Controls.Add(this.bt_excluir);
             this.gp_visualizar.Controls.Add(this.bt_editar);
             this.gp_visualizar.Controls.Add(this.txt_preco);
-            this.gp_visualizar.Controls.Add(this.txt_produto);
             this.gp_visualizar.Controls.Add(this.lb_preco);
             this.gp_visualizar.Controls.Add(this.lb_produto);
             this.gp_visualizar.Location = new System.Drawing.Point(17, 45);
@@ -201,7 +250,7 @@ namespace Branca_De_Neve
             this.gp_visualizar.Size = new System.Drawing.Size(740, 164);
             this.gp_visualizar.TabIndex = 27;
             this.gp_visualizar.TabStop = false;
-            this.gp_visualizar.Text = "Visualizar";
+            this.gp_visualizar.Text = "Cardápio";
             // 
             // bt_add
             // 
@@ -209,12 +258,13 @@ namespace Branca_De_Neve
             this.bt_add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_add.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_add.ForeColor = System.Drawing.Color.White;
-            this.bt_add.Location = new System.Drawing.Point(59, 130);
+            this.bt_add.Location = new System.Drawing.Point(59, 118);
             this.bt_add.Name = "bt_add";
             this.bt_add.Size = new System.Drawing.Size(87, 28);
             this.bt_add.TabIndex = 119;
             this.bt_add.Text = "Adcionar";
             this.bt_add.UseVisualStyleBackColor = false;
+            this.bt_add.Click += new System.EventHandler(this.bt_add_Click);
             // 
             // bt_excluir
             // 
@@ -222,12 +272,13 @@ namespace Branca_De_Neve
             this.bt_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_excluir.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_excluir.ForeColor = System.Drawing.Color.White;
-            this.bt_excluir.Location = new System.Drawing.Point(657, 15);
+            this.bt_excluir.Location = new System.Drawing.Point(657, 19);
             this.bt_excluir.Name = "bt_excluir";
             this.bt_excluir.Size = new System.Drawing.Size(68, 28);
             this.bt_excluir.TabIndex = 118;
             this.bt_excluir.Text = "Excluir";
             this.bt_excluir.UseVisualStyleBackColor = false;
+            this.bt_excluir.Click += new System.EventHandler(this.bt_excluir_Click);
             // 
             // bt_editar
             // 
@@ -235,36 +286,28 @@ namespace Branca_De_Neve
             this.bt_editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_editar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_editar.ForeColor = System.Drawing.Color.White;
-            this.bt_editar.Location = new System.Drawing.Point(152, 130);
+            this.bt_editar.Location = new System.Drawing.Point(152, 118);
             this.bt_editar.Name = "bt_editar";
             this.bt_editar.Size = new System.Drawing.Size(87, 28);
             this.bt_editar.TabIndex = 26;
             this.bt_editar.Text = "Editar";
             this.bt_editar.UseVisualStyleBackColor = false;
+            this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
             // 
             // txt_preco
             // 
             this.txt_preco.BackColor = System.Drawing.Color.White;
-            this.txt_preco.Location = new System.Drawing.Point(578, 81);
+            this.txt_preco.Location = new System.Drawing.Point(413, 80);
             this.txt_preco.Name = "txt_preco";
-            this.txt_preco.Size = new System.Drawing.Size(92, 20);
+            this.txt_preco.Size = new System.Drawing.Size(139, 20);
             this.txt_preco.TabIndex = 44;
             this.txt_preco.TabStop = false;
             this.txt_preco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txt_produto
-            // 
-            this.txt_produto.BackColor = System.Drawing.Color.White;
-            this.txt_produto.Location = new System.Drawing.Point(57, 81);
-            this.txt_produto.MaxLength = 250;
-            this.txt_produto.Name = "txt_produto";
-            this.txt_produto.Size = new System.Drawing.Size(515, 20);
-            this.txt_produto.TabIndex = 105;
-            // 
             // lb_preco
             // 
             this.lb_preco.AutoSize = true;
-            this.lb_preco.Location = new System.Drawing.Point(578, 65);
+            this.lb_preco.Location = new System.Drawing.Point(462, 64);
             this.lb_preco.Name = "lb_preco";
             this.lb_preco.Size = new System.Drawing.Size(35, 13);
             this.lb_preco.TabIndex = 117;
@@ -273,64 +316,41 @@ namespace Branca_De_Neve
             // lb_produto
             // 
             this.lb_produto.AutoSize = true;
-            this.lb_produto.Location = new System.Drawing.Point(54, 64);
+            this.lb_produto.Location = new System.Drawing.Point(175, 64);
             this.lb_produto.Name = "lb_produto";
             this.lb_produto.Size = new System.Drawing.Size(44, 13);
             this.lb_produto.TabIndex = 115;
             this.lb_produto.Text = "Produto";
             // 
-            // dataGridView1
+            // cardapioTableAdapter
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.nOMEDataGridViewTextBoxColumn,
-            this.pRECODataGridViewTextBoxColumn,
-            this.qUANTIDADEDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.produtosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 30);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(702, 444);
-            this.dataGridView1.TabIndex = 0;
+            this.cardapioTableAdapter.ClearBeforeFill = true;
             // 
-            // iDDataGridViewTextBoxColumn
+            // txt_produto
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.txt_produto.Location = new System.Drawing.Point(59, 80);
+            this.txt_produto.Name = "txt_produto";
+            this.txt_produto.Size = new System.Drawing.Size(348, 20);
+            this.txt_produto.TabIndex = 121;
             // 
-            // nOMEDataGridViewTextBoxColumn
+            // txt_tipo
             // 
-            this.nOMEDataGridViewTextBoxColumn.DataPropertyName = "NOME";
-            this.nOMEDataGridViewTextBoxColumn.HeaderText = "NOME";
-            this.nOMEDataGridViewTextBoxColumn.Name = "nOMEDataGridViewTextBoxColumn";
+            this.txt_tipo.BackColor = System.Drawing.Color.White;
+            this.txt_tipo.Location = new System.Drawing.Point(558, 80);
+            this.txt_tipo.Name = "txt_tipo";
+            this.txt_tipo.Size = new System.Drawing.Size(129, 20);
+            this.txt_tipo.TabIndex = 122;
+            this.txt_tipo.TabStop = false;
+            this.txt_tipo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pRECODataGridViewTextBoxColumn
+            // lb_tipo
             // 
-            this.pRECODataGridViewTextBoxColumn.DataPropertyName = "PRECO";
-            this.pRECODataGridViewTextBoxColumn.HeaderText = "PRECO";
-            this.pRECODataGridViewTextBoxColumn.Name = "pRECODataGridViewTextBoxColumn";
-            // 
-            // qUANTIDADEDataGridViewTextBoxColumn
-            // 
-            this.qUANTIDADEDataGridViewTextBoxColumn.DataPropertyName = "QUANTIDADE";
-            this.qUANTIDADEDataGridViewTextBoxColumn.HeaderText = "QUANTIDADE";
-            this.qUANTIDADEDataGridViewTextBoxColumn.Name = "qUANTIDADEDataGridViewTextBoxColumn";
-            // 
-            // produtosBindingSource
-            // 
-            this.produtosBindingSource.DataMember = "produtos";
-            this.produtosBindingSource.DataSource = this.brancadeneveDataSet;
-            // 
-            // brancadeneveDataSet
-            // 
-            this.brancadeneveDataSet.DataSetName = "brancadeneveDataSet";
-            this.brancadeneveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // produtosTableAdapter
-            // 
-            this.produtosTableAdapter.ClearBeforeFill = true;
+            this.lb_tipo.AutoSize = true;
+            this.lb_tipo.Location = new System.Drawing.Point(604, 64);
+            this.lb_tipo.Name = "lb_tipo";
+            this.lb_tipo.Size = new System.Drawing.Size(28, 13);
+            this.lb_tipo.TabIndex = 123;
+            this.lb_tipo.Text = "Tipo";
             // 
             // cardapio
             // 
@@ -352,15 +372,15 @@ namespace Branca_De_Neve
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cardapio_FormClosing);
             this.Load += new System.EventHandler(this.cardapio_Load);
             this.gp_menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brancadeneveDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gp_pesquisar.ResumeLayout(false);
             this.gp_pesquisar.PerformLayout();
             this.gp_visualizar.ResumeLayout(false);
             this.gp_visualizar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produtosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brancadeneveDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,16 +405,17 @@ namespace Branca_De_Neve
         private System.Windows.Forms.Button bt_excluir;
         private System.Windows.Forms.Button bt_editar;
         private System.Windows.Forms.TextBox txt_preco;
-        private System.Windows.Forms.TextBox txt_produto;
         private System.Windows.Forms.Label lb_preco;
         private System.Windows.Forms.Label lb_produto;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private brancadeneveDataSet brancadeneveDataSet;
-        private System.Windows.Forms.BindingSource produtosBindingSource;
-        private brancadeneveDataSetTableAdapters.produtosTableAdapter produtosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource cardapioBindingSource;
+        private brancadeneveDataSetTableAdapters.cardapioTableAdapter cardapioTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nOMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRECODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qUANTIDADEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tIPODataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lb_tipo;
+        private System.Windows.Forms.TextBox txt_tipo;
+        private System.Windows.Forms.TextBox txt_produto;
     }
 }

@@ -104,7 +104,7 @@ namespace Branca_De_Neve
             this.txt_tel = new System.Windows.Forms.MaskedTextBox();
             this.lb_end_n = new System.Windows.Forms.Label();
             this.txt_end_n = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gp_pag = new System.Windows.Forms.GroupBox();
             this.rad_dinheiro = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.rad_credito = new System.Windows.Forms.RadioButton();
@@ -118,7 +118,7 @@ namespace Branca_De_Neve
             this.p_valores.SuspendLayout();
             this.p_qt.SuspendLayout();
             this.gp_cad.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gp_pag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_cartao)).BeginInit();
@@ -1011,23 +1011,24 @@ namespace Branca_De_Neve
             this.txt_end_n.Size = new System.Drawing.Size(56, 20);
             this.txt_end_n.TabIndex = 5;
             this.txt_end_n.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_end_n_MouseClick);
+            this.txt_end_n.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valor_KeyPress);
             // 
-            // groupBox1
+            // gp_pag
             // 
-            this.groupBox1.Controls.Add(this.rad_dinheiro);
-            this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.rad_credito);
-            this.groupBox1.Controls.Add(this.rad_pix);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.rad_debito);
-            this.groupBox1.Controls.Add(this.im_cartao);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 258);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(656, 95);
-            this.groupBox1.TabIndex = 101;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Pagamento";
+            this.gp_pag.Controls.Add(this.rad_dinheiro);
+            this.gp_pag.Controls.Add(this.pictureBox2);
+            this.gp_pag.Controls.Add(this.rad_credito);
+            this.gp_pag.Controls.Add(this.rad_pix);
+            this.gp_pag.Controls.Add(this.pictureBox1);
+            this.gp_pag.Controls.Add(this.rad_debito);
+            this.gp_pag.Controls.Add(this.im_cartao);
+            this.gp_pag.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gp_pag.Location = new System.Drawing.Point(12, 258);
+            this.gp_pag.Name = "gp_pag";
+            this.gp_pag.Size = new System.Drawing.Size(656, 95);
+            this.gp_pag.TabIndex = 101;
+            this.gp_pag.TabStop = false;
+            this.gp_pag.Text = "Pagamento";
             // 
             // rad_dinheiro
             // 
@@ -1128,7 +1129,7 @@ namespace Branca_De_Neve
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(682, 868);
             this.Controls.Add(this.rodape);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gp_pag);
             this.Controls.Add(this.gp_cad);
             this.Controls.Add(this.gp_pedido);
             this.Controls.Add(this.txt_total_venda);
@@ -1152,8 +1153,8 @@ namespace Branca_De_Neve
             this.p_qt.PerformLayout();
             this.gp_cad.ResumeLayout(false);
             this.gp_cad.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gp_pag.ResumeLayout(false);
+            this.gp_pag.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_cartao)).EndInit();
@@ -1226,7 +1227,7 @@ namespace Branca_De_Neve
         private System.Windows.Forms.ToolStripMenuItem cardápioToolStripMenuItem;
         private System.Windows.Forms.Panel p_qt;
         private System.Windows.Forms.Panel p_valores;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gp_pag;
         private System.Windows.Forms.PictureBox im_cartao;
         private System.Windows.Forms.RadioButton rad_debito;
         private System.Windows.Forms.PictureBox pictureBox1;

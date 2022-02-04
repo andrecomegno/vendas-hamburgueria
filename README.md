@@ -1,1 +1,1 @@
-# Em desenvolvimnto xD
+# Em desenvolvimento xD

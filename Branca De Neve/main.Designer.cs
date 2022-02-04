@@ -63,7 +63,7 @@ namespace Branca_De_Neve
             this.bt_pedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_pedido.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_pedido.ForeColor = System.Drawing.Color.White;
-            this.bt_pedido.Location = new System.Drawing.Point(45, 99);
+            this.bt_pedido.Location = new System.Drawing.Point(66, 116);
             this.bt_pedido.Name = "bt_pedido";
             this.bt_pedido.Size = new System.Drawing.Size(193, 69);
             this.bt_pedido.TabIndex = 0;
@@ -81,7 +81,7 @@ namespace Branca_De_Neve
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(499, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(546, 27);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -133,9 +133,9 @@ namespace Branca_De_Neve
             // 
             this.rodape.BackColor = System.Drawing.Color.Gray;
             this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.rodape.Location = new System.Drawing.Point(0, 485);
+            this.rodape.Location = new System.Drawing.Point(0, 495);
             this.rodape.Name = "rodape";
-            this.rodape.Size = new System.Drawing.Size(499, 30);
+            this.rodape.Size = new System.Drawing.Size(546, 30);
             this.rodape.TabIndex = 14;
             // 
             // bt_cardapio
@@ -148,7 +148,7 @@ namespace Branca_De_Neve
             this.bt_cardapio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_cardapio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_cardapio.ForeColor = System.Drawing.Color.White;
-            this.bt_cardapio.Location = new System.Drawing.Point(258, 99);
+            this.bt_cardapio.Location = new System.Drawing.Point(279, 116);
             this.bt_cardapio.Name = "bt_cardapio";
             this.bt_cardapio.Size = new System.Drawing.Size(193, 69);
             this.bt_cardapio.TabIndex = 1;
@@ -162,7 +162,7 @@ namespace Branca_De_Neve
             this.lb_novo_pedido.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lb_novo_pedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_novo_pedido.ForeColor = System.Drawing.Color.White;
-            this.lb_novo_pedido.Location = new System.Drawing.Point(216, 146);
+            this.lb_novo_pedido.Location = new System.Drawing.Point(237, 163);
             this.lb_novo_pedido.Name = "lb_novo_pedido";
             this.lb_novo_pedido.Size = new System.Drawing.Size(19, 20);
             this.lb_novo_pedido.TabIndex = 0;
@@ -179,7 +179,7 @@ namespace Branca_De_Neve
             this.bt_relatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_relatorio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_relatorio.ForeColor = System.Drawing.Color.White;
-            this.bt_relatorio.Location = new System.Drawing.Point(44, 190);
+            this.bt_relatorio.Location = new System.Drawing.Point(63, 203);
             this.bt_relatorio.Name = "bt_relatorio";
             this.bt_relatorio.Size = new System.Drawing.Size(193, 69);
             this.bt_relatorio.TabIndex = 2;
@@ -197,7 +197,7 @@ namespace Branca_De_Neve
             this.bt_caixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_caixa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_caixa.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bt_caixa.Location = new System.Drawing.Point(258, 190);
+            this.bt_caixa.Location = new System.Drawing.Point(279, 203);
             this.bt_caixa.Name = "bt_caixa";
             this.bt_caixa.Size = new System.Drawing.Size(193, 69);
             this.bt_caixa.TabIndex = 3;
@@ -210,7 +210,7 @@ namespace Branca_De_Neve
             this.im_cardapio.BackgroundImage = global::Branca_De_Neve.Properties.Resources.cardapio;
             this.im_cardapio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.im_cardapio.Cursor = System.Windows.Forms.Cursors.Default;
-            this.im_cardapio.Location = new System.Drawing.Point(263, 104);
+            this.im_cardapio.Location = new System.Drawing.Point(284, 121);
             this.im_cardapio.Name = "im_cardapio";
             this.im_cardapio.Size = new System.Drawing.Size(30, 30);
             this.im_cardapio.TabIndex = 23;
@@ -222,7 +222,7 @@ namespace Branca_De_Neve
             this.im_novo_pedido.BackgroundImage = global::Branca_De_Neve.Properties.Resources.pedido;
             this.im_novo_pedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.im_novo_pedido.Cursor = System.Windows.Forms.Cursors.Default;
-            this.im_novo_pedido.Location = new System.Drawing.Point(49, 103);
+            this.im_novo_pedido.Location = new System.Drawing.Point(70, 120);
             this.im_novo_pedido.Name = "im_novo_pedido";
             this.im_novo_pedido.Size = new System.Drawing.Size(30, 30);
             this.im_novo_pedido.TabIndex = 19;
@@ -234,7 +234,7 @@ namespace Branca_De_Neve
             this.im_.BackgroundImage = global::Branca_De_Neve.Properties.Resources.caixa;
             this.im_.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.im_.Cursor = System.Windows.Forms.Cursors.Default;
-            this.im_.Location = new System.Drawing.Point(261, 193);
+            this.im_.Location = new System.Drawing.Point(282, 206);
             this.im_.Name = "im_";
             this.im_.Size = new System.Drawing.Size(30, 30);
             this.im_.TabIndex = 25;
@@ -247,7 +247,7 @@ namespace Branca_De_Neve
             this.im_historico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.im_historico.Cursor = System.Windows.Forms.Cursors.Default;
             this.im_historico.Image = global::Branca_De_Neve.Properties.Resources.historico;
-            this.im_historico.Location = new System.Drawing.Point(47, 193);
+            this.im_historico.Location = new System.Drawing.Point(66, 206);
             this.im_historico.Name = "im_historico";
             this.im_historico.Size = new System.Drawing.Size(30, 30);
             this.im_historico.TabIndex = 24;
@@ -259,18 +259,18 @@ namespace Branca_De_Neve
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(499, 515);
+            this.ClientSize = new System.Drawing.Size(546, 525);
             this.Controls.Add(this.im_);
             this.Controls.Add(this.im_historico);
-            this.Controls.Add(this.im_cardapio);
-            this.Controls.Add(this.bt_caixa);
-            this.Controls.Add(this.bt_relatorio);
-            this.Controls.Add(this.lb_novo_pedido);
-            this.Controls.Add(this.im_novo_pedido);
-            this.Controls.Add(this.bt_cardapio);
-            this.Controls.Add(this.bt_pedido);
             this.Controls.Add(this.rodape);
+            this.Controls.Add(this.im_cardapio);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.im_novo_pedido);
+            this.Controls.Add(this.bt_caixa);
+            this.Controls.Add(this.lb_novo_pedido);
+            this.Controls.Add(this.bt_cardapio);
+            this.Controls.Add(this.bt_relatorio);
+            this.Controls.Add(this.bt_pedido);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Branca_Neve";

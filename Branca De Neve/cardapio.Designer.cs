@@ -50,6 +50,8 @@ namespace Branca_De_Neve
             this.bt_pesquisar = new System.Windows.Forms.Button();
             this.gp_pesquisar = new System.Windows.Forms.GroupBox();
             this.gp_visualizar = new System.Windows.Forms.GroupBox();
+            this.lb_tipo = new System.Windows.Forms.Label();
+            this.txt_produto = new System.Windows.Forms.TextBox();
             this.bt_add = new System.Windows.Forms.Button();
             this.bt_excluir = new System.Windows.Forms.Button();
             this.bt_editar = new System.Windows.Forms.Button();
@@ -57,9 +59,7 @@ namespace Branca_De_Neve
             this.lb_preco = new System.Windows.Forms.Label();
             this.lb_produto = new System.Windows.Forms.Label();
             this.cardapioTableAdapter = new Branca_De_Neve.brancadeneveDataSetTableAdapters.cardapioTableAdapter();
-            this.txt_produto = new System.Windows.Forms.TextBox();
-            this.txt_tipo = new System.Windows.Forms.TextBox();
-            this.lb_tipo = new System.Windows.Forms.Label();
+            this.txt_tipo = new System.Windows.Forms.ComboBox();
             this.gp_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).BeginInit();
@@ -82,6 +82,7 @@ namespace Branca_De_Neve
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -236,8 +237,8 @@ namespace Branca_De_Neve
             // 
             // gp_visualizar
             // 
-            this.gp_visualizar.Controls.Add(this.lb_tipo);
             this.gp_visualizar.Controls.Add(this.txt_tipo);
+            this.gp_visualizar.Controls.Add(this.lb_tipo);
             this.gp_visualizar.Controls.Add(this.txt_produto);
             this.gp_visualizar.Controls.Add(this.bt_add);
             this.gp_visualizar.Controls.Add(this.bt_excluir);
@@ -251,6 +252,22 @@ namespace Branca_De_Neve
             this.gp_visualizar.TabIndex = 27;
             this.gp_visualizar.TabStop = false;
             this.gp_visualizar.Text = "Cardápio";
+            // 
+            // lb_tipo
+            // 
+            this.lb_tipo.AutoSize = true;
+            this.lb_tipo.Location = new System.Drawing.Point(604, 64);
+            this.lb_tipo.Name = "lb_tipo";
+            this.lb_tipo.Size = new System.Drawing.Size(28, 13);
+            this.lb_tipo.TabIndex = 123;
+            this.lb_tipo.Text = "Tipo";
+            // 
+            // txt_produto
+            // 
+            this.txt_produto.Location = new System.Drawing.Point(59, 80);
+            this.txt_produto.Name = "txt_produto";
+            this.txt_produto.Size = new System.Drawing.Size(348, 20);
+            this.txt_produto.TabIndex = 121;
             // 
             // bt_add
             // 
@@ -326,31 +343,18 @@ namespace Branca_De_Neve
             // 
             this.cardapioTableAdapter.ClearBeforeFill = true;
             // 
-            // txt_produto
-            // 
-            this.txt_produto.Location = new System.Drawing.Point(59, 80);
-            this.txt_produto.Name = "txt_produto";
-            this.txt_produto.Size = new System.Drawing.Size(348, 20);
-            this.txt_produto.TabIndex = 121;
-            // 
             // txt_tipo
             // 
-            this.txt_tipo.BackColor = System.Drawing.Color.White;
+            this.txt_tipo.FormattingEnabled = true;
+            this.txt_tipo.Items.AddRange(new object[] {
+            "LANCHES",
+            "BEBEDAS",
+            "PORÇÂO",
+            "OUTROS"});
             this.txt_tipo.Location = new System.Drawing.Point(558, 80);
             this.txt_tipo.Name = "txt_tipo";
-            this.txt_tipo.Size = new System.Drawing.Size(129, 20);
-            this.txt_tipo.TabIndex = 122;
-            this.txt_tipo.TabStop = false;
-            this.txt_tipo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lb_tipo
-            // 
-            this.lb_tipo.AutoSize = true;
-            this.lb_tipo.Location = new System.Drawing.Point(604, 64);
-            this.lb_tipo.Name = "lb_tipo";
-            this.lb_tipo.Size = new System.Drawing.Size(28, 13);
-            this.lb_tipo.TabIndex = 123;
-            this.lb_tipo.Text = "Tipo";
+            this.txt_tipo.Size = new System.Drawing.Size(129, 21);
+            this.txt_tipo.TabIndex = 124;
             // 
             // cardapio
             // 
@@ -415,7 +419,7 @@ namespace Branca_De_Neve
         private System.Windows.Forms.DataGridViewTextBoxColumn pRECODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tIPODataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lb_tipo;
-        private System.Windows.Forms.TextBox txt_tipo;
         private System.Windows.Forms.TextBox txt_produto;
+        private System.Windows.Forms.ComboBox txt_tipo;
     }
 }

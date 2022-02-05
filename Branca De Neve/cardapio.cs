@@ -19,32 +19,27 @@ namespace Branca_De_Neve
         public cardapio()
         {
             InitializeComponent();
+
+            bt_excluir.Enabled = false;
+            bt_excluir.BackColor = Color.DarkGray;
+
+            bt_add.Enabled = false;
+            bt_add.BackColor = Color.DarkGray;
+
+            bt_editar.Enabled = false;
+            bt_editar.BackColor = Color.DarkGray;
+
+            bt_salvar.Enabled = false;
+            bt_salvar.BackColor = Color.DarkGray;
+
         }
-
-        #region BOTÕES PEDIDO E SAIR
-
-        private void bt_pedido_Click(object sender, EventArgs e)
-        {
-            this.Close();
-
-            pedidos pe = new pedidos();
-            pe.Show();            
-        }
-
-        private void bt_sair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        #endregion
 
         #region MENU APP
-
         private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<pedidos>().Count() > 0)
             {
-               MessageBox.Show("A Janela Novo Pedido já está aberto", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("A Janela Novo Pedido já está aberto", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -64,7 +59,7 @@ namespace Branca_De_Neve
             else
             {
                 this.Show();
-            }                
+            }
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -74,31 +69,60 @@ namespace Branca_De_Neve
 
         #endregion
 
-        private void cardapio_FormClosing(object sender, FormClosingEventArgs e)
+        #region BOTAO NOVO
+        private void bt_novo_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Deseja Mesmo Sair ?", "AVISO !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            bt_excluir.Enabled = false;
+            bt_excluir.BackColor = Color.DarkGray;
 
-            switch (dr)
-            {
-                case DialogResult.Yes:
-                    e.Cancel = false;
-                    break;
-                case DialogResult.No:
-                    e.Cancel = true;
-                    break;
-                default:
-                    break;
-            }
+            bt_editar.Enabled = false;
+            bt_editar.BackColor = Color.DarkGray;
+
+            bt_add.Enabled = true;
+            bt_add.BackColor = Color.MediumSeaGreen;
+
+            dataGridView1.Enabled = false;
+            p_novo.Enabled = true;
+            LimparTextBox(p_novo.Controls);
         }
+        #endregion
+
+        #region BOTAO EXCLUIR
+        private void bt_excluir_Click(object sender, EventArgs e)
+        {
+            database database = new database();
+            database.openConnection();
+
+            // EXCLUIR NOVO PRODUTO             
+
+            database.closeConnection();
+
+
+            bt_add.Enabled = false;
+            bt_add.BackColor = Color.DarkGray;
+
+            bt_editar.Enabled = false;
+            bt_editar.BackColor = Color.DarkGray;
+
+            bt_excluir.Enabled = false;
+            bt_excluir.BackColor = Color.DarkGray;
+
+            p_novo.Enabled = false;
+            LimparTextBox(p_novo.Controls);
+        }
+
+        #endregion
+
+        #region BOTAO ADICIONAR
 
         private void bt_add_Click(object sender, EventArgs e)
         {
             verificarNovoProduto();
         }
 
+        // VERIFICA SE TODOS OS COMPOS ESTAO PREENCHIDOS
         private void verificarNovoProduto()
-        {
-            // VERIFICA SE TODOS OS COMPOS ESTAO PREENCHIDOS
+        {            
             if (String.IsNullOrEmpty(txt_produto.Text))
             {
                 txt_produto.BackColor = Color.FromArgb(255, 139, 139);
@@ -113,19 +137,42 @@ namespace Branca_De_Neve
             }
             else
             {
-                addNovoProduto();
+                try
+                {
+                    addNovoProduto();
 
-                DialogResult dr = MessageBox.Show("Novo Produto Salvo Com Sucesso !", "Novo Produto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    DialogResult dr = MessageBox.Show("Novo Produto Salvo Com Sucesso !", "Novo Produto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                finally
+                {
+                    LimparTextBox(p_novo.Controls);
+                    BTadd();
+                }
             }
         }
 
+        // BOTAO ADD, EDITAR, EXCLUIR, DESABILITAR
+        private void BTadd()
+        {
+            bt_add.Enabled = false;
+            bt_add.BackColor = Color.DarkGray;
+
+            bt_editar.Enabled = false;
+            bt_editar.BackColor = Color.DarkGray;
+
+            bt_excluir.Enabled = false;
+            bt_excluir.BackColor = Color.DarkGray;
+
+            p_novo.Enabled = false;
+            dataGridView1.Enabled = true;
+        }
+
+        // INSERT ADCIONAR NOVO PRODUTO
         private void addNovoProduto()
         {
             database database = new database();
             database.openConnection();
 
-            // INSERT ADCIONAR NOVO PRODUTO
             MySqlCommand cmd = new MySqlCommand("insert into cardapio (id, nome, preco, tipo) values (null, ?, ?, ?)", database.getConnection());
 
             cmd.Parameters.Add("@nome", MySqlDbType.VarChar, 256).Value = txt_produto.Text;
@@ -137,6 +184,24 @@ namespace Branca_De_Neve
             database.closeConnection();
         }
 
+        private void txt_produto_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_produto.BackColor = Color.White;
+        }
+
+        private void txt_preco_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_preco.BackColor = Color.White;
+        }
+
+        private void txt_tipo_MouseClick(object sender, MouseEventArgs e)
+        {
+            txt_tipo.BackColor = Color.White;
+        }
+
+        #endregion
+
+        #region BOTAO EDITAR
         private void bt_editar_Click(object sender, EventArgs e)
         {
             database database = new database();
@@ -145,18 +210,36 @@ namespace Branca_De_Neve
             // ADICIONAR EDITAR O PRODUTO 
 
             database.closeConnection();
+
+            bt_salvar.Enabled = true;
+            bt_salvar.BackColor = Color.Orange;
+
+            bt_editar.Enabled = false;
+            bt_editar.BackColor = Color.DarkGray;
+
+            bt_excluir.Enabled = false;
+            bt_excluir.BackColor = Color.DarkGray;
+
+            p_novo.Enabled = true;
+            dataGridView1.Enabled = false;
         }
 
-        private void bt_excluir_Click(object sender, EventArgs e)
+        #endregion
+
+        #region SALVAR
+        private void bt_salvar_Click(object sender, EventArgs e)
         {
-            database database = new database();
-            database.openConnection();
+            p_novo.Enabled = false;
 
-            // EXCLUIR NOVO PRODUTO 
+            bt_salvar.Enabled = false;
+            bt_salvar.BackColor = Color.DarkGray;
 
-            database.closeConnection();
+            bt_excluir.Enabled = true;
+            bt_excluir.BackColor = Color.DarkGray;
         }
+        #endregion
 
+        #region BOTAO PESQUISAR
         private void bt_pesquisar_Click(object sender, EventArgs e)
         {
             database database = new database();
@@ -174,7 +257,28 @@ namespace Branca_De_Neve
             }
 
             database.closeConnection();
-            
+
+        }
+        #endregion
+
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+                txt_produto.Text = dr["NOME"].ToString();
+                txt_preco.Text = dr["PRECO"].ToString();
+                txt_tipo.Text = dr["TIPO"].ToString();
+
+                bt_add.Enabled = false;
+                bt_add.BackColor = Color.DarkGray;
+
+                bt_excluir.Enabled = true;
+                bt_excluir.BackColor = Color.Red;
+
+                bt_editar.Enabled = true;
+                bt_editar.BackColor = Color.MediumSlateBlue;
+            }
         }
 
         private void cardapio_Load(object sender, EventArgs e)
@@ -193,6 +297,49 @@ namespace Branca_De_Neve
             }
 
             database.closeConnection();
+        }
+
+        private void LimparTextBox(Control.ControlCollection control)
+        {
+            foreach (Control c in control)
+            {
+                if (c is TextBox)
+                {
+                    ((TextBox)(c)).Text = string.Empty;
+                }
+            }
+
+            foreach (Control c in control)
+            {
+                if (c is ComboBox)
+                {
+                    ((ComboBox)(c)).SelectedIndex = -1;
+                }
+            }
+        }
+
+        // SAIR
+        private void bt_sair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        // FECHAR A JANELA CARDAPIO
+        private void cardapio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Deseja Mesmo Sair ?", "AVISO !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    e.Cancel = false;
+                    break;
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

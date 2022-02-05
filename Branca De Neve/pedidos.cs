@@ -540,15 +540,17 @@ namespace Branca_De_Neve
             {
                 MessageBox.Show("Selecione Um Pagamento ", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            /*
             else if (String.IsNullOrEmpty(txt_qt_01.Text))
             {
                 txt_qt_01.BackColor = Color.FromArgb(255, 139, 139);
 
-            }
+            }            
             else if (String.IsNullOrEmpty(txt_produto_01.Text))
             {
-                txt_nome.BackColor = Color.FromArgb(255, 139, 139);
+                txt_produto_01.BackColor = Color.FromArgb(255, 139, 139);
             }
+            */
             else
             {
                 ConcluirPedido();

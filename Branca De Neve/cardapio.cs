@@ -20,6 +20,11 @@ namespace Branca_De_Neve
         {
             InitializeComponent();
 
+            Start();
+        }
+
+        private void Start()
+        {
             bt_excluir.Enabled = false;
             bt_excluir.BackColor = Color.DarkGray;
 
@@ -32,34 +37,24 @@ namespace Branca_De_Neve
             bt_salvar.Enabled = false;
             bt_salvar.BackColor = Color.DarkGray;
 
+            bt_cancelar.Enabled = false;
+            bt_cancelar.BackColor = Color.DarkGray;
         }
 
         #region MENU APP
         private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms.OfType<pedidos>().Count() > 0)
-            {
-                MessageBox.Show("A Janela Novo Pedido já está aberto", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                this.Close();
 
-                pedidos pe = new pedidos();
-                pe.Show();
-            }
         }
 
         private void cardápioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms.OfType<cardapio>().Count() > 0)
-            {
-                MessageBox.Show("A Janela Cardápido já está aberto", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                this.Show();
-            }
+
+        }
+
+        private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -81,23 +76,100 @@ namespace Branca_De_Neve
             bt_add.Enabled = true;
             bt_add.BackColor = Color.MediumSeaGreen;
 
+            bt_cancelar.Enabled = true;
+            bt_cancelar.BackColor = Color.Red;
+
             dataGridView1.Enabled = false;
             p_novo.Enabled = true;
             LimparTextBox(p_novo.Controls);
         }
         #endregion
 
+        #region BOTAO CANCELAR
+        private void bt_cancelar_Click(object sender, EventArgs e)
+        {
+
+            txt_produto.BackColor = Color.White;
+            txt_preco.BackColor = Color.White;
+            txt_tipo.BackColor = Color.White;
+
+            bt_cancelar.Enabled = false;
+            bt_cancelar.BackColor = Color.DarkGray;
+
+            bt_excluir.Enabled = false;
+            bt_excluir.BackColor = Color.DarkGray;
+
+            bt_editar.Enabled = false;
+            bt_editar.BackColor = Color.DarkGray;
+
+            bt_salvar.Enabled = false;
+            bt_salvar.BackColor = Color.DarkGray;
+
+            bt_add.Enabled = false;
+            bt_add.BackColor = Color.DarkGray;
+
+            dataGridView1.Enabled = true;
+            p_novo.Enabled = false;
+            LimparTextBox(p_novo.Controls);
+
+        }
+        #endregion
+
         #region BOTAO EXCLUIR
         private void bt_excluir_Click(object sender, EventArgs e)
         {
-            database database = new database();
-            database.openConnection();
+            try
+            {
+                DialogResult dr = MessageBox.Show("Tem Certeza Que Deseja Excluir ?", "AVISO !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
-            // EXCLUIR NOVO PRODUTO             
+                switch (dr)
+                {
+                    case DialogResult.Yes:
+                        Excluir();
+                        break;
+                    case DialogResult.No:
+                        
+                        break;
+                    default:
+                        break;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Código de Erro Interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                dataGridView();
+            }
+        }
 
-            database.closeConnection();
+        private void Excluir()
+        {
+            try
+            {
+                database database = new database();
+                database.openConnection();
 
+                MySqlCommand cmd = new MySqlCommand("delete from cardapio where ID=@id", database.getConnection());
+                cmd.Parameters.AddWithValue("@id", id);
 
+                cmd.ExecuteNonQuery();
+
+                database.closeConnection();
+            }
+            catch
+            {
+                MessageBox.Show("Código de Erro Interno ", "ERRO FATAL");
+            }
+            finally
+            {
+                BTexcluir();
+            }            
+        }
+
+        private void BTexcluir()
+        {
             bt_add.Enabled = false;
             bt_add.BackColor = Color.DarkGray;
 
@@ -146,6 +218,7 @@ namespace Branca_De_Neve
                 finally
                 {
                     LimparTextBox(p_novo.Controls);
+                    dataGridView();
                     BTadd();
                 }
             }
@@ -162,6 +235,9 @@ namespace Branca_De_Neve
 
             bt_excluir.Enabled = false;
             bt_excluir.BackColor = Color.DarkGray;
+
+            bt_cancelar.Enabled = false;
+            bt_cancelar.BackColor = Color.DarkGray;
 
             p_novo.Enabled = false;
             dataGridView1.Enabled = true;
@@ -201,16 +277,14 @@ namespace Branca_De_Neve
 
         #endregion
 
-        #region BOTAO EDITAR
+        #region BOTAO SALVAR E EDITAR
+        private void bt_salvar_Click(object sender, EventArgs e)
+        {
+            verificarSalvar();
+        }
+
         private void bt_editar_Click(object sender, EventArgs e)
         {
-            database database = new database();
-            database.openConnection();
-
-            // ADICIONAR EDITAR O PRODUTO 
-
-            database.closeConnection();
-
             bt_salvar.Enabled = true;
             bt_salvar.BackColor = Color.Orange;
 
@@ -220,23 +294,77 @@ namespace Branca_De_Neve
             bt_excluir.Enabled = false;
             bt_excluir.BackColor = Color.DarkGray;
 
+            bt_cancelar.Enabled = true;
+            bt_cancelar.BackColor = Color.Red;
+
             p_novo.Enabled = true;
             dataGridView1.Enabled = false;
         }
 
-        #endregion
+        private void EditarSalvar()
+        {
+            database database = new database();
+            database.openConnection();
 
-        #region SALVAR
-        private void bt_salvar_Click(object sender, EventArgs e)
+            MySqlCommand cmd = new MySqlCommand("update cardapio set nome=@nome, preco=@preco, tipo=@tipo WHERE (id=@id)", database.getConnection());
+
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.Add("@nome", MySqlDbType.VarChar, 256).Value = txt_produto.Text;
+            cmd.Parameters.Add("@preco", MySqlDbType.Decimal).Value = txt_preco.Text;
+            cmd.Parameters.Add("@tipo", MySqlDbType.VarChar, 256).Value = txt_tipo.Text;
+
+            cmd.ExecuteNonQuery();
+            database.closeConnection();
+        }
+
+        private void BTSalvar()
         {
             p_novo.Enabled = false;
 
             bt_salvar.Enabled = false;
             bt_salvar.BackColor = Color.DarkGray;
 
-            bt_excluir.Enabled = true;
+            bt_excluir.Enabled = false;
             bt_excluir.BackColor = Color.DarkGray;
+
+            bt_cancelar.Enabled = false;
+            bt_cancelar.BackColor = Color.DarkGray;
+
+            dataGridView1.Enabled = true;
+            p_novo.Enabled = true;
+            LimparTextBox(p_novo.Controls);
         }
+
+        private void verificarSalvar()
+        {
+            if (String.IsNullOrEmpty(txt_produto.Text))
+            {
+                txt_produto.BackColor = Color.FromArgb(255, 139, 139);
+            }
+            else if (String.IsNullOrEmpty(txt_preco.Text))
+            {
+                txt_preco.BackColor = Color.FromArgb(255, 139, 139);
+            }
+            else if (String.IsNullOrEmpty(txt_tipo.Text))
+            {
+                txt_tipo.BackColor = Color.FromArgb(255, 139, 139);
+            }
+            else
+            {
+                try
+                {
+                    EditarSalvar();
+                    DialogResult dr = MessageBox.Show("Salvo Com Sucesso !", "Editar Produto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                finally
+                {
+                    LimparTextBox(p_novo.Controls);
+                    BTSalvar();
+                    dataGridView();
+                }
+            }
+        }
+
         #endregion
 
         #region BOTAO PESQUISAR
@@ -246,7 +374,7 @@ namespace Branca_De_Neve
             database.openConnection();
 
             MySqlCommand cmd = new MySqlCommand("select id, nome, preco, tipo from cardapio where nome like @nome '%'", database.getConnection());
-            cmd.Parameters.AddWithValue("@nome", txt_produto.Text);
+            cmd.Parameters.AddWithValue("@nome", txt_pesquisar.Text);
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
@@ -261,11 +389,14 @@ namespace Branca_De_Neve
         }
         #endregion
 
+        // TABELA CARDAPIO
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
+
+                id = dr["ID"].ToString();
                 txt_produto.Text = dr["NOME"].ToString();
                 txt_preco.Text = dr["PRECO"].ToString();
                 txt_tipo.Text = dr["TIPO"].ToString();
@@ -283,6 +414,12 @@ namespace Branca_De_Neve
 
         private void cardapio_Load(object sender, EventArgs e)
         {
+            dataGridView();
+        }
+
+        // DATA BASE
+        private void dataGridView()
+        {
             database database = new database();
             database.openConnection();
 
@@ -290,15 +427,17 @@ namespace Branca_De_Neve
 
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
-                DataTable dt = new DataTable("cardapio");
+                DataTable dt = new DataTable();
                 da.Fill(dt);
 
                 dataGridView1.DataSource = dt;
+
             }
 
             database.closeConnection();
         }
 
+        // LIMPAR FORMULARIO
         private void LimparTextBox(Control.ControlCollection control)
         {
             foreach (Control c in control)

@@ -50,6 +50,8 @@ namespace Branca_De_Neve
             this.bt_pesquisar = new System.Windows.Forms.Button();
             this.gp_pesquisar = new System.Windows.Forms.GroupBox();
             this.gp_visualizar = new System.Windows.Forms.GroupBox();
+            this.bt_cancelar = new System.Windows.Forms.Button();
+            this.bt_salvar = new System.Windows.Forms.Button();
             this.p_novo = new System.Windows.Forms.Panel();
             this.txt_tipo = new System.Windows.Forms.ComboBox();
             this.lb_produto = new System.Windows.Forms.Label();
@@ -62,8 +64,6 @@ namespace Branca_De_Neve
             this.bt_excluir = new System.Windows.Forms.Button();
             this.bt_editar = new System.Windows.Forms.Button();
             this.cardapioTableAdapter = new Branca_De_Neve.brancadeneveDataSetTableAdapters.cardapioTableAdapter();
-            this.bt_salvar = new System.Windows.Forms.Button();
-            this.bt_cancelar = new System.Windows.Forms.Button();
             this.gp_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).BeginInit();
@@ -80,7 +80,7 @@ namespace Branca_De_Neve
             this.gp_menu.Controls.Add(this.dataGridView1);
             this.gp_menu.Location = new System.Drawing.Point(20, 327);
             this.gp_menu.Name = "gp_menu";
-            this.gp_menu.Size = new System.Drawing.Size(740, 522);
+            this.gp_menu.Size = new System.Drawing.Size(740, 496);
             this.gp_menu.TabIndex = 300;
             this.gp_menu.TabStop = false;
             this.gp_menu.Text = "Menu";
@@ -148,7 +148,7 @@ namespace Branca_De_Neve
             this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_sair.ForeColor = System.Drawing.Color.White;
-            this.bt_sair.Location = new System.Drawing.Point(645, 867);
+            this.bt_sair.Location = new System.Drawing.Point(647, 843);
             this.bt_sair.Name = "bt_sair";
             this.bt_sair.Size = new System.Drawing.Size(110, 35);
             this.bt_sair.TabIndex = 18;
@@ -160,7 +160,7 @@ namespace Branca_De_Neve
             // 
             this.rodape.BackColor = System.Drawing.Color.Gray;
             this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.rodape.Location = new System.Drawing.Point(0, 962);
+            this.rodape.Location = new System.Drawing.Point(0, 909);
             this.rodape.Name = "rodape";
             this.rodape.Size = new System.Drawing.Size(776, 30);
             this.rodape.TabIndex = 21;
@@ -268,6 +268,36 @@ namespace Branca_De_Neve
             this.gp_visualizar.TabStop = false;
             this.gp_visualizar.Text = "Visualizar";
             // 
+            // bt_cancelar
+            // 
+            this.bt_cancelar.BackColor = System.Drawing.Color.Red;
+            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
+            this.bt_cancelar.Location = new System.Drawing.Point(641, 19);
+            this.bt_cancelar.Name = "bt_cancelar";
+            this.bt_cancelar.Size = new System.Drawing.Size(87, 28);
+            this.bt_cancelar.TabIndex = 127;
+            this.bt_cancelar.TabStop = false;
+            this.bt_cancelar.Text = "Cancelar";
+            this.bt_cancelar.UseVisualStyleBackColor = false;
+            this.bt_cancelar.Click += new System.EventHandler(this.bt_cancelar_Click);
+            // 
+            // bt_salvar
+            // 
+            this.bt_salvar.BackColor = System.Drawing.Color.Orange;
+            this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bt_salvar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_salvar.ForeColor = System.Drawing.Color.White;
+            this.bt_salvar.Location = new System.Drawing.Point(507, 165);
+            this.bt_salvar.Name = "bt_salvar";
+            this.bt_salvar.Size = new System.Drawing.Size(87, 28);
+            this.bt_salvar.TabIndex = 126;
+            this.bt_salvar.TabStop = false;
+            this.bt_salvar.Text = "Salvar";
+            this.bt_salvar.UseVisualStyleBackColor = false;
+            this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
+            // 
             // p_novo
             // 
             this.p_novo.Controls.Add(this.txt_tipo);
@@ -289,7 +319,7 @@ namespace Branca_De_Neve
             this.txt_tipo.Items.AddRange(new object[] {
             "LANCHE",
             "BEBIDAS",
-            "PORÇÂO",
+            "PORÇÃO",
             "OUTROS"});
             this.txt_tipo.Location = new System.Drawing.Point(499, 23);
             this.txt_tipo.Name = "txt_tipo";
@@ -375,7 +405,7 @@ namespace Branca_De_Neve
             // 
             // bt_excluir
             // 
-            this.bt_excluir.BackColor = System.Drawing.Color.Red;
+            this.bt_excluir.BackColor = System.Drawing.Color.LightCoral;
             this.bt_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_excluir.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_excluir.ForeColor = System.Drawing.Color.White;
@@ -407,42 +437,13 @@ namespace Branca_De_Neve
             // 
             this.cardapioTableAdapter.ClearBeforeFill = true;
             // 
-            // bt_salvar
-            // 
-            this.bt_salvar.BackColor = System.Drawing.Color.Orange;
-            this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bt_salvar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_salvar.ForeColor = System.Drawing.Color.White;
-            this.bt_salvar.Location = new System.Drawing.Point(507, 165);
-            this.bt_salvar.Name = "bt_salvar";
-            this.bt_salvar.Size = new System.Drawing.Size(87, 28);
-            this.bt_salvar.TabIndex = 126;
-            this.bt_salvar.TabStop = false;
-            this.bt_salvar.Text = "Salvar";
-            this.bt_salvar.UseVisualStyleBackColor = false;
-            this.bt_salvar.Click += new System.EventHandler(this.bt_salvar_Click);
-            // 
-            // bt_cancelar
-            // 
-            this.bt_cancelar.BackColor = System.Drawing.Color.LightCoral;
-            this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bt_cancelar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cancelar.ForeColor = System.Drawing.Color.White;
-            this.bt_cancelar.Location = new System.Drawing.Point(641, 19);
-            this.bt_cancelar.Name = "bt_cancelar";
-            this.bt_cancelar.Size = new System.Drawing.Size(87, 28);
-            this.bt_cancelar.TabIndex = 127;
-            this.bt_cancelar.TabStop = false;
-            this.bt_cancelar.Text = "Cancelar";
-            this.bt_cancelar.UseVisualStyleBackColor = false;
-            // 
             // cardapio
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(776, 992);
+            this.ClientSize = new System.Drawing.Size(776, 939);
             this.Controls.Add(this.gp_visualizar);
             this.Controls.Add(this.gp_pesquisar);
             this.Controls.Add(this.menuStrip1);

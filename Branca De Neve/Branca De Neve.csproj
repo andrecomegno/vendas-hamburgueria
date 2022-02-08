@@ -77,6 +77,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>brancadeneveDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="caixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="caixa.Designer.cs">
+      <DependentUpon>caixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="cardapio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,9 @@
       <DependentUpon>relatorio.cs</DependentUpon>
     </Compile>
     <Compile Include="Script\database.cs" />
+    <EmbeddedResource Include="caixa.resx">
+      <DependentUpon>caixa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="cardapio.resx">
       <DependentUpon>cardapio.cs</DependentUpon>
     </EmbeddedResource>

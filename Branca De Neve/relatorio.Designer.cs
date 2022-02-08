@@ -37,18 +37,22 @@ namespace Branca_De_Neve
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rodape = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.bt_concluir = new System.Windows.Forms.Button();
+            this.bt_imprimir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bt_sair = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.bt_buscar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt_pesquisa = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.bt_buscar_cep = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -109,7 +113,7 @@ namespace Branca_De_Neve
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.bt_concluir);
+            this.groupBox1.Controls.Add(this.bt_imprimir);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(12, 138);
             this.groupBox1.Name = "groupBox1";
@@ -118,18 +122,18 @@ namespace Branca_De_Neve
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Relatório";
             // 
-            // bt_concluir
+            // bt_imprimir
             // 
-            this.bt_concluir.BackColor = System.Drawing.Color.YellowGreen;
-            this.bt_concluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bt_concluir.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_concluir.ForeColor = System.Drawing.Color.White;
-            this.bt_concluir.Location = new System.Drawing.Point(621, 14);
-            this.bt_concluir.Name = "bt_concluir";
-            this.bt_concluir.Size = new System.Drawing.Size(110, 35);
-            this.bt_concluir.TabIndex = 71;
-            this.bt_concluir.Text = "Imprimir";
-            this.bt_concluir.UseVisualStyleBackColor = false;
+            this.bt_imprimir.BackColor = System.Drawing.Color.YellowGreen;
+            this.bt_imprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bt_imprimir.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_imprimir.ForeColor = System.Drawing.Color.White;
+            this.bt_imprimir.Location = new System.Drawing.Point(621, 14);
+            this.bt_imprimir.Name = "bt_imprimir";
+            this.bt_imprimir.Size = new System.Drawing.Size(110, 35);
+            this.bt_imprimir.TabIndex = 71;
+            this.bt_imprimir.Text = "Imprimir";
+            this.bt_imprimir.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -145,61 +149,92 @@ namespace Branca_De_Neve
             this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_sair.ForeColor = System.Drawing.Color.White;
-            this.bt_sair.Location = new System.Drawing.Point(27, 820);
+            this.bt_sair.Location = new System.Drawing.Point(633, 820);
             this.bt_sair.Name = "bt_sair";
             this.bt_sair.Size = new System.Drawing.Size(110, 35);
             this.bt_sair.TabIndex = 70;
             this.bt_sair.Text = "Sair";
             this.bt_sair.UseVisualStyleBackColor = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(25, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
-            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.maskedTextBox2);
+            this.groupBox2.Controls.Add(this.maskedTextBox1);
+            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.bt_buscar_cep);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Location = new System.Drawing.Point(12, 48);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(743, 84);
+            this.groupBox2.Size = new System.Drawing.Size(271, 84);
             this.groupBox2.TabIndex = 70;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data";
             // 
+            // bt_buscar
+            // 
+            this.bt_buscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bt_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bt_buscar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_buscar.ForeColor = System.Drawing.Color.White;
+            this.bt_buscar.Location = new System.Drawing.Point(374, 29);
+            this.bt_buscar.Name = "bt_buscar";
+            this.bt_buscar.Size = new System.Drawing.Size(79, 28);
+            this.bt_buscar.TabIndex = 4;
+            this.bt_buscar.Text = "Buscar";
+            this.bt_buscar.UseVisualStyleBackColor = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txt_pesquisa);
+            this.groupBox3.Controls.Add(this.bt_buscar);
+            this.groupBox3.Location = new System.Drawing.Point(290, 48);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(465, 84);
+            this.groupBox3.TabIndex = 71;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Buscar";
+            // 
+            // txt_pesquisa
+            // 
+            this.txt_pesquisa.Location = new System.Drawing.Point(15, 37);
+            this.txt_pesquisa.Name = "txt_pesquisa";
+            this.txt_pesquisa.Size = new System.Drawing.Size(353, 20);
+            this.txt_pesquisa.TabIndex = 6;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 33);
+            this.label1.Location = new System.Drawing.Point(25, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Data";
+            this.label1.Text = "De";
             // 
-            // bt_buscar_cep
+            // label2
             // 
-            this.bt_buscar_cep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.bt_buscar_cep.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bt_buscar_cep.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_buscar_cep.ForeColor = System.Drawing.Color.White;
-            this.bt_buscar_cep.Location = new System.Drawing.Point(265, 42);
-            this.bt_buscar_cep.Name = "bt_buscar_cep";
-            this.bt_buscar_cep.Size = new System.Drawing.Size(79, 28);
-            this.bt_buscar_cep.TabIndex = 4;
-            this.bt_buscar_cep.Text = "Buscar";
-            this.bt_buscar_cep.UseVisualStyleBackColor = false;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(142, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Para";
             // 
-            // textBox2
+            // maskedTextBox1
             // 
-            this.textBox2.Location = new System.Drawing.Point(143, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.maskedTextBox1.Location = new System.Drawing.Point(28, 39);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 7;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Location = new System.Drawing.Point(145, 39);
+            this.maskedTextBox2.Mask = "00/00/0000";
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox2.TabIndex = 8;
+            this.maskedTextBox2.ValidatingType = typeof(System.DateTime);
             // 
             // relatorio
             // 
@@ -207,6 +242,7 @@ namespace Branca_De_Neve
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(767, 941);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.bt_sair);
             this.Controls.Add(this.groupBox1);
@@ -222,6 +258,8 @@ namespace Branca_De_Neve
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,12 +276,15 @@ namespace Branca_De_Neve
         private System.Windows.Forms.Panel rodape;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button bt_sair;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button bt_buscar_cep;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button bt_concluir;
+        private System.Windows.Forms.Button bt_buscar;
+        private System.Windows.Forms.Button bt_imprimir;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txt_pesquisa;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

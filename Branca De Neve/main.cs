@@ -22,19 +22,19 @@ namespace Branca_De_Neve
         private void bt_pedido_Click(object sender, EventArgs e)
         {
             pedidos pe = new pedidos();
-            pe.Show();
+            pe.ShowDialog();
         }
 
         private void bt_cardapio_Click(object sender, EventArgs e)
         {
             cardapio ca = new cardapio();
-            ca.Show();
+            ca.ShowDialog();
         }
 
         private void bt_relatorio_Click(object sender, EventArgs e)
         {
             relatorio re = new relatorio();
-            re.Show();
+            re.ShowDialog();
         }
 
         #endregion
@@ -83,7 +83,5 @@ namespace Branca_De_Neve
                     break;
             }
         }
-
-
     }
 }

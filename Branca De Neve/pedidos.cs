@@ -32,7 +32,7 @@ namespace Branca_De_Neve
             }
             else
             {
-                this.Show();
+                this.ShowDialog();
             }
         }
 
@@ -48,7 +48,7 @@ namespace Branca_De_Neve
                 this.Close();
 
                 cardapio ca = new cardapio();
-                ca.Show();
+                ca.ShowDialog();
             }
         }
 

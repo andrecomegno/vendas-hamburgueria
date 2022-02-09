@@ -796,10 +796,6 @@ namespace Branca_De_Neve
             objCmdProdutos.Parameters.Add("@preco", MySqlDbType.Decimal).Value = txt_valor_01.Text;
             objCmdProdutos.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = txt_qt_01.Text;
 
-            objCmdProdutos.Parameters.Add("@nome", MySqlDbType.VarChar, 256).Value = txt_produto_02.Text;
-            objCmdProdutos.Parameters.Add("@preco", MySqlDbType.Decimal).Value = txt_valor_02.Text;
-            objCmdProdutos.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = txt_qt_02.Text;
-
             objCmdProdutos.ExecuteNonQuery();
             long idProdutos = objCmdProdutos.LastInsertedId;
 

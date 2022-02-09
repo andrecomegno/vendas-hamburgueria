@@ -17,7 +17,7 @@ namespace Branca_De_Neve
             InitializeComponent();            
         }
 
-        #region BOTÕES PEDIR E CARDÁPIO
+        #region BOTÕES
 
         private void bt_pedido_Click(object sender, EventArgs e)
         {

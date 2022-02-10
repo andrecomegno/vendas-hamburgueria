@@ -779,20 +779,20 @@ namespace Branca_De_Neve
             long idPagamento = objCmdPagamento.LastInsertedId;
 
             // INSERT TABELA VENDAS
-            MySqlCommand objCmdVendas = new MySqlCommand("insert into vendas (id, valor_total, data, endereco_id, pagamento_id) value(null, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdVendas = new MySqlCommand("insert into vendas (id, valor_total, data_venda, cliente_id, pagamento_id) value(null, ?, ?, ?, ?)", database.getConnection());
 
             objCmdVendas.Parameters.Add("@valor_total", MySqlDbType.Decimal).Value = txt_total_venda.Text.Replace("R$", "");
-            objCmdVendas.Parameters.Add("@data", MySqlDbType.DateTime).Value = DateTime.Now;
-            objCmdVendas.Parameters.Add("@endereco_id", MySqlDbType.Int32).Value = idEndereco;
+            objCmdVendas.Parameters.Add("@data_venda", MySqlDbType.Date).Value = DateTime.;
+            objCmdVendas.Parameters.Add("@cliente_id", MySqlDbType.Int32).Value = idCliente;
             objCmdVendas.Parameters.Add("@pagamento_id", MySqlDbType.Int32).Value = idPagamento;
 
             objCmdVendas.ExecuteNonQuery();
             long idVendas = objCmdVendas.LastInsertedId;
 
             // INSERT TABELA PRODUTOS
-            MySqlCommand objCmdProdutos = new MySqlCommand("insert into produtos (id, nome, preco, quantidade) value (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProdutos = new MySqlCommand("insert into produtos (id, produto, preco, quantidade) value (null, ?, ?, ?)", database.getConnection());
 
-            objCmdProdutos.Parameters.Add("@nome", MySqlDbType.VarChar, 256).Value = txt_produto_01.Text;
+            objCmdProdutos.Parameters.Add("@produto", MySqlDbType.VarChar, 256).Value = txt_produto_01.Text;
             objCmdProdutos.Parameters.Add("@preco", MySqlDbType.Decimal).Value = txt_valor_01.Text;
             objCmdProdutos.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = txt_qt_01.Text;
 
@@ -802,8 +802,8 @@ namespace Branca_De_Neve
             // INSERT TABELA VENDAS_PRODUTOS
             MySqlCommand objCmdVendasProdutos = new MySqlCommand("insert into vendas_produtos (id_vendas, id_produtos) value(?, ?)", database.getConnection());
 
-            objCmdVendasProdutos.Parameters.Add("@id_pessoa", MySqlDbType.Int32).Value = idVendas;
-            objCmdVendasProdutos.Parameters.Add("@id_telefone", MySqlDbType.Int32).Value = idProdutos;
+            objCmdVendasProdutos.Parameters.Add("@id_vendas", MySqlDbType.Int32).Value = idVendas;
+            objCmdVendasProdutos.Parameters.Add("@id_produtos", MySqlDbType.Int32).Value = idProdutos;
 
             objCmdVendasProdutos.ExecuteNonQuery();
 

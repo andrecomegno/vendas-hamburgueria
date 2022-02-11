@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Branca_De_Neve.Tabela;
 using System.Windows.Forms;
 
 namespace Branca_De_Neve
@@ -19,6 +20,7 @@ namespace Branca_De_Neve
 
         private void imprimir_Load(object sender, EventArgs e)
         {
+
             this.reportViewer1.RefreshReport();
         }
     }

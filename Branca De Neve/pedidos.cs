@@ -782,7 +782,7 @@ namespace Branca_De_Neve
             MySqlCommand objCmdVendas = new MySqlCommand("insert into vendas (id, valor_total, data_venda, cliente_id, pagamento_id) value(null, ?, ?, ?, ?)", database.getConnection());
 
             objCmdVendas.Parameters.Add("@valor_total", MySqlDbType.Decimal).Value = txt_total_venda.Text.Replace("R$", "");
-            objCmdVendas.Parameters.Add("@data_venda", MySqlDbType.Date).Value = DateTime.;
+            objCmdVendas.Parameters.Add("@data_venda", MySqlDbType.Date).Value = DateTime.Now;
             objCmdVendas.Parameters.Add("@cliente_id", MySqlDbType.Int32).Value = idCliente;
             objCmdVendas.Parameters.Add("@pagamento_id", MySqlDbType.Int32).Value = idPagamento;
 

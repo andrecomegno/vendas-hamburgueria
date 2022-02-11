@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -90,11 +93,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="brancadeneveDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>brancadeneveDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="caixa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +138,7 @@
     </Compile>
     <Compile Include="Script\database.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Tabela\clienteRelatorio.cs" />
     <EmbeddedResource Include="caixa.resx">
       <DependentUpon>caixa.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,17 +168,6 @@
     <EmbeddedResource Include="relatorio.resx">
       <DependentUpon>relatorio.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="brancadeneveDataSet.xsc">
-      <DependentUpon>brancadeneveDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="brancadeneveDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>brancadeneveDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="brancadeneveDataSet.xss">
-      <DependentUpon>brancadeneveDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Connected Services\WSCorreios\AtendeClienteService.wsdl" />
     <None Include="Connected Services\WSCorreios\Branca_De_Neve.WSCorreios.atualizaPagamentoNaEntregaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -347,6 +335,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Branca_De_Neve.Tabela.clienteRelatorio.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -429,5 +418,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

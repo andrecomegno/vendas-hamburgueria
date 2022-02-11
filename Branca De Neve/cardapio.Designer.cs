@@ -29,14 +29,7 @@ namespace Branca_De_Neve
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.gp_menu = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.nOMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pRECODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tIPODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cardapioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.brancadeneveDataSet = new Branca_De_Neve.brancadeneveDataSet();
             this.bt_sair = new System.Windows.Forms.Button();
             this.rodape = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -63,15 +56,13 @@ namespace Branca_De_Neve
             this.bt_add = new System.Windows.Forms.Button();
             this.bt_excluir = new System.Windows.Forms.Button();
             this.bt_editar = new System.Windows.Forms.Button();
-            this.cardapioTableAdapter = new Branca_De_Neve.brancadeneveDataSetTableAdapters.cardapioTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gp_menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brancadeneveDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gp_pesquisar.SuspendLayout();
             this.gp_visualizar.SuspendLayout();
             this.p_novo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gp_menu
@@ -84,65 +75,6 @@ namespace Branca_De_Neve
             this.gp_menu.TabIndex = 300;
             this.gp_menu.TabStop = false;
             this.gp_menu.Text = "Menu";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nOMEDataGridViewTextBoxColumn,
-            this.pRECODataGridViewTextBoxColumn,
-            this.tIPODataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.cardapioBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 30);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(702, 444);
-            this.dataGridView1.TabIndex = 2000;
-            this.dataGridView1.TabStop = false;
-            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
-            // 
-            // nOMEDataGridViewTextBoxColumn
-            // 
-            this.nOMEDataGridViewTextBoxColumn.DataPropertyName = "NOME";
-            this.nOMEDataGridViewTextBoxColumn.HeaderText = "NOME";
-            this.nOMEDataGridViewTextBoxColumn.Name = "nOMEDataGridViewTextBoxColumn";
-            this.nOMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nOMEDataGridViewTextBoxColumn.Width = 350;
-            // 
-            // pRECODataGridViewTextBoxColumn
-            // 
-            this.pRECODataGridViewTextBoxColumn.DataPropertyName = "PRECO";
-            this.pRECODataGridViewTextBoxColumn.HeaderText = "PRECO";
-            this.pRECODataGridViewTextBoxColumn.Name = "pRECODataGridViewTextBoxColumn";
-            this.pRECODataGridViewTextBoxColumn.ReadOnly = true;
-            this.pRECODataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tIPODataGridViewTextBoxColumn
-            // 
-            this.tIPODataGridViewTextBoxColumn.DataPropertyName = "TIPO";
-            this.tIPODataGridViewTextBoxColumn.HeaderText = "TIPO";
-            this.tIPODataGridViewTextBoxColumn.Name = "tIPODataGridViewTextBoxColumn";
-            this.tIPODataGridViewTextBoxColumn.ReadOnly = true;
-            this.tIPODataGridViewTextBoxColumn.Width = 200;
-            // 
-            // cardapioBindingSource
-            // 
-            this.cardapioBindingSource.DataMember = "cardapio";
-            this.cardapioBindingSource.DataSource = this.brancadeneveDataSet;
-            // 
-            // brancadeneveDataSet
-            // 
-            this.brancadeneveDataSet.DataSetName = "brancadeneveDataSet";
-            this.brancadeneveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bt_sair
             // 
@@ -435,9 +367,24 @@ namespace Branca_De_Neve
             this.bt_editar.UseVisualStyleBackColor = false;
             this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
             // 
-            // cardapioTableAdapter
+            // dataGridView1
             // 
-            this.cardapioTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(23, 30);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(702, 444);
+            this.dataGridView1.TabIndex = 2000;
+            this.dataGridView1.TabStop = false;
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // cardapio
             // 
@@ -459,9 +406,6 @@ namespace Branca_De_Neve
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cardapio_FormClosing);
             this.Load += new System.EventHandler(this.cardapio_Load);
             this.gp_menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brancadeneveDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gp_pesquisar.ResumeLayout(false);
@@ -469,6 +413,7 @@ namespace Branca_De_Neve
             this.gp_visualizar.ResumeLayout(false);
             this.p_novo.ResumeLayout(false);
             this.p_novo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,10 +440,6 @@ namespace Branca_De_Neve
         private System.Windows.Forms.TextBox txt_preco;
         private System.Windows.Forms.Label lb_preco;
         private System.Windows.Forms.Label lb_produto;
-        private brancadeneveDataSet brancadeneveDataSet;
-        private System.Windows.Forms.BindingSource cardapioBindingSource;
-        private brancadeneveDataSetTableAdapters.cardapioTableAdapter cardapioTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lb_tipo;
         private System.Windows.Forms.TextBox txt_produto;
         private System.Windows.Forms.ComboBox txt_tipo;
@@ -509,5 +450,6 @@ namespace Branca_De_Neve
         private System.Windows.Forms.Button bt_novo;
         private System.Windows.Forms.Button bt_salvar;
         private System.Windows.Forms.Button bt_cancelar;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

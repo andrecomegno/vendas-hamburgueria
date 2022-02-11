@@ -38,35 +38,34 @@ namespace Branca_De_Neve
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rodape = new System.Windows.Forms.Panel();
             this.gp_relatorio = new System.Windows.Forms.GroupBox();
+            this.bt_data = new System.Windows.Forms.Button();
+            this.dataPara = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DATA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nOMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tELEFONEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ENDERECO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NUMERO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PREÇO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TOTAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.brancadeneveDataSet = new Branca_De_Neve.brancadeneveDataSet();
+            this.dataDe = new System.Windows.Forms.DateTimePicker();
             this.bt_imprimir = new System.Windows.Forms.Button();
+            this.lb_para = new System.Windows.Forms.Label();
+            this.lb_de = new System.Windows.Forms.Label();
             this.bt_sair = new System.Windows.Forms.Button();
             this.bt_buscar = new System.Windows.Forms.Button();
             this.gp_buscar = new System.Windows.Forms.GroupBox();
             this.txt_pesquisa = new System.Windows.Forms.TextBox();
-            this.clienteTableAdapter = new Branca_De_Neve.brancadeneveDataSetTableAdapters.clienteTableAdapter();
-            this.lb_de = new System.Windows.Forms.Label();
-            this.lb_para = new System.Windows.Forms.Label();
-            this.dataDe = new System.Windows.Forms.DateTimePicker();
-            this.dataPara = new System.Windows.Forms.DateTimePicker();
-            this.bt_data = new System.Windows.Forms.Button();
+            this.clienteRelatorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.gp_relatorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brancadeneveDataSet)).BeginInit();
             this.gp_buscar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteRelatorioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -141,6 +140,29 @@ namespace Branca_De_Neve
             this.gp_relatorio.TabStop = false;
             this.gp_relatorio.Text = "Relatório";
             // 
+            // bt_data
+            // 
+            this.bt_data.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bt_data.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bt_data.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_data.ForeColor = System.Drawing.Color.White;
+            this.bt_data.Location = new System.Drawing.Point(307, 43);
+            this.bt_data.Name = "bt_data";
+            this.bt_data.Size = new System.Drawing.Size(79, 28);
+            this.bt_data.TabIndex = 7;
+            this.bt_data.Text = "Buscar";
+            this.bt_data.UseVisualStyleBackColor = false;
+            this.bt_data.Click += new System.EventHandler(this.bt_data_Click);
+            // 
+            // dataPara
+            // 
+            this.dataPara.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataPara.Location = new System.Drawing.Point(192, 51);
+            this.dataPara.Name = "dataPara";
+            this.dataPara.Size = new System.Drawing.Size(98, 20);
+            this.dataPara.TabIndex = 2003;
+            this.dataPara.Value = new System.DateTime(2022, 2, 9, 0, 0, 0, 0);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -150,16 +172,18 @@ namespace Branca_De_Neve
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DATA,
-            this.nOMEDataGridViewTextBoxColumn,
-            this.tELEFONEDataGridViewTextBoxColumn,
-            this.ENDERECO,
-            this.NUMERO,
-            this.PRODUTO,
-            this.QUANTIDADE,
-            this.PREÇO,
-            this.TOTAL});
-            this.dataGridView1.DataSource = this.clienteBindingSource;
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18});
+            this.dataGridView1.DataSource = this.clienteRelatorioBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(15, 96);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -169,80 +193,15 @@ namespace Branca_De_Neve
             this.dataGridView1.Size = new System.Drawing.Size(716, 615);
             this.dataGridView1.TabIndex = 2001;
             this.dataGridView1.TabStop = false;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // DATA
+            // dataDe
             // 
-            this.DATA.DataPropertyName = "DATA_VENDA";
-            this.DATA.HeaderText = "DATA";
-            this.DATA.Name = "DATA";
-            this.DATA.ReadOnly = true;
-            // 
-            // nOMEDataGridViewTextBoxColumn
-            // 
-            this.nOMEDataGridViewTextBoxColumn.DataPropertyName = "NOME";
-            this.nOMEDataGridViewTextBoxColumn.HeaderText = "NOME";
-            this.nOMEDataGridViewTextBoxColumn.Name = "nOMEDataGridViewTextBoxColumn";
-            this.nOMEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tELEFONEDataGridViewTextBoxColumn
-            // 
-            this.tELEFONEDataGridViewTextBoxColumn.DataPropertyName = "TELEFONE";
-            this.tELEFONEDataGridViewTextBoxColumn.HeaderText = "TELEFONE";
-            this.tELEFONEDataGridViewTextBoxColumn.Name = "tELEFONEDataGridViewTextBoxColumn";
-            this.tELEFONEDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ENDERECO
-            // 
-            this.ENDERECO.DataPropertyName = "ENDERECO";
-            this.ENDERECO.HeaderText = "ENDEREÇO";
-            this.ENDERECO.Name = "ENDERECO";
-            this.ENDERECO.ReadOnly = true;
-            // 
-            // NUMERO
-            // 
-            this.NUMERO.DataPropertyName = "NUMERO";
-            this.NUMERO.HeaderText = "NUMERO";
-            this.NUMERO.Name = "NUMERO";
-            this.NUMERO.ReadOnly = true;
-            // 
-            // PRODUTO
-            // 
-            this.PRODUTO.DataPropertyName = "PRODUTO";
-            this.PRODUTO.HeaderText = "PRODUTO";
-            this.PRODUTO.Name = "PRODUTO";
-            this.PRODUTO.ReadOnly = true;
-            // 
-            // QUANTIDADE
-            // 
-            this.QUANTIDADE.DataPropertyName = "QUANTIDADE";
-            this.QUANTIDADE.HeaderText = "QUANTIDADE";
-            this.QUANTIDADE.Name = "QUANTIDADE";
-            this.QUANTIDADE.ReadOnly = true;
-            // 
-            // PREÇO
-            // 
-            this.PREÇO.DataPropertyName = "PRECO";
-            this.PREÇO.HeaderText = "PRECO";
-            this.PREÇO.Name = "PREÇO";
-            this.PREÇO.ReadOnly = true;
-            // 
-            // TOTAL
-            // 
-            this.TOTAL.DataPropertyName = "VALOR_TOTAL";
-            this.TOTAL.HeaderText = "TOTAL";
-            this.TOTAL.Name = "TOTAL";
-            this.TOTAL.ReadOnly = true;
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataMember = "cliente";
-            this.clienteBindingSource.DataSource = this.brancadeneveDataSet;
-            // 
-            // brancadeneveDataSet
-            // 
-            this.brancadeneveDataSet.DataSetName = "brancadeneveDataSet";
-            this.brancadeneveDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataDe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dataDe.Location = new System.Drawing.Point(47, 51);
+            this.dataDe.Name = "dataDe";
+            this.dataDe.Size = new System.Drawing.Size(98, 20);
+            this.dataDe.TabIndex = 2002;
+            this.dataDe.Value = new System.DateTime(2022, 2, 9, 0, 0, 0, 0);
             // 
             // bt_imprimir
             // 
@@ -257,6 +216,24 @@ namespace Branca_De_Neve
             this.bt_imprimir.Text = "Imprimir";
             this.bt_imprimir.UseVisualStyleBackColor = false;
             this.bt_imprimir.Click += new System.EventHandler(this.bt_imprimir_Click);
+            // 
+            // lb_para
+            // 
+            this.lb_para.AutoSize = true;
+            this.lb_para.Location = new System.Drawing.Point(157, 55);
+            this.lb_para.Name = "lb_para";
+            this.lb_para.Size = new System.Drawing.Size(29, 13);
+            this.lb_para.TabIndex = 6;
+            this.lb_para.Text = "Para";
+            // 
+            // lb_de
+            // 
+            this.lb_de.AutoSize = true;
+            this.lb_de.Location = new System.Drawing.Point(20, 57);
+            this.lb_de.Name = "lb_de";
+            this.lb_de.Size = new System.Drawing.Size(21, 13);
+            this.lb_de.TabIndex = 5;
+            this.lb_de.Text = "De";
             // 
             // bt_sair
             // 
@@ -283,6 +260,7 @@ namespace Branca_De_Neve
             this.bt_buscar.TabIndex = 4;
             this.bt_buscar.Text = "Buscar";
             this.bt_buscar.UseVisualStyleBackColor = false;
+            this.bt_buscar.Click += new System.EventHandler(this.bt_buscar_Click);
             // 
             // gp_buscar
             // 
@@ -302,59 +280,86 @@ namespace Branca_De_Neve
             this.txt_pesquisa.Size = new System.Drawing.Size(632, 20);
             this.txt_pesquisa.TabIndex = 6;
             // 
-            // clienteTableAdapter
+            // clienteRelatorioBindingSource
             // 
-            this.clienteTableAdapter.ClearBeforeFill = true;
+            this.clienteRelatorioBindingSource.DataSource = typeof(Branca_De_Neve.Tabela.clienteRelatorio);
             // 
-            // lb_de
+            // dataGridViewTextBoxColumn2
             // 
-            this.lb_de.AutoSize = true;
-            this.lb_de.Location = new System.Drawing.Point(20, 57);
-            this.lb_de.Name = "lb_de";
-            this.lb_de.Size = new System.Drawing.Size(21, 13);
-            this.lb_de.TabIndex = 5;
-            this.lb_de.Text = "De";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // lb_para
+            // dataGridViewTextBoxColumn5
             // 
-            this.lb_para.AutoSize = true;
-            this.lb_para.Location = new System.Drawing.Point(157, 55);
-            this.lb_para.Name = "lb_para";
-            this.lb_para.Size = new System.Drawing.Size(29, 13);
-            this.lb_para.TabIndex = 6;
-            this.lb_para.Text = "Para";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "DATA_VENDA";
+            this.dataGridViewTextBoxColumn5.HeaderText = "DATA";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // dataDe
+            // dataGridViewTextBoxColumn6
             // 
-            this.dataDe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dataDe.Location = new System.Drawing.Point(47, 51);
-            this.dataDe.Name = "dataDe";
-            this.dataDe.Size = new System.Drawing.Size(98, 20);
-            this.dataDe.TabIndex = 2002;
-            this.dataDe.Value = new System.DateTime(2022, 2, 9, 0, 0, 0, 0);
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "NOME";
+            this.dataGridViewTextBoxColumn6.HeaderText = "NOME";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
-            // dataPara
+            // dataGridViewTextBoxColumn7
             // 
-            this.dataPara.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dataPara.Location = new System.Drawing.Point(192, 51);
-            this.dataPara.Name = "dataPara";
-            this.dataPara.Size = new System.Drawing.Size(98, 20);
-            this.dataPara.TabIndex = 2003;
-            this.dataPara.Value = new System.DateTime(2022, 2, 9, 0, 0, 0, 0);
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "TELEFONE";
+            this.dataGridViewTextBoxColumn7.HeaderText = "TELEFONE";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // bt_data
+            // dataGridViewTextBoxColumn8
             // 
-            this.bt_data.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.bt_data.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.bt_data.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_data.ForeColor = System.Drawing.Color.White;
-            this.bt_data.Location = new System.Drawing.Point(307, 43);
-            this.bt_data.Name = "bt_data";
-            this.bt_data.Size = new System.Drawing.Size(79, 28);
-            this.bt_data.TabIndex = 7;
-            this.bt_data.Text = "Buscar";
-            this.bt_data.UseVisualStyleBackColor = false;
-            this.bt_data.Click += new System.EventHandler(this.bt_data_Click);
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "ENDERECO";
+            this.dataGridViewTextBoxColumn8.HeaderText = "ENDERECO";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "NUMERO";
+            this.dataGridViewTextBoxColumn10.HeaderText = "NUMERO";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "PRODUTO";
+            this.dataGridViewTextBoxColumn11.HeaderText = "PRODUTO";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "QUANTIDADE";
+            this.dataGridViewTextBoxColumn13.HeaderText = "QUANTIDADE";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "PRECO";
+            this.dataGridViewTextBoxColumn16.HeaderText = "PRECO";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "VALOR_TOTAL";
+            this.dataGridViewTextBoxColumn17.HeaderText = "TOTAL";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "FORMA_PAGAMENTO";
+            this.dataGridViewTextBoxColumn18.HeaderText = "PAGAMENTO";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
             // 
             // relatorio
             // 
@@ -371,16 +376,14 @@ namespace Branca_De_Neve
             this.Name = "relatorio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório de Vendas - Branca de Neve Hamburgueria";
-            this.Load += new System.EventHandler(this.relatorio_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gp_relatorio.ResumeLayout(false);
             this.gp_relatorio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.brancadeneveDataSet)).EndInit();
             this.gp_buscar.ResumeLayout(false);
             this.gp_buscar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteRelatorioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,23 +404,41 @@ namespace Branca_De_Neve
         private System.Windows.Forms.Button bt_imprimir;
         private System.Windows.Forms.GroupBox gp_buscar;
         private System.Windows.Forms.TextBox txt_pesquisa;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private brancadeneveDataSet brancadeneveDataSet;
-        private System.Windows.Forms.BindingSource clienteBindingSource;
-        private brancadeneveDataSetTableAdapters.clienteTableAdapter clienteTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nOMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tELEFONEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ENDERECO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NUMERO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PRODUTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PREÇO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TOTAL;
         private System.Windows.Forms.Button bt_data;
         private System.Windows.Forms.DateTimePicker dataPara;
         private System.Windows.Forms.DateTimePicker dataDe;
         private System.Windows.Forms.Label lb_para;
         private System.Windows.Forms.Label lb_de;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dATADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nOMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tELEFONEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn eNDERECODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nUMERODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRODUTODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qUANTIDADEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRECODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tOTALDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pAGAMENTODataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource clienteRelatorioBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
     }
 }

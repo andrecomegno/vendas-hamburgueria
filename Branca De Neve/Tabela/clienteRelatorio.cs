@@ -9,7 +9,7 @@ namespace Branca_De_Neve.Tabela
     public class clienteRelatorio
     {
         public string ID { get; set; }
-        public DateTime DATA { get; set; }
+        public string DATA { get; set; }
         public string NOME { get; set; }
         public string TELEFONE { get; set; }
         public string ENDERECO { get; set; }

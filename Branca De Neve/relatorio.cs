@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using Branca_De_Neve.Script;
 using Branca_De_Neve.Tabela;
 using MySql.Data.MySqlClient;
-using Dapper;
 
 namespace Branca_De_Neve
 {
@@ -23,8 +22,46 @@ namespace Branca_De_Neve
 
         private void bt_imprimir_Click(object sender, EventArgs e)
         {
+            var dt = gerarRelatorio();
+            using (var im = new imprimir(dt))
+            {
+                im.ShowDialog();
+            }     
+        }
 
+        private DataTable gerarRelatorio()
+        {
+            var dt = new DataTable();
+            dt.Columns.Add("ID", typeof(string));
+            dt.Columns.Add("DATA_VENDA", typeof(string));
+            dt.Columns.Add("NOME", typeof(string));
+            dt.Columns.Add("TELEFONE", typeof(string));
+            dt.Columns.Add("ENDERECO", typeof(string));
+            dt.Columns.Add("NUMERO", typeof(string));
+            dt.Columns.Add("PRODUTO", typeof(string));
+            dt.Columns.Add("PRECO", typeof(string));
+            dt.Columns.Add("QUANTIDADE", typeof(string));
+            dt.Columns.Add("VALOR_TOTAL");
+            dt.Columns.Add("FORMA_PAGAMENTO", typeof(string));
 
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+               dt.Rows.Add
+                    (
+                       item.Cells["ID"].Value.ToString(),
+                       item.Cells["DATA_VENDA"].Value.ToString(),
+                       item.Cells["NOME"].Value.ToString(),
+                       item.Cells["TELEFONE"].Value.ToString(),
+                       item.Cells["ENDERECO"].Value.ToString(),
+                       item.Cells["NUMERO"].Value.ToString(),
+                       item.Cells["PRODUTO"].Value.ToString(),
+                       item.Cells["PRECO"].Value.ToString(),
+                       item.Cells["QUANTIDADE"].Value.ToString(),
+                       item.Cells["VALOR_TOTAL"].Value.ToString(),
+                       item.Cells["FORMA_PAGAMENTO"].Value.ToString()
+                   );
+            }
+            return dt;
         }
 
         private void bt_data_Click(object sender, EventArgs e)
@@ -62,6 +99,10 @@ namespace Branca_De_Neve
             }
 
             database.closeConnection();
+        }
+
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
         }
     }
 }

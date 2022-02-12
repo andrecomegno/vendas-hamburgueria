@@ -443,9 +443,6 @@ namespace Branca_De_Neve
         private System.Windows.Forms.Label lb_tipo;
         private System.Windows.Forms.TextBox txt_produto;
         private System.Windows.Forms.ComboBox txt_tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nOMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pRECODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tIPODataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel p_novo;
         private System.Windows.Forms.Button bt_novo;
         private System.Windows.Forms.Button bt_salvar;

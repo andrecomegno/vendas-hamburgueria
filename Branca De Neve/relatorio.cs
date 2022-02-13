@@ -32,16 +32,16 @@ namespace Branca_De_Neve
         private DataTable gerarRelatorio()
         {
             var dt = new DataTable();
-            dt.Columns.Add("ID", typeof(string));
-            dt.Columns.Add("DATA_VENDA", typeof(string));
+            dt.Columns.Add("ID", typeof(Int32));
+            dt.Columns.Add("DATA_VENDA", typeof(DateTime));
             dt.Columns.Add("NOME", typeof(string));
             dt.Columns.Add("TELEFONE", typeof(string));
             dt.Columns.Add("ENDERECO", typeof(string));
-            dt.Columns.Add("NUMERO", typeof(string));
+            dt.Columns.Add("NUMERO", typeof(Int32));
             dt.Columns.Add("PRODUTO", typeof(string));
-            dt.Columns.Add("PRECO", typeof(string));
-            dt.Columns.Add("QUANTIDADE", typeof(string));
-            dt.Columns.Add("VALOR_TOTAL");
+            dt.Columns.Add("PRECO", typeof(decimal));
+            dt.Columns.Add("QUANTIDADE", typeof(Int32));
+            dt.Columns.Add("VALOR_TOTAL", typeof(decimal));
             dt.Columns.Add("FORMA_PAGAMENTO", typeof(string));
 
             foreach (DataGridViewRow item in dataGridView1.Rows)

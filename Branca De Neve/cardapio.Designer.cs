@@ -30,6 +30,7 @@ namespace Branca_De_Neve
         private void InitializeComponent()
         {
             this.gp_menu = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bt_sair = new System.Windows.Forms.Button();
             this.rodape = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -56,13 +57,12 @@ namespace Branca_De_Neve
             this.bt_add = new System.Windows.Forms.Button();
             this.bt_excluir = new System.Windows.Forms.Button();
             this.bt_editar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.gp_menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gp_pesquisar.SuspendLayout();
             this.gp_visualizar.SuspendLayout();
             this.p_novo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // gp_menu
@@ -76,9 +76,29 @@ namespace Branca_De_Neve
             this.gp_menu.TabStop = false;
             this.gp_menu.Text = "Menu";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(23, 30);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(702, 444);
+            this.dataGridView1.TabIndex = 2000;
+            this.dataGridView1.TabStop = false;
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
+            // 
             // bt_sair
             // 
             this.bt_sair.BackColor = System.Drawing.Color.Red;
+            this.bt_sair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_sair.ForeColor = System.Drawing.Color.White;
@@ -163,6 +183,7 @@ namespace Branca_De_Neve
             // bt_pesquisar
             // 
             this.bt_pesquisar.BackColor = System.Drawing.Color.LightSlateGray;
+            this.bt_pesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_pesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_pesquisar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_pesquisar.ForeColor = System.Drawing.Color.White;
@@ -205,6 +226,7 @@ namespace Branca_De_Neve
             // bt_cancelar
             // 
             this.bt_cancelar.BackColor = System.Drawing.Color.Red;
+            this.bt_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_cancelar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_cancelar.ForeColor = System.Drawing.Color.White;
@@ -220,6 +242,7 @@ namespace Branca_De_Neve
             // bt_salvar
             // 
             this.bt_salvar.BackColor = System.Drawing.Color.Orange;
+            this.bt_salvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_salvar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_salvar.ForeColor = System.Drawing.Color.White;
@@ -310,6 +333,7 @@ namespace Branca_De_Neve
             // bt_novo
             // 
             this.bt_novo.BackColor = System.Drawing.Color.DodgerBlue;
+            this.bt_novo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_novo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_novo.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_novo.ForeColor = System.Drawing.Color.White;
@@ -325,6 +349,7 @@ namespace Branca_De_Neve
             // bt_add
             // 
             this.bt_add.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.bt_add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_add.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_add.ForeColor = System.Drawing.Color.White;
@@ -340,6 +365,7 @@ namespace Branca_De_Neve
             // bt_excluir
             // 
             this.bt_excluir.BackColor = System.Drawing.Color.LightCoral;
+            this.bt_excluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_excluir.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_excluir.ForeColor = System.Drawing.Color.White;
@@ -355,6 +381,7 @@ namespace Branca_De_Neve
             // bt_editar
             // 
             this.bt_editar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.bt_editar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_editar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_editar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_editar.ForeColor = System.Drawing.Color.White;
@@ -366,25 +393,6 @@ namespace Branca_De_Neve
             this.bt_editar.Text = "Editar";
             this.bt_editar.UseVisualStyleBackColor = false;
             this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 30);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(702, 444);
-            this.dataGridView1.TabIndex = 2000;
-            this.dataGridView1.TabStop = false;
-            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             // 
             // cardapio
             // 
@@ -406,6 +414,7 @@ namespace Branca_De_Neve
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cardapio_FormClosing);
             this.Load += new System.EventHandler(this.cardapio_Load);
             this.gp_menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gp_pesquisar.ResumeLayout(false);
@@ -413,7 +422,6 @@ namespace Branca_De_Neve
             this.gp_visualizar.ResumeLayout(false);
             this.p_novo.ResumeLayout(false);
             this.p_novo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

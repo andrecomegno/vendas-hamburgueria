@@ -471,7 +471,7 @@ namespace Branca_De_Neve
                     Convert.ToDouble(txt_total_07.Text) + Convert.ToDouble(txt_total_08.Text) + Convert.ToDouble(txt_total_09.Text) +
                     Convert.ToDouble(txt_total_10.Text);
 
-                txt_total_venda.Text = res.ToString();
+                txt_total_pagar.Text = res.ToString();
             }
             catch
             {
@@ -479,7 +479,7 @@ namespace Branca_De_Neve
             }
             finally
             {
-                txt_total_venda.Text = Convert.ToDouble(txt_total_venda.Text).ToString("C");                
+                txt_total_pagar.Text = Convert.ToDouble(txt_total_pagar.Text).ToString("C");                
             }            
         }
 
@@ -723,15 +723,12 @@ namespace Branca_De_Neve
             {
                 Pedido();
 
-                DialogResult dr = MessageBox.Show("Pedido Salvo Com Sucesso ! \n Deseja Fazer Mais Pedidos ?", "Novo Pedido ?", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("Pedido Salvo Com Sucesso !", "Obrigado !", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 switch (dr)
                 {
-                    case DialogResult.Yes:
+                    case DialogResult.OK:
                         LimparFormulario();
-                        break;
-                    case DialogResult.No:
-                        this.Close();
                         break;
                     default:
                         break;
@@ -779,9 +776,9 @@ namespace Branca_De_Neve
             long idPagamento = objCmdPagamento.LastInsertedId;
 
             // INSERT TABELA VENDAS
-            MySqlCommand objCmdVendas = new MySqlCommand("insert into vendas (id, valor_total, data_venda, cliente_id, pagamento_id) value(null, ?, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdVendas = new MySqlCommand("insert into vendas (id, total, data_venda, cliente_id, pagamento_id) value(null, ?, ?, ?, ?)", database.getConnection());
 
-            objCmdVendas.Parameters.Add("@valor_total", MySqlDbType.Decimal).Value = txt_total_venda.Text.Replace("R$", "");
+            objCmdVendas.Parameters.Add("@total", MySqlDbType.Decimal).Value = txt_total_pagar.Text.Replace("R$", "");
             objCmdVendas.Parameters.Add("@data_venda", MySqlDbType.Date).Value = DateTime.Now;
             objCmdVendas.Parameters.Add("@cliente_id", MySqlDbType.Int32).Value = idCliente;
             objCmdVendas.Parameters.Add("@pagamento_id", MySqlDbType.Int32).Value = idPagamento;
@@ -790,11 +787,12 @@ namespace Branca_De_Neve
             long idVendas = objCmdVendas.LastInsertedId;
 
             // INSERT TABELA PRODUTOS
-            MySqlCommand objCmdProdutos = new MySqlCommand("insert into produtos (id, produto, preco, quantidade) value (null, ?, ?, ?)", database.getConnection());
+            MySqlCommand objCmdProdutos = new MySqlCommand("insert into produtos (id, produto, preco_uni, quantidade, preco_total) value (null, ?, ?, ?, ?)", database.getConnection());
 
             objCmdProdutos.Parameters.Add("@produto", MySqlDbType.VarChar, 256).Value = txt_produto_01.Text;
-            objCmdProdutos.Parameters.Add("@preco", MySqlDbType.Decimal).Value = txt_valor_01.Text;
+            objCmdProdutos.Parameters.Add("@preco_uni", MySqlDbType.Decimal).Value = txt_valor_01.Text;
             objCmdProdutos.Parameters.Add("@quantidade", MySqlDbType.Int32).Value = txt_qt_01.Text;
+            objCmdProdutos.Parameters.Add("@preco_total", MySqlDbType.Decimal).Value = txt_total_01.Text;
 
             objCmdProdutos.ExecuteNonQuery();
             long idProdutos = objCmdProdutos.LastInsertedId;

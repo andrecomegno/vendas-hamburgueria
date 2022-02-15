@@ -47,8 +47,8 @@ namespace Branca_De_Neve
             this.bt_sair = new System.Windows.Forms.Button();
             this.bt_buscar = new System.Windows.Forms.Button();
             this.gp_buscar = new System.Windows.Forms.GroupBox();
-            this.txt_pesquisa = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_pesquisa = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.gp_relatorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -130,6 +130,7 @@ namespace Branca_De_Neve
             // bt_data
             // 
             this.bt_data.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bt_data.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_data.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_data.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_data.ForeColor = System.Drawing.Color.White;
@@ -180,6 +181,7 @@ namespace Branca_De_Neve
             // bt_imprimir
             // 
             this.bt_imprimir.BackColor = System.Drawing.Color.YellowGreen;
+            this.bt_imprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_imprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_imprimir.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_imprimir.ForeColor = System.Drawing.Color.White;
@@ -212,6 +214,7 @@ namespace Branca_De_Neve
             // bt_sair
             // 
             this.bt_sair.BackColor = System.Drawing.Color.Red;
+            this.bt_sair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_sair.ForeColor = System.Drawing.Color.White;
@@ -225,6 +228,7 @@ namespace Branca_De_Neve
             // bt_buscar
             // 
             this.bt_buscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bt_buscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_buscar.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_buscar.ForeColor = System.Drawing.Color.White;
@@ -248,13 +252,6 @@ namespace Branca_De_Neve
             this.gp_buscar.TabStop = false;
             this.gp_buscar.Text = "Buscar";
             // 
-            // txt_pesquisa
-            // 
-            this.txt_pesquisa.Location = new System.Drawing.Point(160, 39);
-            this.txt_pesquisa.Name = "txt_pesquisa";
-            this.txt_pesquisa.Size = new System.Drawing.Size(486, 20);
-            this.txt_pesquisa.TabIndex = 6;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -262,6 +259,13 @@ namespace Branca_De_Neve
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 7;
+            // 
+            // txt_pesquisa
+            // 
+            this.txt_pesquisa.Location = new System.Drawing.Point(160, 39);
+            this.txt_pesquisa.Name = "txt_pesquisa";
+            this.txt_pesquisa.Size = new System.Drawing.Size(486, 20);
+            this.txt_pesquisa.TabIndex = 6;
             // 
             // relatorio
             // 

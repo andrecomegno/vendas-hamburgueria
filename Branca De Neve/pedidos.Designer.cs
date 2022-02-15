@@ -40,7 +40,7 @@ namespace Branca_De_Neve
             this.lb_produto = new System.Windows.Forms.Label();
             this.lb_qt = new System.Windows.Forms.Label();
             this.lb_pagar = new System.Windows.Forms.Label();
-            this.txt_total_venda = new System.Windows.Forms.TextBox();
+            this.txt_total_pagar = new System.Windows.Forms.TextBox();
             this.gp_pedido = new System.Windows.Forms.GroupBox();
             this.p_valores = new System.Windows.Forms.Panel();
             this.txt_valor_01 = new System.Windows.Forms.TextBox();
@@ -127,6 +127,7 @@ namespace Branca_De_Neve
             // bt_concluir
             // 
             this.bt_concluir.BackColor = System.Drawing.Color.YellowGreen;
+            this.bt_concluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_concluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_concluir.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_concluir.ForeColor = System.Drawing.Color.White;
@@ -141,6 +142,7 @@ namespace Branca_De_Neve
             // bt_sair
             // 
             this.bt_sair.BackColor = System.Drawing.Color.Red;
+            this.bt_sair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_sair.ForeColor = System.Drawing.Color.White;
@@ -230,20 +232,20 @@ namespace Branca_De_Neve
             this.lb_pagar.TabIndex = 45;
             this.lb_pagar.Text = "PAGAR";
             // 
-            // txt_total_venda
+            // txt_total_pagar
             // 
-            this.txt_total_venda.BackColor = System.Drawing.Color.White;
-            this.txt_total_venda.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txt_total_venda.Enabled = false;
-            this.txt_total_venda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_total_venda.ForeColor = System.Drawing.Color.Black;
-            this.txt_total_venda.Location = new System.Drawing.Point(521, 693);
-            this.txt_total_venda.Name = "txt_total_venda";
-            this.txt_total_venda.Size = new System.Drawing.Size(132, 26);
-            this.txt_total_venda.TabIndex = 46;
-            this.txt_total_venda.TabStop = false;
-            this.txt_total_venda.Text = "0,00";
-            this.txt_total_venda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_total_pagar.BackColor = System.Drawing.Color.White;
+            this.txt_total_pagar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_total_pagar.Enabled = false;
+            this.txt_total_pagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_total_pagar.ForeColor = System.Drawing.Color.Black;
+            this.txt_total_pagar.Location = new System.Drawing.Point(521, 693);
+            this.txt_total_pagar.Name = "txt_total_pagar";
+            this.txt_total_pagar.Size = new System.Drawing.Size(132, 26);
+            this.txt_total_pagar.TabIndex = 46;
+            this.txt_total_pagar.TabStop = false;
+            this.txt_total_pagar.Text = "0,00";
+            this.txt_total_pagar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // gp_pedido
             // 
@@ -908,6 +910,7 @@ namespace Branca_De_Neve
             // bt_buscar_cep
             // 
             this.bt_buscar_cep.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.bt_buscar_cep.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_buscar_cep.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_buscar_cep.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_buscar_cep.ForeColor = System.Drawing.Color.White;
@@ -1132,7 +1135,7 @@ namespace Branca_De_Neve
             this.Controls.Add(this.gp_pag);
             this.Controls.Add(this.gp_cad);
             this.Controls.Add(this.gp_pedido);
-            this.Controls.Add(this.txt_total_venda);
+            this.Controls.Add(this.txt_total_pagar);
             this.Controls.Add(this.lb_pagar);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.bt_concluir);
@@ -1174,7 +1177,7 @@ namespace Branca_De_Neve
         private System.Windows.Forms.Label lb_produto;
         private System.Windows.Forms.Label lb_qt;
         private System.Windows.Forms.Label lb_pagar;
-        private System.Windows.Forms.TextBox txt_total_venda;
+        private System.Windows.Forms.TextBox txt_total_pagar;
         private System.Windows.Forms.GroupBox gp_pedido;
         private System.Windows.Forms.Label lb_valor_uni;
         private System.Windows.Forms.TextBox txt_valor_02;

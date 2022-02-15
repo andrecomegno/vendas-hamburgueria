@@ -16,13 +16,14 @@ namespace Branca_De_Neve.Tabela
         public Int32 NUMERO { get; set; }
         public string PRODUTO { get; set; }
         public decimal QUANTIDADE { get; set; }
-        public decimal PRECO { get; set; }
-        public string PAGAMENTO { get; set; }
-        public decimal TOTAL_VENDA 
-        { 
-            get 
+        public decimal PRECO_UNI { get; set; }
+        public decimal PRECO_TOTAL { get; set; }
+        public string FORMA_PAGAMENTO { get; set; }
+        public decimal TOTAL
+        {
+            get
             {
-                return QUANTIDADE * PRECO;
+                return QUANTIDADE * PRECO_UNI;
             }
         }
 

@@ -17,7 +17,7 @@ namespace Branca_De_Neve
             InitializeComponent();            
         }
 
-        #region BOTÕES
+        #region BOTAO
 
         private void bt_pedido_Click(object sender, EventArgs e)
         {
@@ -39,29 +39,53 @@ namespace Branca_De_Neve
 
         #endregion
 
-        #region MENU DO APP
+        #region MENU TOP
 
+        // NOVO PEDIDO
+        private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<pedidos>().Count() > 0)
+            {
+                MessageBox.Show("A Janela Novo Pedido já está aberta", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                this.ShowDialog();
+            }
+        }
+
+        // CARDÁPIO
+        private void cardápioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<cardapio>().Count() > 0)
+            {
+                MessageBox.Show("A Janela Cardápido já está aberta", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                cardapio ca = new cardapio();
+                ca.ShowDialog();
+            }
+        }
+
+        // RELATORIO
+        private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<cardapio>().Count() > 0)
+            {
+                MessageBox.Show("A Janela Relatório já está aberta", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                relatorio re = new relatorio();
+                re.Show();
+            }
+        }
+
+        // SAIR
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            pedidos pe = new pedidos();
-            pe.Show();
-        }
-
-        private void cardápioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            cardapio ca = new cardapio();
-            ca.Show();
-        }
-
-        private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            relatorio re = new relatorio();
-            re.Show();
         }
 
         #endregion

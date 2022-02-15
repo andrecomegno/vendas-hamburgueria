@@ -31,12 +31,6 @@ namespace Branca_De_Neve
         {
             this.bt_concluir = new System.Windows.Forms.Button();
             this.bt_sair = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.novoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cardápioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lb_produto = new System.Windows.Forms.Label();
             this.lb_qt = new System.Windows.Forms.Label();
             this.lb_pagar = new System.Windows.Forms.Label();
@@ -113,7 +107,13 @@ namespace Branca_De_Neve
             this.rad_debito = new System.Windows.Forms.RadioButton();
             this.im_cartao = new System.Windows.Forms.PictureBox();
             this.rodape = new System.Windows.Forms.Panel();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cardápioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.relatórioDeVendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gp_pedido.SuspendLayout();
             this.p_valores.SuspendLayout();
             this.p_qt.SuspendLayout();
@@ -122,6 +122,7 @@ namespace Branca_De_Neve
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_cartao)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bt_concluir
@@ -153,56 +154,6 @@ namespace Branca_De_Neve
             this.bt_sair.Text = "Sair";
             this.bt_sair.UseVisualStyleBackColor = false;
             this.bt_sair.Click += new System.EventHandler(this.bt_sair_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.arquivoToolStripMenuItem,
-            this.helpToolStripMenuItem,
-            this.sairToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(682, 27);
-            this.menuStrip1.TabIndex = 15;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // arquivoToolStripMenuItem
-            // 
-            this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novoPedidoToolStripMenuItem,
-            this.cardápioToolStripMenuItem});
-            this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(69, 23);
-            this.arquivoToolStripMenuItem.Text = "Arquivo";
-            // 
-            // novoPedidoToolStripMenuItem
-            // 
-            this.novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
-            this.novoPedidoToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
-            this.novoPedidoToolStripMenuItem.Text = "Novo Pedido";
-            this.novoPedidoToolStripMenuItem.Click += new System.EventHandler(this.novoPedidoToolStripMenuItem_Click);
-            // 
-            // cardápioToolStripMenuItem
-            // 
-            this.cardápioToolStripMenuItem.Name = "cardápioToolStripMenuItem";
-            this.cardápioToolStripMenuItem.Size = new System.Drawing.Size(156, 24);
-            this.cardápioToolStripMenuItem.Text = "Cardápio";
-            this.cardápioToolStripMenuItem.Click += new System.EventHandler(this.cardápioToolStripMenuItem_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(56, 23);
-            this.helpToolStripMenuItem.Text = "Ajuda";
-            // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(43, 23);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // lb_produto
             // 
@@ -1125,19 +1076,77 @@ namespace Branca_De_Neve
             this.rodape.Size = new System.Drawing.Size(682, 30);
             this.rodape.TabIndex = 67;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arquivoToolStripMenuItem,
+            this.helpToolStripMenuItem,
+            this.sairToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(682, 27);
+            this.menuStrip1.TabIndex = 103;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // arquivoToolStripMenuItem
+            // 
+            this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.novoPedidoToolStripMenuItem,
+            this.cardápioToolStripMenuItem,
+            this.relatórioDeVendasToolStripMenuItem});
+            this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
+            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(69, 23);
+            this.arquivoToolStripMenuItem.Text = "Arquivo";
+            // 
+            // novoPedidoToolStripMenuItem
+            // 
+            this.novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
+            this.novoPedidoToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.novoPedidoToolStripMenuItem.Text = "Novo Pedido";
+            this.novoPedidoToolStripMenuItem.Click += new System.EventHandler(this.novoPedidoToolStripMenuItem_Click);
+            // 
+            // cardápioToolStripMenuItem
+            // 
+            this.cardápioToolStripMenuItem.Name = "cardápioToolStripMenuItem";
+            this.cardápioToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.cardápioToolStripMenuItem.Text = "Cardápio";
+            this.cardápioToolStripMenuItem.Click += new System.EventHandler(this.cardápioToolStripMenuItem_Click);
+            // 
+            // relatórioDeVendasToolStripMenuItem
+            // 
+            this.relatórioDeVendasToolStripMenuItem.Name = "relatórioDeVendasToolStripMenuItem";
+            this.relatórioDeVendasToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.relatórioDeVendasToolStripMenuItem.Text = "Relatório De Vendas";
+            this.relatórioDeVendasToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeVendasToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(56, 23);
+            this.helpToolStripMenuItem.Text = "Ajuda";
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(43, 23);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
             // pedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(682, 868);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.rodape);
             this.Controls.Add(this.gp_pag);
             this.Controls.Add(this.gp_cad);
             this.Controls.Add(this.gp_pedido);
             this.Controls.Add(this.txt_total_pagar);
             this.Controls.Add(this.lb_pagar);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.bt_concluir);
             this.Controls.Add(this.bt_sair);
             this.MaximizeBox = false;
@@ -1146,8 +1155,6 @@ namespace Branca_De_Neve
             this.Text = "Novo Pedido - Branca de Neve Hamburgueria";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.pedidos_FormClosing);
             this.Load += new System.EventHandler(this.pedidos_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.gp_pedido.ResumeLayout(false);
             this.gp_pedido.PerformLayout();
             this.p_valores.ResumeLayout(false);
@@ -1161,6 +1168,8 @@ namespace Branca_De_Neve
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_cartao)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1170,10 +1179,6 @@ namespace Branca_De_Neve
 
         private System.Windows.Forms.Button bt_concluir;
         private System.Windows.Forms.Button bt_sair;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.Label lb_produto;
         private System.Windows.Forms.Label lb_qt;
         private System.Windows.Forms.Label lb_pagar;
@@ -1226,8 +1231,6 @@ namespace Branca_De_Neve
         private System.Windows.Forms.TextBox txt_valor_10;
         private System.Windows.Forms.Label lb_end_n;
         private System.Windows.Forms.TextBox txt_end_n;
-        private System.Windows.Forms.ToolStripMenuItem novoPedidoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cardápioToolStripMenuItem;
         private System.Windows.Forms.Panel p_qt;
         private System.Windows.Forms.Panel p_valores;
         private System.Windows.Forms.GroupBox gp_pag;
@@ -1252,5 +1255,12 @@ namespace Branca_De_Neve
         private System.Windows.Forms.ComboBox txt_produto_03;
         private System.Windows.Forms.ComboBox txt_produto_02;
         private System.Windows.Forms.TextBox txt_valor_01;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem novoPedidoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cardápioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem relatórioDeVendasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
     }
 }

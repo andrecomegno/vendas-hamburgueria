@@ -20,6 +20,35 @@ namespace Branca_De_Neve
             InitializeComponent();
         }
 
+        #region MENU
+
+        // NOVO PEDIDO
+        private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // CARDÁPIO
+        private void cardápioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // RELATORIO
+        private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // SAIR
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        #endregion
+
+        #region BOTAO
         private void bt_imprimir_Click(object sender, EventArgs e)
         {
             var dt = gerarRelatorio();
@@ -104,12 +133,12 @@ namespace Branca_De_Neve
             database.closeConnection();
         }
 
-        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        #endregion
+
+        private void relatorio_Load(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                DataRowView dr = (DataRowView)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
-            }
+            dataDe.Value = DateTime.Now;
+            dataPara.Value = DateTime.Now;
         }
     }
 }

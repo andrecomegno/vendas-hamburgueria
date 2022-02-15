@@ -28,7 +28,7 @@ namespace Branca_De_Neve
         {
             if (Application.OpenForms.OfType<pedidos>().Count() > 0)
             {
-                MessageBox.Show("A Janela Novo Pedido já está aberto", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("A Janela Novo Pedido já está aberta", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -41,14 +41,26 @@ namespace Branca_De_Neve
         {
             if (Application.OpenForms.OfType<cardapio>().Count() > 0)
             {
-                MessageBox.Show("A Janela Cardápido já está aberto", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("A Janela Cardápido já está aberta", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                this.Close();
-
                 cardapio ca = new cardapio();
                 ca.ShowDialog();
+            }
+        }
+
+        // RELATORIO
+        private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<cardapio>().Count() > 0)
+            {
+                MessageBox.Show("A Janela Relatório já está aberta", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                relatorio re = new relatorio();
+                re.Show();
             }
         }
 
@@ -684,7 +696,7 @@ namespace Branca_De_Neve
 
         #endregion
 
-        #region BOTOES
+        #region BOTAO
 
         // CONCLUIR PEDIDO
 
@@ -708,17 +720,6 @@ namespace Branca_De_Neve
             {
                 MessageBox.Show("Selecione Um Pagamento ", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            /*
-            else if (String.IsNullOrEmpty(txt_qt_01.Text))
-            {
-                txt_qt_01.BackColor = Color.FromArgb(255, 139, 139);
-
-            }            
-            else if (String.IsNullOrEmpty(txt_produto_01.Text))
-            {
-                txt_produto_01.BackColor = Color.FromArgb(255, 139, 139);
-            }
-            */
             else
             {
                 Pedido();
@@ -908,7 +909,7 @@ namespace Branca_De_Neve
         }
         #endregion
 
-        // JANELA PEPEDIDO
+        // JANELA PEDIDO
         private void pedidos_Load(object sender, EventArgs e)
         {
             Cardapio();

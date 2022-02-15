@@ -29,8 +29,14 @@ namespace Branca_De_Neve
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gp_menu = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nOMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pRECODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tIPODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cardapioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bt_sair = new System.Windows.Forms.Button();
             this.rodape = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -59,6 +65,7 @@ namespace Branca_De_Neve
             this.bt_editar = new System.Windows.Forms.Button();
             this.gp_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.gp_pesquisar.SuspendLayout();
             this.gp_visualizar.SuspendLayout();
@@ -82,8 +89,15 @@ namespace Branca_De_Neve
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.nOMEDataGridViewTextBoxColumn,
+            this.pRECODataGridViewTextBoxColumn,
+            this.tIPODataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.cardapioBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(23, 30);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -94,6 +108,40 @@ namespace Branca_De_Neve
             this.dataGridView1.TabIndex = 2000;
             this.dataGridView1.TabStop = false;
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "Código";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // nOMEDataGridViewTextBoxColumn
+            // 
+            this.nOMEDataGridViewTextBoxColumn.DataPropertyName = "NOME";
+            this.nOMEDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nOMEDataGridViewTextBoxColumn.Name = "nOMEDataGridViewTextBoxColumn";
+            this.nOMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nOMEDataGridViewTextBoxColumn.Width = 448;
+            // 
+            // pRECODataGridViewTextBoxColumn
+            // 
+            this.pRECODataGridViewTextBoxColumn.DataPropertyName = "PRECO";
+            this.pRECODataGridViewTextBoxColumn.HeaderText = "Preço";
+            this.pRECODataGridViewTextBoxColumn.Name = "pRECODataGridViewTextBoxColumn";
+            this.pRECODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tIPODataGridViewTextBoxColumn
+            // 
+            this.tIPODataGridViewTextBoxColumn.DataPropertyName = "TIPO";
+            this.tIPODataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tIPODataGridViewTextBoxColumn.Name = "tIPODataGridViewTextBoxColumn";
+            this.tIPODataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cardapioBindingSource
+            // 
+            this.cardapioBindingSource.DataSource = typeof(Branca_De_Neve.Tabela.cardapio);
             // 
             // bt_sair
             // 
@@ -148,18 +196,21 @@ namespace Branca_De_Neve
             this.novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
             this.novoPedidoToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.novoPedidoToolStripMenuItem.Text = "Novo Pedido";
+            this.novoPedidoToolStripMenuItem.Click += new System.EventHandler(this.novoPedidoToolStripMenuItem_Click);
             // 
             // cardápioToolStripMenuItem
             // 
             this.cardápioToolStripMenuItem.Name = "cardápioToolStripMenuItem";
             this.cardápioToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.cardápioToolStripMenuItem.Text = "Cardápio";
+            this.cardápioToolStripMenuItem.Click += new System.EventHandler(this.cardápioToolStripMenuItem_Click);
             // 
             // relatórioDeVendasToolStripMenuItem
             // 
             this.relatórioDeVendasToolStripMenuItem.Name = "relatórioDeVendasToolStripMenuItem";
             this.relatórioDeVendasToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
             this.relatórioDeVendasToolStripMenuItem.Text = "Relatório De Vendas";
+            this.relatórioDeVendasToolStripMenuItem.Click += new System.EventHandler(this.relatórioDeVendasToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -172,6 +223,7 @@ namespace Branca_De_Neve
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(43, 23);
             this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // txt_pesquisar
             // 
@@ -415,6 +467,7 @@ namespace Branca_De_Neve
             this.Load += new System.EventHandler(this.cardapio_Load);
             this.gp_menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gp_pesquisar.ResumeLayout(false);
@@ -456,5 +509,10 @@ namespace Branca_De_Neve
         private System.Windows.Forms.Button bt_salvar;
         private System.Windows.Forms.Button bt_cancelar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nOMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pRECODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tIPODataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource cardapioBindingSource;
     }
 }

@@ -63,9 +63,11 @@ namespace Branca_De_Neve
             this.bt_add = new System.Windows.Forms.Button();
             this.bt_excluir = new System.Windows.Forms.Button();
             this.bt_editar = new System.Windows.Forms.Button();
+            this.desenvolvido = new System.Windows.Forms.Label();
             this.gp_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).BeginInit();
+            this.rodape.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.gp_pesquisar.SuspendLayout();
             this.gp_visualizar.SuspendLayout();
@@ -161,6 +163,7 @@ namespace Branca_De_Neve
             // rodape
             // 
             this.rodape.BackColor = System.Drawing.Color.Gray;
+            this.rodape.Controls.Add(this.desenvolvido);
             this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rodape.Location = new System.Drawing.Point(0, 909);
             this.rodape.Name = "rodape";
@@ -217,6 +220,7 @@ namespace Branca_De_Neve
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(56, 23);
             this.helpToolStripMenuItem.Text = "Ajuda";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -446,6 +450,16 @@ namespace Branca_De_Neve
             this.bt_editar.UseVisualStyleBackColor = false;
             this.bt_editar.Click += new System.EventHandler(this.bt_editar_Click);
             // 
+            // desenvolvido
+            // 
+            this.desenvolvido.AutoSize = true;
+            this.desenvolvido.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.desenvolvido.Location = new System.Drawing.Point(12, 8);
+            this.desenvolvido.Name = "desenvolvido";
+            this.desenvolvido.Size = new System.Drawing.Size(169, 13);
+            this.desenvolvido.TabIndex = 301;
+            this.desenvolvido.Text = "Desenvolvido por André Comegno";
+            // 
             // cardapio
             // 
             this.AllowDrop = true;
@@ -463,11 +477,12 @@ namespace Branca_De_Neve
             this.Name = "cardapio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cardápio - Branca de Neve Hamburgueria";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.cardapio_FormClosing);
             this.Load += new System.EventHandler(this.cardapio_Load);
             this.gp_menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardapioBindingSource)).EndInit();
+            this.rodape.ResumeLayout(false);
+            this.rodape.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.gp_pesquisar.ResumeLayout(false);
@@ -514,5 +529,6 @@ namespace Branca_De_Neve
         private System.Windows.Forms.DataGridViewTextBoxColumn pRECODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tIPODataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource cardapioBindingSource;
+        private System.Windows.Forms.Label desenvolvido;
     }
 }

@@ -21,7 +21,7 @@ namespace Branca_De_Neve
             InitializeComponent();
         }
 
-        #region MENU TOP
+        #region MENU
 
         // NOVO PEDIDO
         private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,6 +45,8 @@ namespace Branca_De_Neve
             }
             else
             {
+                this.Close();
+
                 cardapio ca = new cardapio();
                 ca.ShowDialog();
             }
@@ -53,15 +55,23 @@ namespace Branca_De_Neve
         // RELATORIO
         private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms.OfType<cardapio>().Count() > 0)
+            if (Application.OpenForms.OfType<relatorio>().Count() > 0)
             {
                 MessageBox.Show("A Janela Relatório já está aberta", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
+                this.Close();
+
                 relatorio re = new relatorio();
-                re.Show();
+                re.ShowDialog();
             }
+        }
+
+        // AJUDA
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/andrecomegno");
         }
 
         // SAIR
@@ -890,23 +900,6 @@ namespace Branca_De_Neve
         {
             this.Close();
         }
-
-        private void pedidos_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Deseja Mesmo Sair ?", "AVISO !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-            switch (dr)
-            {
-                case DialogResult.Yes:
-                    e.Cancel = false;
-                    break;
-                case DialogResult.No:
-                    e.Cancel = true;
-                    break;
-                default:
-                    break;
-            }
-        }
         #endregion
 
         // JANELA PEDIDO
@@ -1040,6 +1033,23 @@ namespace Branca_De_Neve
         private void txt_valor_10_MouseClick(object sender, MouseEventArgs e)
         {
             txt_valor_10.Text = "";
+        }
+
+        private void pedidos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Deseja Mesmo Sair ?", "AVISO !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            switch (dr)
+            {
+                case DialogResult.Yes:
+                    e.Cancel = false;
+                    break;
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

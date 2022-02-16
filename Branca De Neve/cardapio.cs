@@ -19,29 +19,9 @@ namespace Branca_De_Neve
         public cardapio()
         {
             InitializeComponent();
-
-            Start();
         }
 
-        private void Start()
-        {
-            bt_excluir.Enabled = false;
-            bt_excluir.BackColor = Color.DarkGray;
-
-            bt_add.Enabled = false;
-            bt_add.BackColor = Color.DarkGray;
-
-            bt_editar.Enabled = false;
-            bt_editar.BackColor = Color.DarkGray;
-
-            bt_salvar.Enabled = false;
-            bt_salvar.BackColor = Color.DarkGray;
-
-            bt_cancelar.Enabled = false;
-            bt_cancelar.BackColor = Color.DarkGray;
-        }
-
-        #region MENU TOP
+        #region MENU
 
         // NOVO PEDIDO
         private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,7 +32,10 @@ namespace Branca_De_Neve
             }
             else
             {
-                this.ShowDialog();
+                this.Close();
+
+                pedidos pe = new pedidos();
+                pe.Show();
             }
         }
 
@@ -65,23 +48,30 @@ namespace Branca_De_Neve
             }
             else
             {
-                cardapio ca = new cardapio();
-                ca.ShowDialog();
+                this.Show();
             }
         }
 
         // RELATORIO
         private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms.OfType<cardapio>().Count() > 0)
+            if (Application.OpenForms.OfType<relatorio>().Count() > 0)
             {
                 MessageBox.Show("A Janela Relatório já está aberta", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
+                this.Close();
+
                 relatorio re = new relatorio();
                 re.Show();
             }
+        }
+
+        // AJUDA
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/andrecomegno");
         }
 
         // SAIR
@@ -92,7 +82,9 @@ namespace Branca_De_Neve
 
         #endregion
 
-        #region BOTAO NOVO
+        #region BOTAO
+
+        // NOVO PEDIDO
         private void bt_novo_Click(object sender, EventArgs e)
         {
             bt_excluir.Enabled = false;
@@ -111,9 +103,8 @@ namespace Branca_De_Neve
             p_novo.Enabled = true;
             LimparTextBox(p_novo.Controls);
         }
-        #endregion
 
-        #region BOTAO CANCELAR
+        // CANCELAR
         private void bt_cancelar_Click(object sender, EventArgs e)
         {
 
@@ -141,9 +132,8 @@ namespace Branca_De_Neve
             LimparTextBox(p_novo.Controls);
 
         }
-        #endregion
 
-        #region BOTAO EXCLUIR
+        // EXCLUIR
         private void bt_excluir_Click(object sender, EventArgs e)
         {
             try
@@ -211,9 +201,7 @@ namespace Branca_De_Neve
             LimparTextBox(p_novo.Controls);
         }
 
-        #endregion
-
-        #region BOTAO ADICIONAR
+        // ADICIONAR
 
         private void bt_add_Click(object sender, EventArgs e)
         {
@@ -303,9 +291,7 @@ namespace Branca_De_Neve
             txt_tipo.BackColor = Color.White;
         }
 
-        #endregion
-
-        #region BOTAO SALVAR E EDITAR
+        // SALVAR E EDITAR
         private void bt_salvar_Click(object sender, EventArgs e)
         {
             verificarSalvar();
@@ -393,9 +379,7 @@ namespace Branca_De_Neve
             }
         }
 
-        #endregion
-
-        #region BOTAO PESQUISAR
+        // PESQUISAR
         private void bt_pesquisar_Click(object sender, EventArgs e)
         {
             database database = new database();
@@ -414,7 +398,14 @@ namespace Branca_De_Neve
 
             database.closeConnection();
 
+        }        
+
+        // SAIR
+        private void bt_sair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
+
         #endregion
 
         // TABELA CARDAPIO
@@ -433,16 +424,34 @@ namespace Branca_De_Neve
                 bt_add.BackColor = Color.DarkGray;
 
                 bt_excluir.Enabled = true;
-                bt_excluir.BackColor = Color.Red;
+                bt_excluir.BackColor = Color.LightCoral;
 
                 bt_editar.Enabled = true;
                 bt_editar.BackColor = Color.MediumSlateBlue;
+
+                bt_cancelar.Enabled = true;
+                bt_cancelar.BackColor = Color.Red;
             }
         }
 
         private void cardapio_Load(object sender, EventArgs e)
         {
             dataGridView();
+
+            bt_excluir.Enabled = false;
+            bt_excluir.BackColor = Color.DarkGray;
+
+            bt_add.Enabled = false;
+            bt_add.BackColor = Color.DarkGray;
+
+            bt_editar.Enabled = false;
+            bt_editar.BackColor = Color.DarkGray;
+
+            bt_salvar.Enabled = false;
+            bt_salvar.BackColor = Color.DarkGray;
+
+            bt_cancelar.Enabled = false;
+            bt_cancelar.BackColor = Color.DarkGray;
         }
 
         // DATA BASE
@@ -482,30 +491,6 @@ namespace Branca_De_Neve
                 {
                     ((ComboBox)(c)).SelectedIndex = -1;
                 }
-            }
-        }
-
-        // SAIR
-        private void bt_sair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        // FECHAR A JANELA CARDAPIO
-        private void cardapio_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Deseja Mesmo Sair ?", "AVISO !", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-            switch (dr)
-            {
-                case DialogResult.Yes:
-                    e.Cancel = false;
-                    break;
-                case DialogResult.No:
-                    e.Cancel = true;
-                    break;
-                default:
-                    break;
             }
         }
     }

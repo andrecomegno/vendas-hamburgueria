@@ -52,7 +52,9 @@ namespace Branca_De_Neve
             this.bt_pedido = new System.Windows.Forms.Button();
             this.bt_cardapio = new System.Windows.Forms.Button();
             this.bt_relatorio = new System.Windows.Forms.Button();
+            this.desenvolvido = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            this.rodape.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.im_historico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_cardapio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_novo_pedido)).BeginInit();
@@ -108,6 +110,7 @@ namespace Branca_De_Neve
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(56, 23);
             this.helpToolStripMenuItem.Text = "Ajuda";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -119,6 +122,7 @@ namespace Branca_De_Neve
             // rodape
             // 
             this.rodape.BackColor = System.Drawing.Color.Gray;
+            this.rodape.Controls.Add(this.desenvolvido);
             this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rodape.Location = new System.Drawing.Point(0, 616);
             this.rodape.Name = "rodape";
@@ -371,6 +375,16 @@ namespace Branca_De_Neve
             this.bt_relatorio.UseVisualStyleBackColor = false;
             this.bt_relatorio.Click += new System.EventHandler(this.bt_relatorio_Click);
             // 
+            // desenvolvido
+            // 
+            this.desenvolvido.AutoSize = true;
+            this.desenvolvido.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.desenvolvido.Location = new System.Drawing.Point(12, 8);
+            this.desenvolvido.Name = "desenvolvido";
+            this.desenvolvido.Size = new System.Drawing.Size(169, 13);
+            this.desenvolvido.TabIndex = 74;
+            this.desenvolvido.Text = "Desenvolvido por André Comegno";
+            // 
             // Branca_Neve
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,6 +417,8 @@ namespace Branca_De_Neve
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Branca_Neve_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.rodape.ResumeLayout(false);
+            this.rodape.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.im_historico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_cardapio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_novo_pedido)).EndInit();
@@ -435,6 +451,7 @@ namespace Branca_De_Neve
         private System.Windows.Forms.Button bt_pedido;
         private System.Windows.Forms.Button bt_cardapio;
         private System.Windows.Forms.Button bt_relatorio;
+        private System.Windows.Forms.Label desenvolvido;
     }
 }
 

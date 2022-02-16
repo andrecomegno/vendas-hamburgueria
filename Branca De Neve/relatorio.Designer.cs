@@ -30,6 +30,7 @@ namespace Branca_De_Neve
         private void InitializeComponent()
         {
             this.rodape = new System.Windows.Forms.Panel();
+            this.desenvolvido = new System.Windows.Forms.Label();
             this.gp_relatorio = new System.Windows.Forms.GroupBox();
             this.bt_data = new System.Windows.Forms.Button();
             this.dataPara = new System.Windows.Forms.DateTimePicker();
@@ -49,6 +50,7 @@ namespace Branca_De_Neve
             this.relatórioDeVendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rodape.SuspendLayout();
             this.gp_relatorio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gp_buscar.SuspendLayout();
@@ -58,11 +60,22 @@ namespace Branca_De_Neve
             // rodape
             // 
             this.rodape.BackColor = System.Drawing.Color.Gray;
+            this.rodape.Controls.Add(this.desenvolvido);
             this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.rodape.Location = new System.Drawing.Point(0, 989);
+            this.rodape.Location = new System.Drawing.Point(0, 873);
             this.rodape.Name = "rodape";
             this.rodape.Size = new System.Drawing.Size(767, 30);
             this.rodape.TabIndex = 68;
+            // 
+            // desenvolvido
+            // 
+            this.desenvolvido.AutoSize = true;
+            this.desenvolvido.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.desenvolvido.Location = new System.Drawing.Point(9, 8);
+            this.desenvolvido.Name = "desenvolvido";
+            this.desenvolvido.Size = new System.Drawing.Size(169, 13);
+            this.desenvolvido.TabIndex = 73;
+            this.desenvolvido.Text = "Desenvolvido por André Comegno";
             // 
             // gp_relatorio
             // 
@@ -75,7 +88,7 @@ namespace Branca_De_Neve
             this.gp_relatorio.Controls.Add(this.lb_de);
             this.gp_relatorio.Location = new System.Drawing.Point(12, 144);
             this.gp_relatorio.Name = "gp_relatorio";
-            this.gp_relatorio.Size = new System.Drawing.Size(743, 753);
+            this.gp_relatorio.Size = new System.Drawing.Size(743, 611);
             this.gp_relatorio.TabIndex = 69;
             this.gp_relatorio.TabStop = false;
             this.gp_relatorio.Text = "Relatório";
@@ -117,7 +130,7 @@ namespace Branca_De_Neve
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(716, 615);
+            this.dataGridView1.Size = new System.Drawing.Size(716, 493);
             this.dataGridView1.TabIndex = 2001;
             this.dataGridView1.TabStop = false;
             // 
@@ -170,7 +183,7 @@ namespace Branca_De_Neve
             this.bt_sair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.bt_sair.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_sair.ForeColor = System.Drawing.Color.White;
-            this.bt_sair.Location = new System.Drawing.Point(643, 922);
+            this.bt_sair.Location = new System.Drawing.Point(645, 779);
             this.bt_sair.Name = "bt_sair";
             this.bt_sair.Size = new System.Drawing.Size(110, 35);
             this.bt_sair.TabIndex = 70;
@@ -260,6 +273,7 @@ namespace Branca_De_Neve
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(56, 23);
             this.helpToolStripMenuItem.Text = "Ajuda";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -273,7 +287,7 @@ namespace Branca_De_Neve
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(767, 1019);
+            this.ClientSize = new System.Drawing.Size(767, 903);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.gp_buscar);
             this.Controls.Add(this.bt_sair);
@@ -284,6 +298,8 @@ namespace Branca_De_Neve
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório de Vendas - Branca de Neve Hamburgueria";
             this.Load += new System.EventHandler(this.relatorio_Load);
+            this.rodape.ResumeLayout(false);
+            this.rodape.PerformLayout();
             this.gp_relatorio.ResumeLayout(false);
             this.gp_relatorio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -317,5 +333,6 @@ namespace Branca_De_Neve
         private System.Windows.Forms.ToolStripMenuItem relatórioDeVendasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.Label desenvolvido;
     }
 }

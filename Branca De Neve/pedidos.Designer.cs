@@ -107,6 +107,7 @@ namespace Branca_De_Neve
             this.rad_debito = new System.Windows.Forms.RadioButton();
             this.im_cartao = new System.Windows.Forms.PictureBox();
             this.rodape = new System.Windows.Forms.Panel();
+            this.desenvolvido = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.novoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -122,6 +123,7 @@ namespace Branca_De_Neve
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_cartao)).BeginInit();
+            this.rodape.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1070,11 +1072,22 @@ namespace Branca_De_Neve
             // rodape
             // 
             this.rodape.BackColor = System.Drawing.Color.Gray;
+            this.rodape.Controls.Add(this.desenvolvido);
             this.rodape.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rodape.Location = new System.Drawing.Point(0, 838);
             this.rodape.Name = "rodape";
             this.rodape.Size = new System.Drawing.Size(682, 30);
             this.rodape.TabIndex = 67;
+            // 
+            // desenvolvido
+            // 
+            this.desenvolvido.AutoSize = true;
+            this.desenvolvido.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.desenvolvido.Location = new System.Drawing.Point(9, 8);
+            this.desenvolvido.Name = "desenvolvido";
+            this.desenvolvido.Size = new System.Drawing.Size(169, 13);
+            this.desenvolvido.TabIndex = 104;
+            this.desenvolvido.Text = "Desenvolvido por André Comegno";
             // 
             // menuStrip1
             // 
@@ -1126,6 +1139,7 @@ namespace Branca_De_Neve
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(56, 23);
             this.helpToolStripMenuItem.Text = "Ajuda";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -1168,6 +1182,8 @@ namespace Branca_De_Neve
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.im_cartao)).EndInit();
+            this.rodape.ResumeLayout(false);
+            this.rodape.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -1262,5 +1278,6 @@ namespace Branca_De_Neve
         private System.Windows.Forms.ToolStripMenuItem relatórioDeVendasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.Label desenvolvido;
     }
 }

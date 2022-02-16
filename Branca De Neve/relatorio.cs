@@ -25,19 +25,52 @@ namespace Branca_De_Neve
         // NOVO PEDIDO
         private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (Application.OpenForms.OfType<pedidos>().Count() > 0)
+            {
+                MessageBox.Show("A Janela Novo Pedido já está aberta", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                this.Close();
 
+                pedidos pe = new pedidos();
+                pe.Show();
+            }
         }
 
         // CARDÁPIO
         private void cardápioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (Application.OpenForms.OfType<cardapio>().Count() > 0)
+            {
+                MessageBox.Show("A Janela Cardápido já está aberta", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                this.Close();
 
+                cardapio ca = new cardapio();
+                ca.Show();
+            }
         }
 
         // RELATORIO
         private void relatórioDeVendasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (Application.OpenForms.OfType<relatorio>().Count() > 0)
+            {
+                MessageBox.Show("A Janela Relatório já está aberta", "OPS !", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                this.Close();
+            }
+        }
 
+        // AJUDA
+        private void helpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/andrecomegno");
         }
 
         // SAIR
